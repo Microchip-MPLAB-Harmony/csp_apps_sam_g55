@@ -44,6 +44,6 @@ The following table shows the target hardware for the application projects.
 Following table provides the LED name:
 
 | Board      | LED Name |
-| ---------- | ---------------- |--------- |
+| ---------- | ---------------- |
 | [SAM G55 Xplained Pro Evaluation Kit](https://www.microchip.com/developmenttools/ProductDetails/atsamg55-xpro) | LED0 |
 |||
