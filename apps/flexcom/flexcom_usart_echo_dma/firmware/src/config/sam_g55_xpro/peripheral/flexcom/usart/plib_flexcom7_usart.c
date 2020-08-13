@@ -211,7 +211,7 @@ bool FLEXCOM7_USART_SerialSetup( FLEXCOM_USART_SERIAL_SETUP *setup, uint32_t src
             /* The input clock source - srcClkFreq, is too low to generate the desired baud */
             return status;
         }
-        
+
         if (brgVal > 65535)
         {
             /* The requested baud is so low that the ratio of srcClkFreq to baud exceeds the 16-bit register value of CD register */
@@ -319,5 +319,23 @@ size_t FLEXCOM7_USART_WriteCountGet( void )
 size_t FLEXCOM7_USART_ReadCountGet( void )
 {
     return (flexcom7UsartObj.rxSize - USART7_REGS->US_RCR);
+}
+
+bool FLEXCOM7_USART_ReadAbort(void)
+{
+    if (flexcom7UsartObj.rxBusyStatus == true)
+    {
+        /* Disable PDA channel transfer */
+        USART7_REGS->US_RCR = (uint32_t) 0;
+        USART7_REGS->US_PTCR = US_PTCR_RXTDIS_Msk;
+        USART7_REGS->US_IDR = US_IDR_ENDRX_Msk;
+
+        flexcom7UsartObj.rxBusyStatus = false;
+
+        /* If required application should read the num bytes processed prior to calling the read abort API */
+        flexcom7UsartObj.rxSize = flexcom7UsartObj.rxProcessedSize = 0;
+    }
+
+    return true;
 }
 
