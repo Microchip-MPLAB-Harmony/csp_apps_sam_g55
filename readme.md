@@ -1,6 +1,12 @@
-﻿[![MCHP](https://www.microchip.com/ResourcePackages/Microchip/assets/dist/images/logo.png)](https://www.microchip.com)
+﻿---
+title: Harmony 3 peripheral library application examples for SAM G55 family
+nav_order: 1
+has_children: true
+has_toc: false
+---
+[![MCHP](https://www.microchip.com/ResourcePackages/Microchip/assets/dist/images/logo.png)](https://www.microchip.com)
 
-# Harmony 3 peripheral library application examples for SAM G55G/G55J family
+# Harmony 3 peripheral library application examples for SAM G55 family
 
 MPLAB® Harmony 3 is an extension of the MPLAB® ecosystem for creating embedded firmware solutions for Microchip 32-bit SAM and PIC® microcontroller and microprocessor devices.  Refer to the following links for more information.
 
@@ -10,28 +16,27 @@ MPLAB® Harmony 3 is an extension of the MPLAB® ecosystem for creating embedded
 - [Microchip MPLAB® Harmony](https://www.microchip.com/mplab/mplab-harmony)
 - [Microchip MPLAB® Harmony Pages](https://microchip-mplab-harmony.github.io/)
 
-This repository contains the MPLAB® Harmony 3 peripheral library application examples for SAM E70/S70/V70/V71 family
+This repository contains the MPLAB® Harmony 3 peripheral library application examples for SAM G55 family
 
 - [Release Notes](release_notes.md)
 - [MPLAB® Harmony License](mplab_harmony_license.md)
 
-To download or clone these application from Github, go to the [top level of the repository](https://github.com/Microchip-MPLAB-Harmony/csp_apps_sam_g55) page and click:
-
-![clone](./docs/images/clone.png)
+To clone or download these applications from Github, go to the [main page of this repository](https://github.com/Microchip-MPLAB-Harmony/csp_apps_sam_g55) and then click **Clone** button to clone this repository or download as zip file.
+This content can also be downloaded using content manager by following these [instructions](https://github.com/Microchip-MPLAB-Harmony/contentmanager/wiki).
 
 ## Contents Summary
 
 | Folder     | Description                             |
 | ---        | ---                                     |
-| apps       | Peripheral library example applications |
-| docs       | Applications help documentation         |
+| apps       | Contains peripheral library example applications |
+| docs       | Contains documentation in html format for offline viewing (to be used only after cloning this repository onto a local machine). Use [github pages](https://microchip-mplab-harmony.github.io/csp_apps_sam_g55/) of this repository for viewing it online. |
 
 ## Code Examples
 
 The following applications are provided to demonstrate the typical or interesting usage models of one or more peripheral libraries.
 
-| Name | Description|
-|:---------|:-----------|
+| Name | Description |
+| ---- | ----------- |
 | [ADC Polling](apps/adc/adc_polled_mode/readme.md) | This example demonstrates how to sample an analog input in polled mode and send the converted data to console |
 | [ADC user sequence](apps/adc/adc_user_sequence/readme.md) | This example demonstrates how to sample three analog inputs using the user sequencer in software trigger mode and send the converted data to the console |
 | [Clock configuration](apps/clock/clock_config/readme.md) | This example application shows how to configure the clock system to run the device at maximum frequency. It also outputs a prescaled clock signal on a GPIO pin for measurement and verification |
@@ -60,7 +65,7 @@ The following applications are provided to demonstrate the typical or interestin
 | [TC compare mode](apps/tc/tc_compare_mode/readme.md) | This example shows how to use the TC module in compare mode to generate an active low, active high, and toggle output on compare match |
 | [TC timer mode](apps/tc/tc_timer_mode/readme.md) | This example shows how to use the TC module in timer mode to generate periodic interrupt |
 | [WDT timeout](apps/wdt/wdt_timeout/readme.md) | This example shows how to generate a Watchdog timer reset by emulating a deadlock |
-|||
+
 ____
 
 [![License](https://img.shields.io/badge/license-Harmony%20license-orange.svg)](https://github.com/Microchip-MPLAB-Harmony/csp_apps_sam_g55/blob/master/mplab_harmony_license.md)
