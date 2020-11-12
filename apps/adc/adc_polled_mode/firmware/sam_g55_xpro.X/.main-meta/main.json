@@ -1,0 +1,76 @@
+{
+	"metaDataVersion": "1.0.0",
+	"category": "com.microchip.ide.project",
+	"content": {
+		"metaDataVersion": "1.1.0",
+		"name": "com.microchip.mcu32.mplabx.project.csp_apps_sam_g55_adc_polled_mode",
+		"version": "3.0.1",
+		"displayName": "ADC Polling Example for SAM G5x Family",
+		"projectName": "adc_polled_mode_sam_g55_xpro",
+		"shortDescription": "This example demonstrates how to sample an analog input in polled mode and send the converted data to console.",
+		"ide": {
+			"name": "MPLABX",
+			"semverRange": ">=5.40.0"
+		},
+		"compiler": [
+			{
+				"name": "XC32",
+				"semverRange": ">=2.40.0"
+			}
+		],
+		"dfp": {
+			"name": "SAMG_DFP",
+			"semverRange": "^3.2.38"
+		},
+		"configurator": {
+			"name": "MHC",
+			"semverRange": ">=3.5.1"
+		},
+		"device": {
+			"metaDataVersion": "1.0.0",
+			"category": "com.microchip.portal.contentRef",
+			"content": {
+				"metaDataVersion": "1.0.0",
+				"category": "com.microchip.device",
+				"name": "ATSAMG55J19",
+				"versionRange": "*"
+			}
+		},
+		"author": "Microchip",
+		"subcategories": [
+			[
+				"Development Kit", "SAM G55 Xplained Pro Evaluation Kit"
+			],
+			[
+				"Harmony", "Peripherals", "ADC"
+			],
+			[
+				"Peripherals", "ADC"
+			]
+		],
+		"peripherals": [
+			"ADC"
+		],
+		"keywords": [
+			"MHC",
+			"Harmony",
+			"ATSAMG55J19",
+			"SAM G5x Family",
+			"AC voltage",
+			"Analog to Digital Converter",
+			"ADC",
+			"Analog"
+		],
+		"additionalData": {
+			"longDescription": {
+				"metaDataVersion": "1.0.0",
+				"category": "com.microchip.portal.fileRef",
+				"content": {
+					"metaDataVersion": "1.0.0",
+					"fileName": "./../../readme.md",
+					"mimeType": "text/markdown"
+				}
+			}
+		}
+	}
+}
