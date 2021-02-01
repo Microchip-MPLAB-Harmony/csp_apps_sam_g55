@@ -48,6 +48,7 @@
 #include "plib_flexcom5_spi_slave.h"
 #include "peripheral/pio/plib_pio.h"
 #include <string.h>
+#include "interrupts.h"
 
 #define FLEXCOM5_READ_BUFFER_SIZE            256
 #define FLEXCOM5_WRITE_BUFFER_SIZE           256
