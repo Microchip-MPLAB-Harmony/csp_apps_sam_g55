@@ -5,10 +5,10 @@
     Microchip Technology Inc.
 
   File Name
-    plib_flexcom6_twi.h
+    plib_flexcom6_twi_master.h
 
   Summary
-    FLEXCOM TWI peripheral library interface.
+    FLEXCOM TWI Master peripheral library interface.
 
   Description
     This file defines the interface to the FLEXCOM TWI peripheral library.  This
@@ -44,8 +44,8 @@
 *******************************************************************************/
 // DOM-IGNORE-END
 
-#ifndef PLIB_FLEXCOM6_TWI_H
-#define PLIB_FLEXCOM6_TWI_H
+#ifndef PLIB_FLEXCOM6_TWI_MASTER_H
+#define PLIB_FLEXCOM6_TWI_MASTER_H
 
 // *****************************************************************************
 // *****************************************************************************
@@ -53,7 +53,7 @@
 // *****************************************************************************
 // *****************************************************************************
 
-#include "plib_flexcom_twi_master.h"
+#include "plib_flexcom_twi_master_common.h"
 
 // DOM-IGNORE-BEGIN
 #ifdef __cplusplus  // Provide C++ Compatibility
@@ -355,23 +355,23 @@ FLEXCOM_TWI_ERROR FLEXCOM6_TWI_ErrorGet(void);
 
    Precondition:
     FLEXCOM6_Initialize must have been called for the associated TWI instance.
-	The transfer status should not be busy.
-	
+    The transfer status should not be busy.
+
    Parameters:
     setup - Pointer to the structure containing the transfer setup.
     srcClkFreq - TWI Peripheral Clock Source Frequency.
-	
+
    Returns:
     true - Transfer setup was updated Successfully.
     false - Failure while updating transfer setup.
-    
+
    Example:
-    <code>    
-    
+    <code>
+
     FLEXCOM_TWI_TRANSFER_SETUP setup;
-    
+
     setup.clkSpeed = 400000;
-    
+
     // Make sure that the I2C is not busy before changing the I2C clock frequency
     if (FLEXCOM6_TWI_IsBusy() == false)
     {
@@ -379,11 +379,11 @@ FLEXCOM_TWI_ERROR FLEXCOM6_TWI_ErrorGet(void);
         {
             // Transfer Setup updated successfully
         }
-    }    
+    }
     </code>
 
    Remarks:
-    srcClkFreq overrides any change in the peripheral clock frequency. 
+    srcClkFreq overrides any change in the peripheral clock frequency.
     If configured to zero PLib takes the peripheral clock frequency from MHC.
 */
 
@@ -397,4 +397,4 @@ bool FLEXCOM6_TWI_TransferSetup(FLEXCOM_TWI_TRANSFER_SETUP* setup, uint32_t srcC
 #endif
 // DOM-IGNORE-END
 
-#endif //PLIB_FLEXCOM6_TWI_H
+#endif //PLIB_FLEXCOM6_TWI_MASTER_H

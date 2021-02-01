@@ -53,7 +53,7 @@
 #include "peripheral/nvic/plib_nvic.h"
 #include "peripheral/cmcc/plib_cmcc.h"
 #include "peripheral/efc/plib_efc.h"
-#include "peripheral/flexcom/twi/plib_flexcom6_twi.h"
+#include "peripheral/flexcom/twi/master/plib_flexcom6_twi_master.h"
 
 // DOM-IGNORE-BEGIN
 #ifdef __cplusplus  // Provide C++ Compatibility
@@ -62,6 +62,9 @@ extern "C" {
 
 #endif
 // DOM-IGNORE-END
+
+/* CPU clock frequency */
+#define CPU_CLOCK_FREQUENCY 119996416
 
 // *****************************************************************************
 // *****************************************************************************
