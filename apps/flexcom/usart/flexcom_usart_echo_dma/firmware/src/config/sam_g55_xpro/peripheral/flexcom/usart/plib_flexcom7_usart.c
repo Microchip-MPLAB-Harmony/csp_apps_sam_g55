@@ -49,6 +49,7 @@
 // *****************************************************************************
 
 #include "plib_flexcom7_usart.h"
+#include "interrupts.h"
 
 // *****************************************************************************
 // *****************************************************************************
@@ -57,6 +58,26 @@
 // *****************************************************************************
 
 FLEXCOM_USART_OBJECT flexcom7UsartObj;
+
+void static FLEXCOM7_USART_ErrorClear( void )
+{
+    uint8_t dummyData = 0u;
+
+    if (USART7_REGS->US_CSR & (US_CSR_OVRE_Msk | US_CSR_FRAME_Msk | US_CSR_PARE_Msk))
+    {
+        USART7_REGS->US_CR = US_CR_RSTSTA_Msk;
+
+        /* Flush existing error bytes from the RX FIFO */
+        while (USART7_REGS->US_CSR & US_CSR_RXRDY_Msk)
+        {
+            dummyData = (USART7_REGS->US_RHR & US_RHR_RXCHR_Msk);
+        }
+    }
+
+    /* Ignore the warning */
+    (void)dummyData;
+}
+
 
 
 void FLEXCOM7_InterruptHandler( void )
@@ -97,22 +118,6 @@ void FLEXCOM7_InterruptHandler( void )
     }
 }
 
-void static FLEXCOM7_USART_ErrorClear( void )
-{
-    uint8_t dummyData = 0u;
-
-    USART7_REGS->US_CR = US_CR_RSTSTA_Msk;
-
-    /* Flush existing error bytes from the RX FIFO */
-    while( US_CSR_RXRDY_Msk == (USART7_REGS->US_CSR& US_CSR_RXRDY_Msk) )
-    {
-        dummyData = (USART7_REGS->US_RHR& US_RHR_RXCHR_Msk);
-    }
-
-    /* Ignore the warning */
-    (void)dummyData;
-}
-
 void FLEXCOM7_USART_Initialize( void )
 {
     /* Set FLEXCOM USART operating mode */
@@ -136,6 +141,7 @@ void FLEXCOM7_USART_Initialize( void )
     flexcom7UsartObj.rxProcessedSize = 0;
     flexcom7UsartObj.rxBusyStatus = false;
     flexcom7UsartObj.rxCallback = NULL;
+    flexcom7UsartObj.errorStatus = FLEXCOM_USART_ERROR_NONE;
     flexcom7UsartObj.txBuffer = NULL;
     flexcom7UsartObj.txSize = 0;
     flexcom7UsartObj.txProcessedSize = 0;
@@ -145,32 +151,12 @@ void FLEXCOM7_USART_Initialize( void )
 
 FLEXCOM_USART_ERROR FLEXCOM7_USART_ErrorGet( void )
 {
-    FLEXCOM_USART_ERROR errors = FLEXCOM_USART_ERROR_NONE;
-    uint32_t status = USART7_REGS->US_CSR;
+    FLEXCOM_USART_ERROR errorStatus = flexcom7UsartObj.errorStatus;
 
-    /* Collect all errors */
-    if(status & US_CSR_OVRE_Msk)
-    {
-        errors = FLEXCOM_USART_ERROR_OVERRUN;
-    }
-
-    if(status & US_CSR_PARE_Msk)
-    {
-        errors |= FLEXCOM_USART_ERROR_PARITY;
-    }
-
-    if(status & US_CSR_FRAME_Msk)
-    {
-        errors |= FLEXCOM_USART_ERROR_FRAMING;
-    }
-
-    if(errors != FLEXCOM_USART_ERROR_NONE)
-    {
-        FLEXCOM7_USART_ErrorClear();
-    }
+    flexcom7UsartObj.errorStatus = FLEXCOM_USART_ERROR_NONE;
 
     /* All errors are cleared, but send the previous error state */
-    return errors;
+    return errorStatus;
 }
 
 bool FLEXCOM7_USART_SerialSetup( FLEXCOM_USART_SERIAL_SETUP *setup, uint32_t srcClkFreq )
@@ -234,23 +220,23 @@ bool FLEXCOM7_USART_SerialSetup( FLEXCOM_USART_SERIAL_SETUP *setup, uint32_t src
 bool FLEXCOM7_USART_Read( void *buffer, const size_t size )
 {
     bool status = false;
-    uint8_t * lBuffer = (uint8_t *)buffer;
+    uint8_t* pBuffer = (uint8_t*)buffer;
 
-    if(lBuffer != NULL)
+    if(pBuffer != NULL)
     {
-        /* Clear errors before submitting the request.
-         * ErrorGet clears errors internally. */
-        FLEXCOM7_USART_ErrorGet();
-
         /* Check if receive request is in progress */
         if(flexcom7UsartObj.rxBusyStatus == false)
         {
+            /* Clear errors that may have got generated when there was no active read request pending */
+            FLEXCOM7_USART_ErrorClear();
+
             status = true;
 
-            flexcom7UsartObj.rxBuffer = lBuffer;
+            flexcom7UsartObj.rxBuffer = pBuffer;
             flexcom7UsartObj.rxSize = size;
             flexcom7UsartObj.rxProcessedSize = 0;
             flexcom7UsartObj.rxBusyStatus = true;
+            flexcom7UsartObj.errorStatus = FLEXCOM_USART_ERROR_NONE;
 
             USART7_REGS->US_RPR = (uint32_t) buffer;
             USART7_REGS->US_RCR = (uint32_t) size;
@@ -265,24 +251,26 @@ bool FLEXCOM7_USART_Read( void *buffer, const size_t size )
 bool FLEXCOM7_USART_Write( void *buffer, const size_t size )
 {
     bool status = false;
-    uint8_t * lBuffer = (uint8_t *)buffer;
+    uint8_t* pBuffer = (uint8_t *)buffer;
 
-    if(lBuffer != NULL)
+    if(pBuffer != NULL)
     {
         /* Check if transmit request is in progress */
         if(flexcom7UsartObj.txBusyStatus == false)
         {
             status = true;
 
-            flexcom7UsartObj.txBuffer = lBuffer;
+            flexcom7UsartObj.txBuffer = pBuffer;
             flexcom7UsartObj.txSize = size;
             flexcom7UsartObj.txProcessedSize = 0;
             flexcom7UsartObj.txBusyStatus = true;
+
 
             USART7_REGS->US_TPR = (uint32_t) buffer;
             USART7_REGS->US_TCR = (uint32_t) size;
             USART7_REGS->US_PTCR = US_PTCR_TXTEN_Msk;
             USART7_REGS->US_IER = US_IER_ENDTX_Msk;
+
         }
     }
 
