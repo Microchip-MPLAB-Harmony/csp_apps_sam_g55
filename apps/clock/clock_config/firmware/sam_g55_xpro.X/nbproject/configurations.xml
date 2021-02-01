@@ -28,6 +28,8 @@
           <itemPath>../src/config/sam_g55_xpro/toolchain_specifics.h</itemPath>
           <itemPath>../src/config/sam_g55_xpro/definitions.h</itemPath>
           <itemPath>../src/config/sam_g55_xpro/device.h</itemPath>
+          <itemPath>../src/config/sam_g55_xpro/interrupts.h</itemPath>
+          <itemPath>../src/config/sam_g55_xpro/device_vectors.h</itemPath>
         </logicalFolder>
       </logicalFolder>
       <logicalFolder displayName="packs" name="f2" projectFiles="true">
@@ -62,7 +64,7 @@
           <logicalFolder displayName="pio" name="f2" projectFiles="true">
             <itemPath>../src/packs/ATSAMG55J19_DFP/pio/samg55j19.h</itemPath>
           </logicalFolder>
-          <itemPath>../src/packs/ATSAMG55J19_DFP/atsamg55j19.h</itemPath>
+          <itemPath>../src/packs/ATSAMG55J19_DFP/samg55j19.h</itemPath>
         </logicalFolder>
         <logicalFolder displayName="CMSIS" name="f2" projectFiles="true">
           <logicalFolder displayName="CMSIS" name="f1" projectFiles="true">
@@ -88,9 +90,16 @@
       <itemPath>Makefile</itemPath>
       <itemPath>../src/config/sam_g55_xpro/harmony.prj</itemPath>
       <itemPath>../src/config/sam_g55_xpro/sam_g55_xpro.xml</itemPath>
-      <itemPath>../../../../../../mhc/../csp_apps_sam_g55/apps/clock/clock_config/firmware/src/config/sam_g55_xpro/sam_g55_xpro.xml</itemPath>
+      <itemPath>../../../../../../csp_apps_sam_g55/apps/clock/clock_config/firmware/src/config/sam_g55_xpro/sam_g55_xpro.xml</itemPath>
+      <itemPath>../src/config/sam_g55_xpro/harmony-manifest-success.yml</itemPath>
     </logicalFolder>
-    <logicalFolder displayName="Linker Files" name="LinkerScript" projectFiles="true"/>
+    <logicalFolder displayName="Linker Files" name="LinkerScript" projectFiles="true">
+      <logicalFolder displayName="config" name="f1" projectFiles="true">
+        <logicalFolder displayName="sam_g55_xpro" name="f1" projectFiles="true">
+          <itemPath>../src/config/sam_g55_xpro/ATSAMG55J19.ld</itemPath>
+        </logicalFolder>
+      </logicalFolder>
+    </logicalFolder>
     <logicalFolder displayName="Source Files" name="SourceFiles" projectFiles="true">
       <logicalFolder displayName="config" name="f1" projectFiles="true">
         <logicalFolder displayName="sam_g55_xpro" name="f1" projectFiles="true">
@@ -202,7 +211,7 @@
         <property key="enable-symbols" value="true"/>
         <property key="enable-unroll-loops" value="false"/>
         <property key="exclude-floating-point" value="false"/>
-        <property key="extra-include-directories" value="../src;../src/config/sam_g55_xpro;../src/packs/ATSAMG55J19_DFP;../src/packs/CMSIS/CMSIS/Core/Include;../src/packs/CMSIS/"/>
+        <property key="extra-include-directories" value="../src;../src/config/sam_g55_xpro;../src/packs/ATSAMG55J19_DFP;../src/packs/CMSIS/CMSIS/Core/Include;../src/packs/CMSIS/;"/>
         <property key="generate-16-bit-code" value="false"/>
         <property key="generate-micro-compressed-code" value="false"/>
         <property key="isolate-each-function" value="true"/>
@@ -298,7 +307,7 @@
         <property key="enable-unroll-loops" value="false"/>
         <property key="exceptions" value="true"/>
         <property key="exclude-floating-point" value="false"/>
-        <property key="extra-include-directories" value="../src;../src/config/sam_g55_xpro;../src/packs/ATSAMG55J19_DFP;../src/packs/CMSIS/CMSIS/Core/Include;../src/packs/CMSIS/"/>
+        <property key="extra-include-directories" value="../src;../src/config/sam_g55_xpro;../src/packs/ATSAMG55J19_DFP;../src/packs/CMSIS/CMSIS/Core/Include;../src/packs/CMSIS/;"/>
         <property key="generate-16-bit-code" value="false"/>
         <property key="generate-micro-compressed-code" value="false"/>
         <property key="isolate-each-function" value="true"/>
