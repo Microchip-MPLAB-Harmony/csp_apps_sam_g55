@@ -1,0 +1,6 @@
+format_version: v1.0
+type: UniqueComponent
+attributes: {id: mem2mem}
+children:
+- type: ElementPosition
+  attributes: {x: '190', y: '60', id: mem2mem}
