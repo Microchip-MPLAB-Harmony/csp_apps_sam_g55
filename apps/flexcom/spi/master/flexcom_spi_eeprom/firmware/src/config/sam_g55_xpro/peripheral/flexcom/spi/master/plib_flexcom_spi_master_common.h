@@ -5,10 +5,10 @@
     Microchip Technology Inc.
 
   File Name:
-    plib_flexcom_spi_local.h
+    plib_flexcom_spi_master_common.h
 
   Summary:
-   FLEXCOM SPI PLIB Common Header File.
+   FLEXCOM SPI PLIB Master Common Header File.
 
   Description:
     This file has prototype of all the interfaces which are common for all the
@@ -44,8 +44,8 @@
 *******************************************************************************/
 // DOM-IGNORE-END
 
-#ifndef PLIB_FLEXCOM_SPI_LOCAL_H  // Guards against multiple inclusion
-#define PLIB_FLEXCOM_SPI_LOCAL_H
+#ifndef PLIB_FLEXCOM_SPI_MASTER_COMMON_H  // Guards against multiple inclusion
+#define PLIB_FLEXCOM_SPI_MASTER_COMMON_H
 
 // *****************************************************************************
 // *****************************************************************************
@@ -65,7 +65,7 @@
 #endif
 
 // DOM-IGNORE-END
-/****************************** ${FLEXCOM_INSTANCE_NAME} SPI Interface *********************************/
+/****************************** FLEXCOM5 SPI Interface *********************************/
 
 typedef enum
 {
@@ -86,6 +86,12 @@ typedef enum
     FLEXCOM_SPI_CLOCK_POLARITY_INVALID = 0xFFFFFFFF
 
 } FLEXCOM_SPI_CLOCK_POLARITY;
+
+typedef enum
+{
+    FLEXCOM_SPI_CHIP_SELECT_NPCS0 = 0x02,
+    FLEXCOM_SPI_CHIP_SELECT_NPCS1 = 0x01,
+}FLEXCOM_SPI_CHIP_SELECT;
 
 typedef enum
 {
@@ -145,7 +151,7 @@ typedef struct
 
 #endif
 
-#endif /* PLIB_FLEXCOM_SPI_LOCAL_H */
+#endif /* PLIB_FLEXCOM_SPI_MASTER_COMMON_H */
 
 /*******************************************************************************
  End of File
