@@ -1,20 +1,26 @@
 /*******************************************************************************
-  NVIC PLIB Implementation
+  FLEXCOM5 SPI PLIB
 
   Company:
     Microchip Technology Inc.
 
   File Name:
-    plib_nvic.c
+    plib_flexcom5_spi_master.h
 
   Summary:
-    NVIC PLIB Source File
+   FLEXCOM5 SPI Master PLIB Header File.
 
-  Description:
-    None
+  Description
+    This file defines the interface to the FLEXCOM SPI peripheral library.
+    This library provides access to and control of the associated
+    peripheral instance.
+
+  Remarks:
+    None.
 
 *******************************************************************************/
 
+// DOM-IGNORE-BEGIN
 /*******************************************************************************
 * Copyright (C) 2018 Microchip Technology Inc. and its subsidiaries.
 *
@@ -37,61 +43,52 @@
 * ANY WAY RELATED TO THIS SOFTWARE WILL NOT EXCEED THE AMOUNT OF FEES, IF ANY,
 * THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
 *******************************************************************************/
+// DOM-IGNORE-END
+
+#ifndef PLIB_FLEXCOM5_SPI_MASTER_H // Guards against multiple inclusion
+#define PLIB_FLEXCOM5_SPI_MASTER_H
+
+// *****************************************************************************
+// *****************************************************************************
+// Section: Included Files
+// *****************************************************************************
+// *****************************************************************************
 
 #include "device.h"
-#include "plib_nvic.h"
+#include "plib_flexcom_spi_master_common.h"
+
+// DOM-IGNORE-BEGIN
+#ifdef __cplusplus // Provide C++ Compatibility
+
+    extern "C" {
+
+#endif
+
+// DOM-IGNORE-END
+
+/****************************** FLEXCOM5 SPI Interface *********************************/
+
+void FLEXCOM5_SPI_Initialize( void );
+
+bool FLEXCOM5_SPI_WriteRead( void * pTransmitData, size_t txSize, void * pReceiveData, size_t rxSize );
+
+bool FLEXCOM5_SPI_Write( void * pTransmitData, size_t txSize );
+
+bool FLEXCOM5_SPI_Read( void * pReceiveData, size_t rxSize );
+
+bool FLEXCOM5_SPI_TransferSetup( FLEXCOM_SPI_TRANSFER_SETUP * setup, uint32_t spiSourceClock );
 
 
-// *****************************************************************************
-// *****************************************************************************
-// Section: NVIC Implementation
-// *****************************************************************************
-// *****************************************************************************
 
-void NVIC_Initialize( void )
-{
-    /* Priority 0 to 7 and no sub-priority. 0 is the highest priority */
-    NVIC_SetPriorityGrouping( 0x00 );
+/* Provide C++ Compatibility */
+#ifdef __cplusplus
 
-    /* Enable NVIC Controller */
-    __DMB();
-    __enable_irq();
-
-    /* Enable the interrupt sources and configure the priorities as configured
-     * from within the "Interrupt Manager" of MHC. */
-
-
-
-}
-
-void NVIC_INT_Enable( void )
-{
-    __DMB();
-    __enable_irq();
-}
-
-bool NVIC_INT_Disable( void )
-{
-    bool processorStatus;
-
-    processorStatus = (bool) (__get_PRIMASK() == 0);
-
-    __disable_irq();
-    __DMB();
-
-    return processorStatus;
-}
-
-void NVIC_INT_Restore( bool state )
-{
-    if( state == true )
-    {
-        __DMB();
-        __enable_irq();
     }
-    else
-    {
-        __disable_irq();
-        __DMB();
-    }
-}
+
+#endif
+
+#endif // PLIB_FLEXCOM5_SPI_MASTER_H
+
+/*******************************************************************************
+ End of File
+*/

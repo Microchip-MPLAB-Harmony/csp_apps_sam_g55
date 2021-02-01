@@ -5,13 +5,13 @@
     Microchip Technology Inc.
 
   File Name:
-    plib_flexcom5_spi.c
+    plib_flexcom5_spi_master.c
 
   Summary:
-    FLEXCOM5 SPI PLIB Implementation File.
+    FLEXCOM5 SPI Master PLIB Implementation File.
 
   Description:
-    This file defines the interface to the FLEXCOM SPI peripheral library.
+    This file defines the interface to the FLEXCOM SPI Master peripheral library.
     This library provides access to and control of the associated
     peripheral instance.
 
@@ -45,7 +45,8 @@
 *******************************************************************************/
 // DOM-IGNORE-END
 
-#include "plib_flexcom5_spi.h"
+#include "plib_flexcom5_spi_master.h"
+#include "interrupts.h"
 
 // *****************************************************************************
 // *****************************************************************************
@@ -62,15 +63,20 @@ void FLEXCOM5_SPI_Initialize( void )
     SPI5_REGS->SPI_CR = SPI_CR_SPIDIS_Msk | SPI_CR_SWRST_Msk;
 
     /* Enable Master mode, select clock source, select particular NPCS line for chip select and disable mode fault detection */
-    SPI5_REGS->SPI_MR = SPI_MR_MSTR_Msk | SPI_MR_BRSRCCLK_PERIPH_CLK | SPI_MR_PCS(0) | SPI_MR_MODFDIS_Msk;
+    SPI5_REGS->SPI_MR = SPI_MR_MSTR_Msk | SPI_MR_BRSRCCLK_PERIPH_CLK | SPI_MR_DLYBCS(0) | SPI_MR_PCS(FLEXCOM_SPI_CHIP_SELECT_NPCS0) | SPI_MR_MODFDIS_Msk;
 
-    /* Set up clock Polarity, data phase, Communication Width, Baud Rate and Chip select active after transfer */
-    SPI5_REGS->SPI_CSR[0] = SPI_CSR_CPOL(0) | SPI_CSR_NCPHA(1) | SPI_CSR_BITS_8_BIT | SPI_CSR_SCBR(119) | SPI_CSR_CSAAT_Msk;
+    /* Set up clock Polarity, data phase, Communication Width, Baud Rate */
+    SPI5_REGS->SPI_CSR[0] = SPI_CSR_CPOL(0) | SPI_CSR_NCPHA(1) | SPI_CSR_BITS_8_BIT | SPI_CSR_SCBR(119)| SPI_CSR_DLYBS(0) | SPI_CSR_DLYBCT(0) | SPI_CSR_CSAAT_Msk;
+
+
+
+
 
 
     /* Enable FLEXCOM5 SPI */
     SPI5_REGS->SPI_CR = SPI_CR_SPIEN_Msk;
 }
+
 
 bool FLEXCOM5_SPI_WriteRead( void* pTransmitData, size_t txSize, void* pReceiveData, size_t rxSize )
 {
@@ -194,7 +200,7 @@ bool FLEXCOM5_SPI_TransferSetup( FLEXCOM_SPI_TRANSFER_SETUP * setup, uint32_t sp
         scbr = 255;
     }
 
-    SPI5_REGS->SPI_CSR[0] = (uint32_t)setup->clockPolarity | (uint32_t)setup->clockPhase | (uint32_t)setup->dataBits | SPI_CSR_SCBR(scbr);
+    SPI5_REGS->SPI_CSR[0] = (SPI5_REGS->SPI_CSR[0] & ~(SPI_CSR_CPOL_Msk | SPI_CSR_NCPHA_Msk | SPI_CSR_BITS_Msk | SPI_CSR_SCBR_Msk)) | ((uint32_t)setup->clockPolarity | (uint32_t)setup->clockPhase | (uint32_t)setup->dataBits | SPI_CSR_SCBR(scbr));
 
     return true;
 }

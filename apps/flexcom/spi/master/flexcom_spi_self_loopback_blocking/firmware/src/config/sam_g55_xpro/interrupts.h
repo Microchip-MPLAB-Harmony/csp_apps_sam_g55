@@ -1,24 +1,18 @@
 /*******************************************************************************
-  FLEXCOM5 SPI PLIB
+ System Interrupts File
 
   Company:
     Microchip Technology Inc.
 
   File Name:
-    plib_flexcom5_spi.h
+    interrupt.h
 
   Summary:
-   FLEXCOM5 SPI PLIB Header File.
+    Interrupt vectors mapping
 
-  Description
-    This file defines the interface to the FLEXCOM SPI peripheral library.
-    This library provides access to and control of the associated
-    peripheral instance.
-
-  Remarks:
-    None.
-
-*******************************************************************************/
+  Description:
+    This file contains declarations of device vectors used by Harmony 3
+ *******************************************************************************/
 
 // DOM-IGNORE-BEGIN
 /*******************************************************************************
@@ -42,52 +36,30 @@
 * FULLEST EXTENT ALLOWED BY LAW, MICROCHIP'S TOTAL LIABILITY ON ALL CLAIMS IN
 * ANY WAY RELATED TO THIS SOFTWARE WILL NOT EXCEED THE AMOUNT OF FEES, IF ANY,
 * THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
-*******************************************************************************/
+ *******************************************************************************/
 // DOM-IGNORE-END
 
-#ifndef PLIB_FLEXCOM5_SPI_H // Guards against multiple inclusion
-#define PLIB_FLEXCOM5_SPI_H
+#ifndef INTERRUPTS_H
+#define INTERRUPTS_H
 
 // *****************************************************************************
 // *****************************************************************************
 // Section: Included Files
 // *****************************************************************************
 // *****************************************************************************
-
-#include "device.h"
-#include "plib_flexcom_spi_local.h"
-
-// DOM-IGNORE-BEGIN
-#ifdef __cplusplus // Provide C++ Compatibility
-
-    extern "C" {
-
-#endif
-
-// DOM-IGNORE-END
-
-/****************************** FLEXCOM5 SPI Interface *********************************/
-
-void FLEXCOM5_SPI_Initialize( void );
-
-bool FLEXCOM5_SPI_WriteRead( void * pTransmitData, size_t txSize, void * pReceiveData, size_t rxSize );
-
-bool FLEXCOM5_SPI_Write( void * pTransmitData, size_t txSize );
-
-bool FLEXCOM5_SPI_Read( void * pReceiveData, size_t rxSize );
-
-bool FLEXCOM5_SPI_TransferSetup( FLEXCOM_SPI_TRANSFER_SETUP * setup, uint32_t spiSourceClock );
+#include <stdint.h>
 
 
-/* Provide C++ Compatibility */
-#ifdef __cplusplus
+// *****************************************************************************
+// *****************************************************************************
+// Section: Handler Routines
+// *****************************************************************************
+// *****************************************************************************
 
-    }
+void Reset_Handler (void);
+void NonMaskableInt_Handler (void);
+void HardFault_Handler (void);
 
-#endif
 
-#endif // PLIB_FLEXCOM5_SPI_H
 
-/*******************************************************************************
- End of File
-*/
+#endif // INTERRUPTS_H
