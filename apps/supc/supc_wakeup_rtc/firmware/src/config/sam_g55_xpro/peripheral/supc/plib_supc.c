@@ -47,6 +47,7 @@
 #include "plib_supc.h"
 #include "peripheral/clock/plib_clock.h"
 #include "peripheral/efc/plib_efc.h"
+#include "interrupts.h"
 
 
 static void WaitEntryClockSetup( bool xtal_disable )
