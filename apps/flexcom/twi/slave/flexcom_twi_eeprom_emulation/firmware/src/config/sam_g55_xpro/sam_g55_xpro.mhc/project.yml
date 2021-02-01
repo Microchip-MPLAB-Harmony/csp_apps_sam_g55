@@ -41,41 +41,41 @@ files:
   security: NON_SECURE
   type: SOURCE
   userChecksum: E7F577FF226C5D6558A834247E19085A
-- generatedChecksum: 4DE159F616B56E2CEDEBEF156269B15C
+- generatedChecksum: 08455A8B76479102F310CC00F3BCD2E9
   logicalPath: config\sam_g55_xpro\peripheral\cmcc
   name: plib_cmcc.c
   physicalPath: peripheral\cmcc
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 4DE159F616B56E2CEDEBEF156269B15C
-- generatedChecksum: AA664C7023E156B2C6430CCBBAA479D8
+  userChecksum: 08455A8B76479102F310CC00F3BCD2E9
+- generatedChecksum: 8974F8056362B223EEC3FD4C15C54414
   logicalPath: config\sam_g55_xpro\peripheral\efc
   name: plib_efc.c
   physicalPath: peripheral\efc
   security: NON_SECURE
   type: SOURCE
-  userChecksum: AA664C7023E156B2C6430CCBBAA479D8
-- generatedChecksum: F54CB0A1CA73C6B31EEC60A850D0CEE8
+  userChecksum: 8974F8056362B223EEC3FD4C15C54414
+- generatedChecksum: FE2EBEB4AA6912C40F8A958C7CD04FA8
   logicalPath: config\sam_g55_xpro\peripheral\flexcom\twi\slave
   name: plib_flexcom6_twi_slave.c
   physicalPath: peripheral\flexcom\twi\slave
   security: NON_SECURE
   type: SOURCE
-  userChecksum: F54CB0A1CA73C6B31EEC60A850D0CEE8
-- generatedChecksum: CB18CF275948A012812F8E481CFEE849
+  userChecksum: FE2EBEB4AA6912C40F8A958C7CD04FA8
+- generatedChecksum: 70832B961FE02945F192BDA6DC151F89
   logicalPath: config\sam_g55_xpro\peripheral\nvic
   name: plib_nvic.c
   physicalPath: peripheral\nvic
   security: NON_SECURE
   type: SOURCE
-  userChecksum: CB18CF275948A012812F8E481CFEE849
-- generatedChecksum: B5A8A8AC69704B6F3610B37AF28CF789
+  userChecksum: 70832B961FE02945F192BDA6DC151F89
+- generatedChecksum: 38B368843CCF4B3B8A47A7AEF3DDFA53
   logicalPath: config\sam_g55_xpro\peripheral\pio
   name: plib_pio.c
   physicalPath: peripheral\pio
   security: NON_SECURE
   type: SOURCE
-  userChecksum: B5A8A8AC69704B6F3610B37AF28CF789
+  userChecksum: 38B368843CCF4B3B8A47A7AEF3DDFA53
 - generatedChecksum: 4F007AD54887A74C492A1DA2B4F6D02A
   logicalPath: config\sam_g55_xpro
   name: startup_xc32.c
@@ -97,13 +97,6 @@ files:
   security: NON_SECURE
   type: HEADER
   userChecksum: 33B8AE06998C7673C7C6978BC2B0BFC2
-- generatedChecksum: 9C858FD38C5E41BC3F03F88C0F1E682F
-  logicalPath: packs\ATSAMG55J19_DFP
-  name: atsamg55j19.h
-  physicalPath: ..\..\packs\ATSAMG55J19_DFP
-  security: NON_SECURE
-  type: HEADER
-  userChecksum: 9C858FD38C5E41BC3F03F88C0F1E682F
 - generatedChecksum: 01B82424BC59A54620F7E9E0DB808EBB
   logicalPath: packs\CMSIS\CMSIS\Core\Include
   name: cachel1_armv7.h
@@ -195,13 +188,13 @@ files:
   security: NON_SECURE
   type: HEADER
   userChecksum: 6FDA9B1B4BEB0065C6F55E2AA705F7C7
-- generatedChecksum: D66BECD625FF7E0BB1288799FE266C0D
+- generatedChecksum: B2B6C8FA402EA332272FF5E6F01E48F9
   logicalPath: config\sam_g55_xpro
   name: device.h
   physicalPath: ''
   security: NON_SECURE
   type: HEADER
-  userChecksum: D66BECD625FF7E0BB1288799FE266C0D
+  userChecksum: B2B6C8FA402EA332272FF5E6F01E48F9
 - generatedChecksum: 85D3482D395C59BDFF268B01940CDDDE
   logicalPath: config\sam_g55_xpro
   name: device_cache.h
@@ -370,6 +363,13 @@ files:
   security: NON_SECURE
   type: HEADER
   userChecksum: F8AC362B6968276E4337C035603A555C
+- generatedChecksum: 9C858FD38C5E41BC3F03F88C0F1E682F
+  logicalPath: packs\ATSAMG55J19_DFP
+  name: samg55j19.h
+  physicalPath: ..\..\packs\ATSAMG55J19_DFP
+  security: NON_SECURE
+  type: HEADER
+  userChecksum: 9C858FD38C5E41BC3F03F88C0F1E682F
 - generatedChecksum: 8B7B5AF8CE2C747A5AAD02FF87455114
   logicalPath: packs\ATSAMG55J19_DFP\pio
   name: samg55j19.h
