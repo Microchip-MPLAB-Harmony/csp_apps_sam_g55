@@ -42,6 +42,7 @@
 
 #include "device.h"
 #include "plib_adc.h"
+#include "interrupts.h"
 
 #define ADC_SEQ1_CHANNEL_NUM (8U)
 
