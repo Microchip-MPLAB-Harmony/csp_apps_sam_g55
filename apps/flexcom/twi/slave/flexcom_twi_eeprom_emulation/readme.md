@@ -55,7 +55,7 @@ Hardware setup requires two boards, one acting as the TWI Master and the other a
 
 ### Setting up [SAM G55 Xplained Pro Evaluation Kit](https://www.microchip.com/developmenttools/ProductDetails/atsamg55-xpro)
 
-- On EXT1 header, connect TWI SDA line on Pin 11 (PB08) and TWI SCL line on Pin 12 (PB09) with the corresponding SDA and SCL lines of the TWI master
+- On EXT1 header, connect TWI SDA line on Pin 11 (PB10) and TWI SCL line on Pin 12 (PB11) with the corresponding SDA and SCL lines of the TWI master
 - Connect a ground wire between TWI master and TWI slave boards
 - Connect the Debug USB port on the board to the computer using a micro USB cable
 
