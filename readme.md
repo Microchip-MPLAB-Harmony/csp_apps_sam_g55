@@ -42,15 +42,18 @@ The following applications are provided to demonstrate the typical or interestin
 | [Clock configuration](apps/clock/clock_config/readme.md) | This example application shows how to configure the clock system to run the device at maximum frequency. It also outputs a prescaled clock signal on a GPIO pin for measurement and verification |
 | [CRCCU Compute CRC32](apps/crccu/crccu_crc32_generate/readme.md) | This example demonstrates how to use the CRCCU module to calculate 32 bit CRC value of a data block |
 | [EFC read write](apps/efc/flash_read_write/readme.md) | This example shows how to use EFC to erase and program the internal Flash memory |
-| [FLEXCOM SPI EEPROM read write](apps/flexcom/flexcom_spi_eeprom/readme.md) | This example application shows how to use the flexcom module in SPI mode |
-| [FLEXCOM SPI blocking](apps/flexcom/flexcom_spi_self_loopback_blocking/readme.md) | This example application demonstrates how to use the FLEXCOM SPI peripheral to transmit and receive a block of data in a blocking manner |
-| [FLEXCOM SPI with DMA](apps/flexcom/flexcom_spi_self_loopback_dma/readme.md) | This example application shows how to use FLEXCOM SPI PLIB with external loop back to write and then read back an array of data in DMA mode |
-| [FLEXCOM SPI interrupt](apps/flexcom/flexcom_spi_self_loopback_interrupt/readme.md) | This example application shows how to use FLEXCOM SPI PLIB with external loop back to write and then read back an array of data in interrupt mode |
-| [FLEXCOM TWI (I2C) EEPROM](apps/flexcom/flexcom_twi_eeprom/readme.md) | This example application shows how to use the flexcom module in TWI mode |
-| [FLEXCOM USART blocking](apps/flexcom/flexcom_usart_echo_blocking/readme.md) | This example application shows how to use the flexcom module in USART mode |
-| [FLEXCOM USART with DMA](apps/flexcom/flexcom_usart_echo_dma/readme.md) | This example application shows how to use the flexcom module in USART DMA mode |
-| [FLEXCOM USART interrupt](apps/flexcom/flexcom_usart_echo_interrupt/readme.md) | This example application shows how to use the flexcom module in USART mode |
-| [FLEXCOM USART ring buffer](apps/flexcom/flexcom_usart_ring_buffer_interrupt/readme.md) | This example application demonstrates how to use the FLEXCOM peripheral in USART ring buffer mode |
+| [FLEXCOM SPI EEPROM read write](apps/flexcom/spi/master/flexcom_spi_eeprom/readme.md) | This example application shows how to use the flexcom module in SPI mode |
+| [FLEXCOM SPI blocking](apps/flexcom/spi/master/flexcom_spi_self_loopback_blocking/readme.md) | This example application demonstrates how to use the FLEXCOM SPI peripheral to transmit and receive a block of data in a blocking manner |
+| [FLEXCOM SPI with DMA](apps/flexcom/spi/master/flexcom_spi_self_loopback_dma/readme.md) | This example application shows how to use FLEXCOM SPI PLIB with external loop back to write and then read back an array of data in DMA mode |
+| [FLEXCOM SPI interrupt](apps/flexcom/spi/master/flexcom_spi_self_loopback_interrupt/readme.md) | This example application shows how to use FLEXCOM SPI PLIB with external loop back to write and then read back an array of data in interrupt mode |
+| [FLEXCOM SPI Master read write test application](apps/flexcom/spi/master/flexcom_spi_write_read_test_app/readme.md) | This is a FLEXCOM SPI Master test application which is provided to demonstrate communication between SPI master and the corresponding SPI slave application available under -  apps/flexcom/spi/slave/flexcom_spi_write_read/firmware  |
+| [FLEXCOM SPI Slave read write](apps/flexcom/spi/slave/flexcom_spi_write_read/readme.md) | This example application demonstrates how to use the FLEXCOM SPI peripheral in slave mode |
+| [FLEXCOM TWI (I2C) EEPROM](apps/flexcom/twi/master/flexcom_twi_eeprom/readme.md) | This example application shows how to use the flexcom module in TWI mode |
+| [FLEXCOM TWI EEPROM emulation](apps/flexcom/twi/slave/flexcom_twi_eeprom_emulation/readme.md) | This example application demonstrates how to use the FLEXCOM TWI peripheral in slave mode |
+| [FLEXCOM USART blocking](apps/flexcom/usart/flexcom_usart_echo_blocking/readme.md) | This example application shows how to use the flexcom module in USART mode |
+| [FLEXCOM USART with DMA](apps/flexcom/usart/flexcom_usart_echo_dma/readme.md) | This example application shows how to use the flexcom module in USART DMA mode |
+| [FLEXCOM USART interrupt](apps/flexcom/usart/flexcom_usart_echo_interrupt/readme.md) | This example application shows how to use the flexcom module in USART mode |
+| [FLEXCOM USART ring buffer](apps/flexcom/usart/flexcom_usart_ring_buffer_interrupt/readme.md) | This example application demonstrates how to use the FLEXCOM peripheral in USART ring buffer mode |
 | [MEM2MEM memory transfer](apps/mem2mem/mem2mem_memory_transfer/readme.md) | This application demonstrates data transfer between two memory location using MEM2MEM |
 | [PIO interrupt](apps/pio/pio_led_on_off_interrupt/readme.md) | This example shows how to generate GPIO interrupt on switch press and release, and indicate the switch status using the LED |
 | [PIO polling](apps/pio/pio_led_on_off_polling/readme.md) | This example shows how to poll the switch input, and indicate the switch status using the LED |
