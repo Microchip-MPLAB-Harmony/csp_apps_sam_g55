@@ -126,19 +126,6 @@ children:
         attributes: {id: readOnly}
         children:
         - {type: Value, value: 'true'}
-      - type: Boolean
-        attributes: {id: visible}
-        children:
-        - {type: Value, value: 'false'}
-  - type: Comment
-    attributes: {id: FLEXCOM_SPI_CLOCK_MODE_COMMENT}
-    children:
-    - type: Attributes
-      children:
-      - type: Boolean
-        attributes: {id: visible}
-        children:
-        - {type: Value, value: 'false'}
   - type: Integer
     attributes: {id: FLEXCOM_SPI_CSR0_BAUD_RATE}
     children:
@@ -245,10 +232,6 @@ children:
         attributes: {id: readOnly}
         children:
         - {type: Value, value: 'true'}
-      - type: Boolean
-        attributes: {id: visible}
-        children:
-        - {type: Value, value: 'false'}
   - type: KeyValueSet
     attributes: {id: FLEXCOM_SPI_CSR_CPOL}
     children:
@@ -262,10 +245,6 @@ children:
         attributes: {id: readOnly}
         children:
         - {type: Value, value: 'true'}
-      - type: Boolean
-        attributes: {id: visible}
-        children:
-        - {type: Value, value: 'false'}
   - type: Integer
     attributes: {id: FLEXCOM_SPI_CSR_INDEX}
     children:
@@ -286,10 +265,6 @@ children:
         attributes: {id: readOnly}
         children:
         - {type: Value, value: 'true'}
-      - type: Boolean
-        attributes: {id: visible}
-        children:
-        - {type: Value, value: 'false'}
   - type: Hex
     attributes: {id: FLEXCOM_SPI_DUMMY_DATA}
     children:
@@ -369,10 +344,6 @@ children:
         attributes: {id: readOnly}
         children:
         - {type: Value, value: 'true'}
-      - type: Boolean
-        attributes: {id: visible}
-        children:
-        - {type: Value, value: 'false'}
   - type: Integer
     attributes: {id: FLEXCOM_SPI_NUM_CSR}
     children:
