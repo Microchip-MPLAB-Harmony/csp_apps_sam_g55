@@ -1,7 +1,7 @@
 /**
  * \brief Header file for ATSAMG55J19
  *
- * Copyright (c) 2020 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2021 Microchip Technology Inc. and its subsidiaries.
  *
  * Subject to your compliance with these terms, you may use Microchip software and any derivatives
  * exclusively with Microchip products. It is your responsibility to comply with third party license
@@ -20,7 +20,7 @@
  *
  */
 
-/* file generated from device description version 2019-12-16T02:54:59Z */
+/* file generated from device description version 2021-05-17T12:40:13Z */
 #ifndef _SAMG55J19_H_
 #define _SAMG55J19_H_
 
@@ -128,7 +128,7 @@ typedef struct _DeviceVectors
 {
   /* Stack pointer */
   void* pvStack;
-  /* Cortex-M handlers */
+  /* CORTEX-M4 handlers */
   void* pfnReset_Handler;                        /* -15 Reset Vector, invoked on Power up and warm reset */
   void* pfnNonMaskableInt_Handler;               /* -14 Non maskable Interrupt, cannot be stopped or preempted */
   void* pfnHardFault_Handler;                    /* -13 Hard Fault, all classes of Fault */
@@ -198,12 +198,6 @@ typedef struct _DeviceVectors
   void* pfnCRCCU_Handler;                        /*  49 Cyclic Redundancy Check Calculation Unit (CRCCU) */
 } DeviceVectors;
 
-/* Defines for Deprecated Interrupt and Exceptions handler names */
-#define pfnMemManage_Handler      pfnMemoryManagement_Handler     /**< \deprecated  Backward compatibility for ASF*/
-#define pfnDebugMon_Handler       pfnDebugMonitor_Handler         /**< \deprecated  Backward compatibility for ASF*/
-#define pfnNMI_Handler            pfnNonMaskableInt_Handler       /**< \deprecated  Backward compatibility for ASF*/
-#define pfnSVC_Handler            pfnSVCall_Handler               /**< \deprecated  Backward compatibility for ASF*/
-
 #endif /* !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__)) */
 
 #if !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__))
@@ -256,26 +250,17 @@ void UHP_Handler                   ( void );
 void UDP_Handler                   ( void );
 void CRCCU_Handler                 ( void );
 #endif /* DONT_USE_PREDEFINED_PERIPHERALS_HANDLERS */
-/* Defines for Deprecated Interrupt and Exceptions handler names */
-#define MemManage_Handler         MemoryManagement_Handler        /**< \deprecated  Backward compatibility*/
-#define DebugMon_Handler          DebugMonitor_Handler            /**< \deprecated  Backward compatibility*/
-#define NMI_Handler               NonMaskableInt_Handler          /**< \deprecated  Backward compatibility*/
-#define SVC_Handler               SVCall_Handler                  /**< \deprecated  Backward compatibility*/
-
 #endif /* !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__)) */
 
-/*
- * \brief Configuration of the CORTEX-M4 Processor and Core Peripherals
- */
-#define __CM4_REV                 0x0001 /**< CM4 Core Revision                                                         */
-#define __NVIC_PRIO_BITS               4 /**< Number of Bits used for Priority Levels                                   */
-#define __Vendor_SysTickConfig         0 /**< Set to 1 if different SysTick Config is used                              */
-#define __MPU_PRESENT                  1 /**< MPU present or not                                                        */
-#define __VTOR_PRESENT                 1 /**< Vector Table Offset Register present or not                               */
-#define __FPU_PRESENT                  1 /**< FPU present or not                                                        */
-#define __ARCH_ARM                     1
-#define __ARCH_ARM_CORTEX_M            1
-#define __DEVICE_IS_SAM                1
+/** \brief Configuration of the CORTEX-M4 Processor and Core Peripherals */
+#define __CM4_REV                     0x0001 /**< CM4 Core Revision                                                         */
+#define __NVIC_PRIO_BITS                   4 /**< Number of Bits used for Priority Levels                                   */
+#define __Vendor_SysTickConfig             0 /**< Set to 1 if different SysTick Config is used                              */
+#define __MPU_PRESENT                      1 /**< MPU present or not                                                        */
+#define __VTOR_PRESENT                     1 /**< Vector Table Offset Register present or not                               */
+#define __FPU_PRESENT                      1 /**< FPU present or not                                                        */
+#define __ARCH_ARM                         1
+#define __ARCH_ARM_CORTEX_M                1
 
 /*
  * \brief CMSIS includes
@@ -298,6 +283,7 @@ void CRCCU_Handler                 ( void );
 #include "component/crccu.h"
 #include "component/efc.h"
 #include "component/flexcom.h"
+#include "component/fuses.h"
 #include "component/gpbr.h"
 #include "component/i2sc.h"
 #include "component/matrix.h"
@@ -318,6 +304,67 @@ void CRCCU_Handler                 ( void );
 #include "component/usart.h"
 #include "component/wdt.h"
 /** @}  end of Peripheral Software API */
+
+/* ************************************************************************** */
+/*   INSTANCE DEFINITIONS FOR SAMG55J19 */
+/* ************************************************************************** */
+#include "instance/adc.h"
+#include "instance/chipid.h"
+#include "instance/cmcc.h"
+#include "instance/crccu.h"
+#include "instance/efc.h"
+#include "instance/flexcom0.h"
+#include "instance/flexcom1.h"
+#include "instance/flexcom2.h"
+#include "instance/flexcom3.h"
+#include "instance/flexcom4.h"
+#include "instance/flexcom5.h"
+#include "instance/flexcom6.h"
+#include "instance/flexcom7.h"
+#include "instance/fuses.h"
+#include "instance/gpbr.h"
+#include "instance/i2sc0.h"
+#include "instance/i2sc1.h"
+#include "instance/matrix.h"
+#include "instance/mem2mem.h"
+#include "instance/pdmic0.h"
+#include "instance/pdmic1.h"
+#include "instance/pioa.h"
+#include "instance/piob.h"
+#include "instance/pmc.h"
+#include "instance/rstc.h"
+#include "instance/rtc.h"
+#include "instance/rtt.h"
+#include "instance/spi0.h"
+#include "instance/spi1.h"
+#include "instance/spi2.h"
+#include "instance/spi3.h"
+#include "instance/spi4.h"
+#include "instance/spi5.h"
+#include "instance/spi6.h"
+#include "instance/spi7.h"
+#include "instance/supc.h"
+#include "instance/tc0.h"
+#include "instance/tc1.h"
+#include "instance/twi0.h"
+#include "instance/twi1.h"
+#include "instance/twi2.h"
+#include "instance/twi3.h"
+#include "instance/twi4.h"
+#include "instance/twi5.h"
+#include "instance/twi6.h"
+#include "instance/twi7.h"
+#include "instance/udp.h"
+#include "instance/uhp.h"
+#include "instance/usart0.h"
+#include "instance/usart1.h"
+#include "instance/usart2.h"
+#include "instance/usart3.h"
+#include "instance/usart4.h"
+#include "instance/usart5.h"
+#include "instance/usart6.h"
+#include "instance/usart7.h"
+#include "instance/wdt.h"
 
 /** \addtogroup SAMG55J19_id Peripheral Ids Definitions
  *  @{
@@ -416,7 +463,7 @@ void CRCCU_Handler                 ( void );
 #define TWI6_REGS                        ((twi_registers_t*)0x40040600)                /**< \brief TWI6 Registers Address       */
 #define TWI7_REGS                        ((twi_registers_t*)0x40034600)                /**< \brief TWI7 Registers Address       */
 #define UDP_REGS                         ((udp_registers_t*)0x40044000)                /**< \brief UDP Registers Address        */
-#define UHP_REGS                         ((uhp_registers_t*)0x4004c000)                /**< \brief UHP Registers Address        */
+#define UHP_REGS                         ((uhp_registers_t*)0x20400000)                /**< \brief UHP Registers Address        */
 #define USART0_REGS                      ((usart_registers_t*)0x4000c200)              /**< \brief USART0 Registers Address     */
 #define USART1_REGS                      ((usart_registers_t*)0x40020200)              /**< \brief USART1 Registers Address     */
 #define USART2_REGS                      ((usart_registers_t*)0x40024200)              /**< \brief USART2 Registers Address     */
@@ -426,6 +473,7 @@ void CRCCU_Handler                 ( void );
 #define USART6_REGS                      ((usart_registers_t*)0x40040200)              /**< \brief USART6 Registers Address     */
 #define USART7_REGS                      ((usart_registers_t*)0x40034200)              /**< \brief USART7 Registers Address     */
 #define WDT_REGS                         ((wdt_registers_t*)0x400e1450)                /**< \brief WDT Registers Address        */
+#define GPNVMBITS_REGS                   ((fuses_gpnvmbits_registers_t*)0x00000000)    /**< \brief FUSES Registers Address      */
 #endif /* (defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__)) */
 /** @}  end of Peripheral Base Address Definitions */
 
@@ -436,62 +484,63 @@ void CRCCU_Handler                 ( void );
 /* ************************************************************************** */
 /*   BASE ADDRESS DEFINITIONS FOR SAMG55J19                                   */
 /* ************************************************************************** */
-#define ADC_BASE_ADDRESS                 _UL_(0x40038000)                              /**< \brief ADC Base Address */
-#define CHIPID_BASE_ADDRESS              _UL_(0x400e0740)                              /**< \brief CHIPID Base Address */
-#define CMCC_BASE_ADDRESS                _UL_(0x4003c000)                              /**< \brief CMCC Base Address */
-#define CRCCU_BASE_ADDRESS               _UL_(0x40048000)                              /**< \brief CRCCU Base Address */
-#define EFC_BASE_ADDRESS                 _UL_(0x400e0a00)                              /**< \brief EFC Base Address */
-#define FLEXCOM0_BASE_ADDRESS            _UL_(0x4000c000)                              /**< \brief FLEXCOM0 Base Address */
-#define FLEXCOM1_BASE_ADDRESS            _UL_(0x40020000)                              /**< \brief FLEXCOM1 Base Address */
-#define FLEXCOM2_BASE_ADDRESS            _UL_(0x40024000)                              /**< \brief FLEXCOM2 Base Address */
-#define FLEXCOM3_BASE_ADDRESS            _UL_(0x40018000)                              /**< \brief FLEXCOM3 Base Address */
-#define FLEXCOM4_BASE_ADDRESS            _UL_(0x4001c000)                              /**< \brief FLEXCOM4 Base Address */
-#define FLEXCOM5_BASE_ADDRESS            _UL_(0x40008000)                              /**< \brief FLEXCOM5 Base Address */
-#define FLEXCOM6_BASE_ADDRESS            _UL_(0x40040000)                              /**< \brief FLEXCOM6 Base Address */
-#define FLEXCOM7_BASE_ADDRESS            _UL_(0x40034000)                              /**< \brief FLEXCOM7 Base Address */
-#define GPBR_BASE_ADDRESS                _UL_(0x400e1490)                              /**< \brief GPBR Base Address */
-#define I2SC0_BASE_ADDRESS               _UL_(0x40000000)                              /**< \brief I2SC0 Base Address */
-#define I2SC1_BASE_ADDRESS               _UL_(0x40004000)                              /**< \brief I2SC1 Base Address */
-#define MATRIX_BASE_ADDRESS              _UL_(0x400e0200)                              /**< \brief MATRIX Base Address */
-#define MEM2MEM_BASE_ADDRESS             _UL_(0x40028000)                              /**< \brief MEM2MEM Base Address */
-#define PDMIC0_BASE_ADDRESS              _UL_(0x4002c000)                              /**< \brief PDMIC0 Base Address */
-#define PDMIC1_BASE_ADDRESS              _UL_(0x40030000)                              /**< \brief PDMIC1 Base Address */
-#define PIOA_BASE_ADDRESS                _UL_(0x400e0e00)                              /**< \brief PIOA Base Address */
-#define PIOB_BASE_ADDRESS                _UL_(0x400e1000)                              /**< \brief PIOB Base Address */
-#define PMC_BASE_ADDRESS                 _UL_(0x400e0400)                              /**< \brief PMC Base Address */
-#define RSTC_BASE_ADDRESS                _UL_(0x400e1400)                              /**< \brief RSTC Base Address */
-#define RTC_BASE_ADDRESS                 _UL_(0x400e1460)                              /**< \brief RTC Base Address */
-#define RTT_BASE_ADDRESS                 _UL_(0x400e1430)                              /**< \brief RTT Base Address */
-#define SPI0_BASE_ADDRESS                _UL_(0x4000c400)                              /**< \brief SPI0 Base Address */
-#define SPI1_BASE_ADDRESS                _UL_(0x40020400)                              /**< \brief SPI1 Base Address */
-#define SPI2_BASE_ADDRESS                _UL_(0x40024400)                              /**< \brief SPI2 Base Address */
-#define SPI3_BASE_ADDRESS                _UL_(0x40018400)                              /**< \brief SPI3 Base Address */
-#define SPI4_BASE_ADDRESS                _UL_(0x4001c400)                              /**< \brief SPI4 Base Address */
-#define SPI5_BASE_ADDRESS                _UL_(0x40008400)                              /**< \brief SPI5 Base Address */
-#define SPI6_BASE_ADDRESS                _UL_(0x40040400)                              /**< \brief SPI6 Base Address */
-#define SPI7_BASE_ADDRESS                _UL_(0x40034400)                              /**< \brief SPI7 Base Address */
-#define SUPC_BASE_ADDRESS                _UL_(0x400e1410)                              /**< \brief SUPC Base Address */
-#define TC0_BASE_ADDRESS                 _UL_(0x40010000)                              /**< \brief TC0 Base Address */
-#define TC1_BASE_ADDRESS                 _UL_(0x40014000)                              /**< \brief TC1 Base Address */
-#define TWI0_BASE_ADDRESS                _UL_(0x4000c600)                              /**< \brief TWI0 Base Address */
-#define TWI1_BASE_ADDRESS                _UL_(0x40020600)                              /**< \brief TWI1 Base Address */
-#define TWI2_BASE_ADDRESS                _UL_(0x40024600)                              /**< \brief TWI2 Base Address */
-#define TWI3_BASE_ADDRESS                _UL_(0x40018600)                              /**< \brief TWI3 Base Address */
-#define TWI4_BASE_ADDRESS                _UL_(0x4001c600)                              /**< \brief TWI4 Base Address */
-#define TWI5_BASE_ADDRESS                _UL_(0x40008600)                              /**< \brief TWI5 Base Address */
-#define TWI6_BASE_ADDRESS                _UL_(0x40040600)                              /**< \brief TWI6 Base Address */
-#define TWI7_BASE_ADDRESS                _UL_(0x40034600)                              /**< \brief TWI7 Base Address */
-#define UDP_BASE_ADDRESS                 _UL_(0x40044000)                              /**< \brief UDP Base Address */
-#define UHP_BASE_ADDRESS                 _UL_(0x4004c000)                              /**< \brief UHP Base Address */
-#define USART0_BASE_ADDRESS              _UL_(0x4000c200)                              /**< \brief USART0 Base Address */
-#define USART1_BASE_ADDRESS              _UL_(0x40020200)                              /**< \brief USART1 Base Address */
-#define USART2_BASE_ADDRESS              _UL_(0x40024200)                              /**< \brief USART2 Base Address */
-#define USART3_BASE_ADDRESS              _UL_(0x40018200)                              /**< \brief USART3 Base Address */
-#define USART4_BASE_ADDRESS              _UL_(0x4001c200)                              /**< \brief USART4 Base Address */
-#define USART5_BASE_ADDRESS              _UL_(0x40008200)                              /**< \brief USART5 Base Address */
-#define USART6_BASE_ADDRESS              _UL_(0x40040200)                              /**< \brief USART6 Base Address */
-#define USART7_BASE_ADDRESS              _UL_(0x40034200)                              /**< \brief USART7 Base Address */
-#define WDT_BASE_ADDRESS                 _UL_(0x400e1450)                              /**< \brief WDT Base Address */
+#define ADC_BASE_ADDRESS                 _UL_(0x40038000)                              /* ADC Base Address */
+#define CHIPID_BASE_ADDRESS              _UL_(0x400e0740)                              /* CHIPID Base Address */
+#define CMCC_BASE_ADDRESS                _UL_(0x4003c000)                              /* CMCC Base Address */
+#define CRCCU_BASE_ADDRESS               _UL_(0x40048000)                              /* CRCCU Base Address */
+#define EFC_BASE_ADDRESS                 _UL_(0x400e0a00)                              /* EFC Base Address */
+#define FLEXCOM0_BASE_ADDRESS            _UL_(0x4000c000)                              /* FLEXCOM0 Base Address */
+#define FLEXCOM1_BASE_ADDRESS            _UL_(0x40020000)                              /* FLEXCOM1 Base Address */
+#define FLEXCOM2_BASE_ADDRESS            _UL_(0x40024000)                              /* FLEXCOM2 Base Address */
+#define FLEXCOM3_BASE_ADDRESS            _UL_(0x40018000)                              /* FLEXCOM3 Base Address */
+#define FLEXCOM4_BASE_ADDRESS            _UL_(0x4001c000)                              /* FLEXCOM4 Base Address */
+#define FLEXCOM5_BASE_ADDRESS            _UL_(0x40008000)                              /* FLEXCOM5 Base Address */
+#define FLEXCOM6_BASE_ADDRESS            _UL_(0x40040000)                              /* FLEXCOM6 Base Address */
+#define FLEXCOM7_BASE_ADDRESS            _UL_(0x40034000)                              /* FLEXCOM7 Base Address */
+#define GPBR_BASE_ADDRESS                _UL_(0x400e1490)                              /* GPBR Base Address */
+#define I2SC0_BASE_ADDRESS               _UL_(0x40000000)                              /* I2SC0 Base Address */
+#define I2SC1_BASE_ADDRESS               _UL_(0x40004000)                              /* I2SC1 Base Address */
+#define MATRIX_BASE_ADDRESS              _UL_(0x400e0200)                              /* MATRIX Base Address */
+#define MEM2MEM_BASE_ADDRESS             _UL_(0x40028000)                              /* MEM2MEM Base Address */
+#define PDMIC0_BASE_ADDRESS              _UL_(0x4002c000)                              /* PDMIC0 Base Address */
+#define PDMIC1_BASE_ADDRESS              _UL_(0x40030000)                              /* PDMIC1 Base Address */
+#define PIOA_BASE_ADDRESS                _UL_(0x400e0e00)                              /* PIOA Base Address */
+#define PIOB_BASE_ADDRESS                _UL_(0x400e1000)                              /* PIOB Base Address */
+#define PMC_BASE_ADDRESS                 _UL_(0x400e0400)                              /* PMC Base Address */
+#define RSTC_BASE_ADDRESS                _UL_(0x400e1400)                              /* RSTC Base Address */
+#define RTC_BASE_ADDRESS                 _UL_(0x400e1460)                              /* RTC Base Address */
+#define RTT_BASE_ADDRESS                 _UL_(0x400e1430)                              /* RTT Base Address */
+#define SPI0_BASE_ADDRESS                _UL_(0x4000c400)                              /* SPI0 Base Address */
+#define SPI1_BASE_ADDRESS                _UL_(0x40020400)                              /* SPI1 Base Address */
+#define SPI2_BASE_ADDRESS                _UL_(0x40024400)                              /* SPI2 Base Address */
+#define SPI3_BASE_ADDRESS                _UL_(0x40018400)                              /* SPI3 Base Address */
+#define SPI4_BASE_ADDRESS                _UL_(0x4001c400)                              /* SPI4 Base Address */
+#define SPI5_BASE_ADDRESS                _UL_(0x40008400)                              /* SPI5 Base Address */
+#define SPI6_BASE_ADDRESS                _UL_(0x40040400)                              /* SPI6 Base Address */
+#define SPI7_BASE_ADDRESS                _UL_(0x40034400)                              /* SPI7 Base Address */
+#define SUPC_BASE_ADDRESS                _UL_(0x400e1410)                              /* SUPC Base Address */
+#define TC0_BASE_ADDRESS                 _UL_(0x40010000)                              /* TC0 Base Address */
+#define TC1_BASE_ADDRESS                 _UL_(0x40014000)                              /* TC1 Base Address */
+#define TWI0_BASE_ADDRESS                _UL_(0x4000c600)                              /* TWI0 Base Address */
+#define TWI1_BASE_ADDRESS                _UL_(0x40020600)                              /* TWI1 Base Address */
+#define TWI2_BASE_ADDRESS                _UL_(0x40024600)                              /* TWI2 Base Address */
+#define TWI3_BASE_ADDRESS                _UL_(0x40018600)                              /* TWI3 Base Address */
+#define TWI4_BASE_ADDRESS                _UL_(0x4001c600)                              /* TWI4 Base Address */
+#define TWI5_BASE_ADDRESS                _UL_(0x40008600)                              /* TWI5 Base Address */
+#define TWI6_BASE_ADDRESS                _UL_(0x40040600)                              /* TWI6 Base Address */
+#define TWI7_BASE_ADDRESS                _UL_(0x40034600)                              /* TWI7 Base Address */
+#define UDP_BASE_ADDRESS                 _UL_(0x40044000)                              /* UDP Base Address */
+#define UHP_BASE_ADDRESS                 _UL_(0x20400000)                              /* UHP Base Address */
+#define USART0_BASE_ADDRESS              _UL_(0x4000c200)                              /* USART0 Base Address */
+#define USART1_BASE_ADDRESS              _UL_(0x40020200)                              /* USART1 Base Address */
+#define USART2_BASE_ADDRESS              _UL_(0x40024200)                              /* USART2 Base Address */
+#define USART3_BASE_ADDRESS              _UL_(0x40018200)                              /* USART3 Base Address */
+#define USART4_BASE_ADDRESS              _UL_(0x4001c200)                              /* USART4 Base Address */
+#define USART5_BASE_ADDRESS              _UL_(0x40008200)                              /* USART5 Base Address */
+#define USART6_BASE_ADDRESS              _UL_(0x40040200)                              /* USART6 Base Address */
+#define USART7_BASE_ADDRESS              _UL_(0x40034200)                              /* USART7 Base Address */
+#define WDT_BASE_ADDRESS                 _UL_(0x400e1450)                              /* WDT Base Address */
+#define GPNVMBITS_BASE_ADDRESS           _UL_(0x00000000)                              /* FUSES Base Address */
 /** @}  end of Peripheral Base Address Definitions */
 
 /** \addtogroup SAMG55J19_pio Peripheral Pio Definitions
