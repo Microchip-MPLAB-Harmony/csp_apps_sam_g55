@@ -215,3 +215,8 @@ bool FLEXCOM5_SPI_Read( void* pReceiveData, size_t rxSize )
     return (FLEXCOM5_SPI_WriteRead(NULL, 0, pReceiveData, rxSize));
 }
 
+bool FLEXCOM5_SPI_IsTransmitterBusy( void )
+{
+    return ((SPI5_REGS->SPI_SR & SPI_SR_TXEMPTY_Msk) == 0)? true : false;
+}
+

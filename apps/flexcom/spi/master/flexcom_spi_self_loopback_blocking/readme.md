@@ -47,8 +47,8 @@ The following table shows the target hardware for the application projects.
 
 1. Build and Program the application project using its IDE
 2. LED indicates the success or failure:
-    - LED is turned ON when the value read from the EEPROM matched with the written value
-    - LED is turned OFF when the value read from the EEPROM did not match with the written value
+    - LED is turned ON when the received value matches with the transmitted value
+    - LED is turned OFF when the received value does not match with the transmitted value
 3. SPI data transfer and compare match checking happens only one time
 
 Following table provides the LED name:
