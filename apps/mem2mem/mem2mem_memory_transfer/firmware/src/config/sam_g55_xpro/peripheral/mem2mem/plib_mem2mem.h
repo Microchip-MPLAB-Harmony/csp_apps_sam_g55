@@ -49,47 +49,12 @@ Description:
 // *****************************************************************************
 // *****************************************************************************
 
-#include <stdint.h>
-#include <stddef.h>
 #include <stdbool.h>
+#include "plib_mem2mem_common.h"
 
-// DOM-IGNORE-BEGIN
 #ifdef __cplusplus // Provide C++ Compatibility
-
-    extern "C" {
-
+extern "C" {
 #endif
-// DOM-IGNORE-END
-
-typedef enum
-{
-    MEM2MEM_TRANSFER_WIDTH_BYTE,
-
-    MEM2MEM_TRANSFER_WIDTH_HALFWORD,
-
-    MEM2MEM_TRANSFER_WIDTH_WORD,
-
-} MEM2MEM_TRANSFER_WIDTH;
-
-typedef enum
-{
-    /* Data was transferred successfully. */
-    MEM2MEM_TRANSFER_EVENT_COMPLETE,
-
-    /* Error while processing the request */
-    MEM2MEM_TRANSFER_EVENT_ERROR
-
-} MEM2MEM_TRANSFER_EVENT;
-
-typedef void (*MEM2MEM_CALLBACK)( MEM2MEM_TRANSFER_EVENT event, uintptr_t context );
-
-typedef struct
-{
-    MEM2MEM_CALLBACK    callback;
-
-    uintptr_t           context;
-
-} MEM2MEM_OBJECT;
 
 // *****************************************************************************
 // *****************************************************************************
@@ -101,12 +66,8 @@ bool MEM2MEM_ChannelTransfer( const void *srcAddr, const void *destAddr, size_t 
 
 void MEM2MEM_CallbackRegister( MEM2MEM_CALLBACK callback, uintptr_t context );
 
-// DOM-IGNORE-BEGIN
 #ifdef __cplusplus // Provide C++ Compatibility
-
     }
-
 #endif
-// DOM-IGNORE-END
 
 #endif    //PLIB_MEM2MEM_H

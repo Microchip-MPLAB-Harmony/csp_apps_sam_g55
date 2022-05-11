@@ -1,22 +1,25 @@
 /*******************************************************************************
- System Interrupts File
+  PWM Peripheral Library Interface Header File
 
-  Company:
+  Company
     Microchip Technology Inc.
 
-  File Name:
-    interrupt.h
+  File Name
+    plib_mem2mem_common.h
 
-  Summary:
-    Interrupt vectors mapping
+  Summary
+    MEM2MEM peripheral library interface.
 
-  Description:
-    This file contains declarations of device vectors used by Harmony 3
- *******************************************************************************/
+  Description
+    This file defines the interface to the PWM peripheral library.  This
+    library provides access to and control of the associated peripheral
+    instance.
+
+*******************************************************************************/
 
 // DOM-IGNORE-BEGIN
 /*******************************************************************************
-* Copyright (C) 2018 Microchip Technology Inc. and its subsidiaries.
+* Copyright (C) 2022 Microchip Technology Inc. and its subsidiaries.
 *
 * Subject to your compliance with these terms, you may use Microchip software
 * and any derivatives exclusively with Microchip products. It is your
@@ -36,36 +39,64 @@
 * FULLEST EXTENT ALLOWED BY LAW, MICROCHIP'S TOTAL LIABILITY ON ALL CLAIMS IN
 * ANY WAY RELATED TO THIS SOFTWARE WILL NOT EXCEED THE AMOUNT OF FEES, IF ANY,
 * THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
- *******************************************************************************/
+*******************************************************************************/
 // DOM-IGNORE-END
 
-#ifndef INTERRUPTS_H
-#define INTERRUPTS_H
+#ifndef PLIB_MEM2MEM_COMMON_H    // Guards against multiple inclusion
+#define PLIB_MEM2MEM_COMMON_H
 
 // *****************************************************************************
 // *****************************************************************************
 // Section: Included Files
 // *****************************************************************************
 // *****************************************************************************
+
 #include <stdint.h>
+#include <stddef.h>
 
-
+#ifdef __cplusplus  // Provide C++ Compatibility
+extern "C" {
+#endif
 
 // *****************************************************************************
 // *****************************************************************************
-// Section: Handler Routines
+// Section: Preprocessor macros
 // *****************************************************************************
 // *****************************************************************************
+#define    MEM2MEM_TRANSFER_WIDTH_BYTE      (0U)
 
-void Reset_Handler (void);
-void NonMaskableInt_Handler (void);
-void HardFault_Handler (void);
-void MemoryManagement_Handler (void);
-void BusFault_Handler (void);
-void UsageFault_Handler (void);
-void DebugMonitor_Handler (void);
-void MEM2MEM_InterruptHandler (void);
+#define    MEM2MEM_TRANSFER_WIDTH_HALFWORD  (1U)
 
+#define    MEM2MEM_TRANSFER_WIDTH_WORD      (2U)
 
+// *****************************************************************************
+// *****************************************************************************
+// Section: Data Types
+// *****************************************************************************
+// *****************************************************************************
+typedef uint32_t MEM2MEM_TRANSFER_WIDTH;
 
-#endif // INTERRUPTS_H
+typedef enum
+{
+    /* Data was transferred successfully. */
+    MEM2MEM_TRANSFER_EVENT_COMPLETE,
+
+    /* Error while processing the request */
+    MEM2MEM_TRANSFER_EVENT_ERROR
+
+} MEM2MEM_TRANSFER_EVENT;
+
+typedef void (*MEM2MEM_CALLBACK)( MEM2MEM_TRANSFER_EVENT event, uintptr_t context );
+
+typedef struct
+{
+    MEM2MEM_CALLBACK    callback;
+    uintptr_t           context;
+
+} MEM2MEM_OBJECT;
+
+#ifdef __cplusplus // Provide C++ Compatibility
+    }
+#endif
+
+#endif //PLIB_MEM2MEM_COMMON_H
