@@ -4,19 +4,19 @@
     <logicalFolder name="HeaderFiles"
                    displayName="Header Files"
                    projectFiles="true">
-      <logicalFolder name="f2" displayName="config" projectFiles="true">
+      <logicalFolder name="f1" displayName="config" projectFiles="true">
         <logicalFolder name="f1" displayName="sam_g55_xpro" projectFiles="true">
           <logicalFolder name="f1" displayName="peripheral" projectFiles="true">
-            <logicalFolder name="f2" displayName="clock" projectFiles="true">
+            <logicalFolder name="f1" displayName="clock" projectFiles="true">
               <itemPath>../src/config/sam_g55_xpro/peripheral/clock/plib_clock.h</itemPath>
             </logicalFolder>
-            <logicalFolder name="f4" displayName="cmcc" projectFiles="true">
+            <logicalFolder name="f2" displayName="cmcc" projectFiles="true">
               <itemPath>../src/config/sam_g55_xpro/peripheral/cmcc/plib_cmcc.h</itemPath>
             </logicalFolder>
-            <logicalFolder name="f5" displayName="efc" projectFiles="true">
+            <logicalFolder name="f3" displayName="efc" projectFiles="true">
               <itemPath>../src/config/sam_g55_xpro/peripheral/efc/plib_efc.h</itemPath>
             </logicalFolder>
-            <logicalFolder name="f6" displayName="flexcom" projectFiles="true">
+            <logicalFolder name="f4" displayName="flexcom" projectFiles="true">
               <logicalFolder name="f1" displayName="spi" projectFiles="true">
                 <logicalFolder name="f1" displayName="master" projectFiles="true">
                   <itemPath>../src/config/sam_g55_xpro/peripheral/flexcom/spi/master/plib_flexcom5_spi_master.h</itemPath>
@@ -24,10 +24,10 @@
                 </logicalFolder>
               </logicalFolder>
             </logicalFolder>
-            <logicalFolder name="f3" displayName="nvic" projectFiles="true">
+            <logicalFolder name="f5" displayName="nvic" projectFiles="true">
               <itemPath>../src/config/sam_g55_xpro/peripheral/nvic/plib_nvic.h</itemPath>
             </logicalFolder>
-            <logicalFolder name="f1" displayName="pio" projectFiles="true">
+            <logicalFolder name="f6" displayName="pio" projectFiles="true">
               <itemPath>../src/config/sam_g55_xpro/peripheral/pio/plib_pio.h</itemPath>
             </logicalFolder>
           </logicalFolder>
@@ -39,8 +39,8 @@
           <itemPath>../src/config/sam_g55_xpro/device_vectors.h</itemPath>
         </logicalFolder>
       </logicalFolder>
-      <logicalFolder name="f1" displayName="packs" projectFiles="true">
-        <logicalFolder name="f2" displayName="ATSAMG55J19_DFP" projectFiles="true">
+      <logicalFolder name="f2" displayName="packs" projectFiles="true">
+        <logicalFolder name="f1" displayName="ATSAMG55J19_DFP" projectFiles="true">
           <logicalFolder name="f1" displayName="component" projectFiles="true">
             <itemPath>../src/packs/ATSAMG55J19_DFP/component/adc.h</itemPath>
             <itemPath>../src/packs/ATSAMG55J19_DFP/component/chipid.h</itemPath>
@@ -69,7 +69,7 @@
             <itemPath>../src/packs/ATSAMG55J19_DFP/component/wdt.h</itemPath>
             <itemPath>../src/packs/ATSAMG55J19_DFP/component/fuses.h</itemPath>
           </logicalFolder>
-          <logicalFolder name="f3" displayName="instance" projectFiles="true">
+          <logicalFolder name="f2" displayName="instance" projectFiles="true">
             <itemPath>../src/packs/ATSAMG55J19_DFP/instance/adc.h</itemPath>
             <itemPath>../src/packs/ATSAMG55J19_DFP/instance/chipid.h</itemPath>
             <itemPath>../src/packs/ATSAMG55J19_DFP/instance/cmcc.h</itemPath>
@@ -128,12 +128,12 @@
             <itemPath>../src/packs/ATSAMG55J19_DFP/instance/usart7.h</itemPath>
             <itemPath>../src/packs/ATSAMG55J19_DFP/instance/wdt.h</itemPath>
           </logicalFolder>
-          <logicalFolder name="f2" displayName="pio" projectFiles="true">
+          <logicalFolder name="f3" displayName="pio" projectFiles="true">
             <itemPath>../src/packs/ATSAMG55J19_DFP/pio/samg55j19.h</itemPath>
           </logicalFolder>
           <itemPath>../src/packs/ATSAMG55J19_DFP/samg55j19.h</itemPath>
         </logicalFolder>
-        <logicalFolder name="f1" displayName="CMSIS" projectFiles="true">
+        <logicalFolder name="f2" displayName="CMSIS" projectFiles="true">
           <logicalFolder name="f1" displayName="CMSIS" projectFiles="true">
             <logicalFolder name="f1" displayName="Core" projectFiles="true">
               <logicalFolder name="f1" displayName="Include" projectFiles="true">
@@ -167,6 +167,7 @@
       <itemPath>Makefile</itemPath>
       <itemPath>../src/config/sam_g55_xpro/harmony-manifest-success.yml</itemPath>
       <itemPath>flexcom_spi_self_loopback_blocking_sam_g55_xpro.mc3</itemPath>
+      <itemPath>../src/config/sam_g55_xpro/pin_configurations.csv</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -182,31 +183,31 @@
                    projectFiles="true">
       <logicalFolder name="f1" displayName="config" projectFiles="true">
         <logicalFolder name="f1" displayName="sam_g55_xpro" projectFiles="true">
-          <logicalFolder name="f2" displayName="peripheral" projectFiles="true">
-            <logicalFolder name="f2" displayName="clock" projectFiles="true">
+          <logicalFolder name="f1" displayName="peripheral" projectFiles="true">
+            <logicalFolder name="f1" displayName="clock" projectFiles="true">
               <itemPath>../src/config/sam_g55_xpro/peripheral/clock/plib_clock.c</itemPath>
             </logicalFolder>
-            <logicalFolder name="f4" displayName="cmcc" projectFiles="true">
+            <logicalFolder name="f2" displayName="cmcc" projectFiles="true">
               <itemPath>../src/config/sam_g55_xpro/peripheral/cmcc/plib_cmcc.c</itemPath>
             </logicalFolder>
-            <logicalFolder name="f5" displayName="efc" projectFiles="true">
+            <logicalFolder name="f3" displayName="efc" projectFiles="true">
               <itemPath>../src/config/sam_g55_xpro/peripheral/efc/plib_efc.c</itemPath>
             </logicalFolder>
-            <logicalFolder name="f6" displayName="flexcom" projectFiles="true">
+            <logicalFolder name="f4" displayName="flexcom" projectFiles="true">
               <logicalFolder name="f1" displayName="spi" projectFiles="true">
                 <logicalFolder name="f1" displayName="master" projectFiles="true">
                   <itemPath>../src/config/sam_g55_xpro/peripheral/flexcom/spi/master/plib_flexcom5_spi_master.c</itemPath>
                 </logicalFolder>
               </logicalFolder>
             </logicalFolder>
-            <logicalFolder name="f3" displayName="nvic" projectFiles="true">
+            <logicalFolder name="f5" displayName="nvic" projectFiles="true">
               <itemPath>../src/config/sam_g55_xpro/peripheral/nvic/plib_nvic.c</itemPath>
             </logicalFolder>
-            <logicalFolder name="f1" displayName="pio" projectFiles="true">
+            <logicalFolder name="f6" displayName="pio" projectFiles="true">
               <itemPath>../src/config/sam_g55_xpro/peripheral/pio/plib_pio.c</itemPath>
             </logicalFolder>
           </logicalFolder>
-          <logicalFolder name="f1" displayName="stdio" projectFiles="true">
+          <logicalFolder name="f2" displayName="stdio" projectFiles="true">
             <itemPath>../src/config/sam_g55_xpro/stdio/xc32_monitor.c</itemPath>
           </logicalFolder>
           <itemPath>../src/config/sam_g55_xpro/initialization.c</itemPath>
@@ -232,11 +233,11 @@
         <targetPluginBoard></targetPluginBoard>
         <platformTool>EdbgTool</platformTool>
         <languageToolchain>XC32</languageToolchain>
-        <languageToolchainVersion>3.01</languageToolchainVersion>
+        <languageToolchainVersion>4.10</languageToolchainVersion>
         <platform>3</platform>
       </toolsSet>
       <packs>
-        <pack name="SAMG_DFP" vendor="Microchip" version="3.4.57"/>
+        <pack name="SAMG_DFP" vendor="Microchip" version="3.5.65"/>
         <pack name="CMSIS" vendor="ARM" version="5.4.0"/>
       </packs>
       <ScriptingSettings>
@@ -299,7 +300,7 @@
         <property key="enable-unroll-loops" value="false"/>
         <property key="exclude-floating-point" value="false"/>
         <property key="extra-include-directories"
-                  value="../src;../src/config/sam_g55_xpro;../src/packs/ATSAMG55J19_DFP;../src/packs/CMSIS/CMSIS/Core/Include;../src/packs/CMSIS/"/>
+                  value="../src;../src/config/sam_g55_xpro;../src/packs/ATSAMG55J19_DFP;../src/packs/CMSIS/;../src/packs/CMSIS/CMSIS/Core/Include"/>
         <property key="generate-16-bit-code" value="false"/>
         <property key="generate-micro-compressed-code" value="false"/>
         <property key="isolate-each-function" value="true"/>
@@ -398,7 +399,7 @@
         <property key="exceptions" value="true"/>
         <property key="exclude-floating-point" value="false"/>
         <property key="extra-include-directories"
-                  value="../src;../src/config/sam_g55_xpro;../src/packs/ATSAMG55J19_DFP;../src/packs/CMSIS/CMSIS/Core/Include;../src/packs/CMSIS/"/>
+                  value="../src;../src/config/sam_g55_xpro;../src/packs/ATSAMG55J19_DFP;../src/packs/CMSIS/;../src/packs/CMSIS/CMSIS/Core/Include"/>
         <property key="generate-16-bit-code" value="false"/>
         <property key="generate-micro-compressed-code" value="false"/>
         <property key="isolate-each-function" value="true"/>
@@ -431,9 +432,13 @@
       </C32Global>
       <EdbgTool>
         <property key="AutoSelectMemRanges" value="auto"/>
+        <property key="arm.use_vtor" value="false"/>
+        <property key="arm.vtor_adr" value="exception_table"/>
         <property key="communication.activationmode" value="nohv"/>
         <property key="communication.interface" value="jtag"/>
         <property key="communication.speed" value="${communication.speed.default}"/>
+        <property key="debugoptions.debug-startup" value="Use system settings"/>
+        <property key="debugoptions.reset-behaviour" value="Use system settings"/>
         <property key="debugoptions.useswbreakpoints" value="false"/>
         <property key="firmware.path"
                   value="Press to browse for a specific firmware version"/>
@@ -441,6 +446,8 @@
                   value="Press to select which tool pack to use"/>
         <property key="firmware.update.action" value="firmware.update.use.latest"/>
         <property key="freeze.timers" value="false"/>
+        <property key="lastid" value=""/>
+        <property key="loader.board_file" value="${ProjectDir}/board.xboard"/>
         <property key="memories.aux" value="false"/>
         <property key="memories.bootflash" value="true"/>
         <property key="memories.configurationmemory" value="true"/>
@@ -454,7 +461,6 @@
                   value="${memories.instruction.ram.ranges}"/>
         <property key="memories.programmemory" value="true"/>
         <property key="memories.programmemory.ranges" value="400000-47ffff"/>
-        <property key="memories.rww" value="true"/>
         <property key="poweroptions.powerenable" value="false"/>
         <property key="programoptions.eraseb4program" value="true"/>
         <property key="programoptions.preservedataflash" value="false"/>
@@ -466,6 +472,10 @@
         <property key="programoptions.preserveprogramrange" value="false"/>
         <property key="programoptions.preserveuserid" value="false"/>
         <property key="programoptions.programuserotp" value="false"/>
+        <property key="script.has_reset" value="true"/>
+        <property key="script.log_level" value="1"/>
+        <property key="script.reset_delay" value="0"/>
+        <property key="script.show_output" value="false"/>
         <property key="toolpack.updateoptions"
                   value="toolpack.updateoptions.uselatestoolpack"/>
         <property key="toolpack.updateoptions.packversion"
@@ -953,9 +963,13 @@
       </Simulator>
       <Tool>
         <property key="AutoSelectMemRanges" value="auto"/>
+        <property key="arm.use_vtor" value="false"/>
+        <property key="arm.vtor_adr" value="exception_table"/>
         <property key="communication.activationmode" value="nohv"/>
         <property key="communication.interface" value="jtag"/>
         <property key="communication.speed" value="${communication.speed.default}"/>
+        <property key="debugoptions.debug-startup" value="Use system settings"/>
+        <property key="debugoptions.reset-behaviour" value="Use system settings"/>
         <property key="debugoptions.useswbreakpoints" value="false"/>
         <property key="firmware.path"
                   value="Press to browse for a specific firmware version"/>
@@ -963,6 +977,8 @@
                   value="Press to select which tool pack to use"/>
         <property key="firmware.update.action" value="firmware.update.use.latest"/>
         <property key="freeze.timers" value="false"/>
+        <property key="lastid" value=""/>
+        <property key="loader.board_file" value="${ProjectDir}/board.xboard"/>
         <property key="memories.aux" value="false"/>
         <property key="memories.bootflash" value="true"/>
         <property key="memories.configurationmemory" value="true"/>
@@ -988,6 +1004,10 @@
         <property key="programoptions.preserveprogramrange" value="false"/>
         <property key="programoptions.preserveuserid" value="false"/>
         <property key="programoptions.programuserotp" value="false"/>
+        <property key="script.has_reset" value="true"/>
+        <property key="script.log_level" value="1"/>
+        <property key="script.reset_delay" value="0"/>
+        <property key="script.show_output" value="false"/>
         <property key="toolpack.updateoptions"
                   value="toolpack.updateoptions.uselatestoolpack"/>
         <property key="toolpack.updateoptions.packversion"
