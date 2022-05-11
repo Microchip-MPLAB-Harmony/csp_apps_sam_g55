@@ -66,7 +66,8 @@ void ADC_Initialize( void )
     ADC_REGS->ADC_MR = ADC_MR_PRESCAL(7U) | ADC_MR_TRACKTIM(15U) | ADC_MR_STARTUP_SUT64 | ADC_MR_TRANSFER(2U) | ADC_MR_ANACH_Msk ;
 
     /* resolution and sign mode of result */
-    ADC_REGS->ADC_EMR = ADC_EMR_OSR_NO_AVERAGE  | ADC_EMR_SRCCLK_PERIPH_CLK | ADC_EMR_TAG_Msk;
+    ADC_REGS->ADC_EMR = ADC_EMR_OSR_NO_AVERAGE  | ADC_EMR_SRCCLK_PERIPH_CLK | ADC_EMR_TAG_Msk | ADC_EMR_CMPFILTER(0U)  | ADC_EMR_CMPSEL(0U)  | ADC_EMR_CMPTYPE(ADC_EMR_CMPTYPE_FLAG_ONLY_Val) | ADC_EMR_CMPMODE(ADC_EMR_CMPMODE_LOW);
+
 
     /* User defined channel conversion sequence */
     ADC_REGS->ADC_MR |= ADC_MR_USEQ_Msk;
@@ -85,25 +86,25 @@ void ADC_Initialize( void )
 /* Enable ADC channels */
 void ADC_ChannelsEnable( ADC_CHANNEL_MASK channelsMask )
 {
-    ADC_REGS->ADC_CHER |= channelsMask;
+    ADC_REGS->ADC_CHER |= (uint32_t)channelsMask;
 }
 
 /* Disable ADC channels */
 void ADC_ChannelsDisable( ADC_CHANNEL_MASK channelsMask )
 {
-    ADC_REGS->ADC_CHDR |= channelsMask;
+    ADC_REGS->ADC_CHDR |= (uint32_t)channelsMask;
 }
 
 /* Enable channel end of conversion interrupt */
 void ADC_ChannelsInterruptEnable( ADC_INTERRUPT_MASK channelsInterruptMask )
 {
-    ADC_REGS->ADC_IER |= channelsInterruptMask;
+    ADC_REGS->ADC_IER |= (uint32_t)channelsInterruptMask;
 }
 
 /* Disable channel end of conversion interrupt */
 void ADC_ChannelsInterruptDisable( ADC_INTERRUPT_MASK channelsInterruptMask )
 {
-    ADC_REGS->ADC_IDR |= channelsInterruptMask;
+    ADC_REGS->ADC_IDR |= (uint32_t)channelsInterruptMask;
 }
 
 /* Start the conversion with software trigger */
@@ -115,26 +116,59 @@ void ADC_ConversionStart( void )
 /* Check if conversion result is available */
 bool ADC_ChannelResultIsReady( ADC_CHANNEL_NUM channel )
 {
-    return (ADC_REGS->ADC_ISR >> channel) & 0x1U;
+    return (((ADC_REGS->ADC_ISR >> (uint32_t)channel) & 0x1U) != 0U);
 }
 
 /* Read the conversion result */
 uint16_t ADC_ChannelResultGet( ADC_CHANNEL_NUM channel )
 {
-    return (ADC_REGS->ADC_CDR[channel]);
+    return (uint16_t)(ADC_REGS->ADC_CDR[channel]);
 }
 
 /* Configure the user defined conversion sequence */
 void ADC_ConversionSequenceSet( ADC_CHANNEL_NUM *channelList, uint8_t numChannel )
 {
     uint8_t channelIndex;
+    (void)numChannel;
 
     ADC_REGS->ADC_SEQR1 = 0U;
 
     for (channelIndex = 0U; channelIndex < ADC_SEQ1_CHANNEL_NUM; channelIndex++)
     {
-        ADC_REGS->ADC_SEQR1 |= channelList[channelIndex] << (channelIndex * 4U);
+        ADC_REGS->ADC_SEQR1 |= (uint32_t)channelList[channelIndex] << (channelIndex * 4U);
     }
+}
+
+/* Set the comparator channel */
+void ADC_ComparatorChannelSet(ADC_CHANNEL_NUM channel)
+{
+    ADC_REGS->ADC_EMR &= ~(ADC_EMR_CMPSEL_Msk | ADC_EMR_CMPALL_Msk);
+    ADC_REGS->ADC_EMR |= ((uint32_t)channel << ADC_EMR_CMPSEL_Pos);
+}
+
+/* Enable compare on all channels */
+void ADC_CompareAllChannelsEnable(void)
+{
+    ADC_REGS->ADC_EMR |= ADC_EMR_CMPALL_Msk;
+}
+
+/* Disable compare on all channels */
+void ADC_CompareAllChannelsDisable(void)
+{
+    ADC_REGS->ADC_EMR &= ~ADC_EMR_CMPALL_Msk;
+}
+
+/* Stops the conversion result storage until the next comparison match */
+void ADC_CompareRestart(void)
+{
+    ADC_REGS->ADC_CR |= ADC_CR_CMPRST_Msk;
+}
+
+/* Set the comparator mode */
+void ADC_ComparatorModeSet(ADC_COMPARATOR_MODE cmpMode)
+{
+    ADC_REGS->ADC_EMR &= ~(ADC_EMR_CMPMODE_Msk);
+    ADC_REGS->ADC_EMR |= ((uint32_t)cmpMode << ADC_EMR_CMPMODE_Pos);
 }
 
 /* Register the callback function */

@@ -106,6 +106,16 @@ void ADC_ConversionSequenceSet( ADC_CHANNEL_NUM *channelList, uint8_t numChannel
 
 void ADC_CallbackRegister( ADC_CALLBACK callback, uintptr_t context );
 
+void ADC_ComparatorChannelSet(ADC_CHANNEL_NUM channel);
+
+void ADC_CompareAllChannelsEnable(void);
+
+void ADC_CompareAllChannelsDisable(void);
+
+void ADC_CompareRestart(void);
+
+void ADC_ComparatorModeSet(ADC_COMPARATOR_MODE cmpMode);
+
 // DOM-IGNORE-BEGIN
 #ifdef __cplusplus  // Provide C++ Compatibility
 
