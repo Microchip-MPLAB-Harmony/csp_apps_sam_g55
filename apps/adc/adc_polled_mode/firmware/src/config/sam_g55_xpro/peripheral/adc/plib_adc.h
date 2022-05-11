@@ -96,6 +96,18 @@ uint16_t ADC_ChannelResultGet( ADC_CHANNEL_NUM channel );
 
 void ADC_ConversionSequenceSet( ADC_CHANNEL_NUM *channelList, uint8_t numChannel );
 
+uint32_t ADC_StatusGet(void);
+bool ADC_ComparatorStatusGet(void);
+
+void ADC_ComparatorChannelSet(ADC_CHANNEL_NUM channel);
+
+void ADC_CompareAllChannelsEnable(void);
+
+void ADC_CompareAllChannelsDisable(void);
+
+void ADC_CompareRestart(void);
+
+void ADC_ComparatorModeSet(ADC_COMPARATOR_MODE cmpMode);
 
 // DOM-IGNORE-BEGIN
 #ifdef __cplusplus  // Provide C++ Compatibility
