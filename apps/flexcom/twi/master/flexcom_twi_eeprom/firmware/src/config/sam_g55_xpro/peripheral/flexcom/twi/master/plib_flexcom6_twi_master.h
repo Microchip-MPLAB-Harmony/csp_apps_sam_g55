@@ -167,13 +167,10 @@ void FLEXCOM6_TWI_CallbackRegister(FLEXCOM_TWI_CALLBACK callback, uintptr_t cont
     <code>
         uint8_t myData [NUM_BYTES] = {'1', '0', ' ', 'B', 'Y', 'T', 'E', 'S', '!', '!',};
 
-        // wait for the current transfer to complete
         while(FLEXCOM6_TWI_IsBusy( ));
 
-        // perform the next transfer
         if(!FLEXCOM6_TWI_Write( SLAVE_ADDR, &myData[0], NUM_BYTES ))
         {
-            // error handling
         }
 
     </code>
@@ -215,7 +212,6 @@ bool FLEXCOM6_TWI_IsBusy(void);
 
         if(!FLEXCOM6_TWI_Read( SLAVE_ADDR, &myData[0], NUM_BYTES ))
         {
-            // error handling
         }
     </code>
 
@@ -256,7 +252,6 @@ bool FLEXCOM6_TWI_Read(uint16_t address, uint8_t *pdata, size_t length);
 
         if(!FLEXCOM6_TWI_Write( SLAVE_ADDR, &myData[0], NUM_BYTES ))
         {
-            // error handling
         }
     </code>
 
@@ -302,7 +297,6 @@ bool FLEXCOM6_TWI_Write(uint16_t address, uint8_t *pdata, size_t length);
 
         if(!FLEXCOM6_TWI_WriteRead( SLAVE_ADDR, &myTxData[0], NUM_BYTES, myRxData, NUM_BYTES ))
         {
-            // error handling
         }
     </code>
 
@@ -336,7 +330,6 @@ bool FLEXCOM6_TWI_WriteRead(uint16_t address, uint8_t *wdata, size_t wlength, ui
     <code>
     if(FLEXCOM_TWI_ERROR_NONE == FLEXCOM6_TWI_ErrorGet())
     {
-        //FLEXCOM TWI transfer is completed, go to next state.
     }
     </code>
 
@@ -372,12 +365,11 @@ FLEXCOM_TWI_ERROR FLEXCOM6_TWI_ErrorGet(void);
 
     setup.clkSpeed = 400000;
 
-    // Make sure that the I2C is not busy before changing the I2C clock frequency
     if (FLEXCOM6_TWI_IsBusy() == false)
     {
         if (FLEXCOM6_TWI_TransferSetup( &setup, 0 ) == true)
         {
-            // Transfer Setup updated successfully
+
         }
     }
     </code>
@@ -388,6 +380,34 @@ FLEXCOM_TWI_ERROR FLEXCOM6_TWI_ErrorGet(void);
 */
 
 bool FLEXCOM6_TWI_TransferSetup(FLEXCOM_TWI_TRANSFER_SETUP* setup, uint32_t srcClkFreq );
+
+// *****************************************************************************
+/* Function:
+    void FLEXCOM6_TWI_TransferAbort( void )
+
+   Summary:
+    Aborts the ongoing TWI transfer.
+
+   Precondition:
+    FLEXCOM6_Initialize must have been called for the associated TWI instance.
+
+   Parameters:
+    None
+
+   Returns:
+    None
+
+   Example:
+    <code>
+
+    FLEXCOM6_TWI_TransferAbort();
+
+    </code>
+
+   Remarks:
+    None
+*/
+void FLEXCOM6_TWI_TransferAbort( void );
 
 // DOM-IGNORE-BEGIN
 #ifdef __cplusplus  // Provide C++ Compatibility
