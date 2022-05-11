@@ -4,13 +4,6 @@ attributes: {id: core}
 children:
 - type: Symbols
   children:
-  - type: String
-    attributes: {id: CMCC_INSTANCE_NAME}
-    children:
-    - type: Values
-      children:
-      - type: Dynamic
-        attributes: {id: core, value: CMCC}
   - type: KeyValueSet
     attributes: {id: COMPILER_CHOICE}
     children:
@@ -70,7 +63,7 @@ children:
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: core, value: '119996416'}
+        attributes: {id: core, value: '100007936'}
   - type: Boolean
     attributes: {id: FLEXCOM7_INTERRUPT_ENABLE}
     children:
@@ -371,7 +364,7 @@ children:
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: core, value: '119996416'}
+        attributes: {id: core, value: '100007936'}
   - type: Hex
     attributes: {id: PIOA_PDR_VALUE}
     children:
@@ -392,7 +385,7 @@ children:
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: core, value: '119996416'}
+        attributes: {id: core, value: '100007936'}
   - type: Hex
     attributes: {id: PMC_PCER0}
     children:
@@ -470,7 +463,7 @@ children:
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: core, value: '59998208'}
+        attributes: {id: core, value: '50003968'}
   - type: Boolean
     attributes: {id: TC0_CH0_INTERRUPT_ENABLE}
     children:
@@ -505,7 +498,7 @@ children:
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: core, value: '59998208'}
+        attributes: {id: core, value: '50003968'}
   - type: Boolean
     attributes: {id: TC0_CH1_INTERRUPT_ENABLE}
     children:

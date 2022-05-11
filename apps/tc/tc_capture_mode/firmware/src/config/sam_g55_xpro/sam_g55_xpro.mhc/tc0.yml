@@ -52,7 +52,7 @@ children:
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: tc0, value: '59998208'}
+        attributes: {id: tc0, value: '50003968'}
   - type: Combo
     attributes: {id: TC0_CMR_ACPA}
     children:
@@ -113,7 +113,7 @@ children:
       - type: String
         attributes: {id: text}
         children:
-        - {type: Value, value: '**** Waveform Period is 400.011947023 uS****'}
+        - {type: Value, value: '**** Waveform Period is 479.961910224 uS****'}
   - type: Long
     attributes: {id: TC0_COMPARE_PERIOD_COUNT}
     children:
@@ -143,7 +143,7 @@ children:
       - type: String
         attributes: {id: text}
         children:
-        - {type: Value, value: '****Clock resolution is 16.6671644593 nS****'}
+        - {type: Value, value: '****Clock resolution is 19.998412926 nS****'}
   - type: Menu
     attributes: {id: TC0_TIMER}
     children:
@@ -177,7 +177,7 @@ children:
       - type: Float
         attributes: {id: max}
         children:
-        - {type: Value, value: '1.0922993'}
+        - {type: Value, value: '1.310616'}
   - type: Comment
     attributes: {id: TC0_Zero_Freq}
     children:
@@ -209,7 +209,7 @@ children:
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: tc0, value: '59998208'}
+        attributes: {id: tc0, value: '50003968'}
   - type: Comment
     attributes: {id: TC1_COMPARE_PERIOD}
     children:
@@ -241,7 +241,7 @@ children:
       - type: String
         attributes: {id: text}
         children:
-        - {type: Value, value: '****Clock resolution is 16.6671644593 nS****'}
+        - {type: Value, value: '****Clock resolution is 19.998412926 nS****'}
   - type: Menu
     attributes: {id: TC1_TIMER}
     children:
@@ -275,7 +275,7 @@ children:
       - type: Float
         attributes: {id: max}
         children:
-        - {type: Value, value: '1.0922993'}
+        - {type: Value, value: '1.310616'}
   - type: Comment
     attributes: {id: TC1_Zero_Freq}
     children:
