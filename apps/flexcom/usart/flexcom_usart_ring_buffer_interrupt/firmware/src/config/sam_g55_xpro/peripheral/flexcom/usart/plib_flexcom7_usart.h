@@ -68,7 +68,7 @@
 // *****************************************************************************
 // *****************************************************************************
 
-#define FLEXCOM7_USART_FrequencyGet()    (uint32_t)(119996416UL)
+#define FLEXCOM7_USART_FrequencyGet()    (uint32_t)(100007936UL)
 
 /****************************** FLEXCOM7 USART API *********************************/
 void FLEXCOM7_USART_Initialize( void );
@@ -84,6 +84,8 @@ size_t FLEXCOM7_USART_WriteCountGet(void);
 size_t FLEXCOM7_USART_WriteFreeBufferCountGet(void);
 
 size_t FLEXCOM7_USART_WriteBufferSizeGet(void);
+
+bool FLEXCOM7_USART_TransmitComplete( void );
 
 bool FLEXCOM7_USART_WriteNotificationEnable(bool isEnabled, bool isPersistent);
 
