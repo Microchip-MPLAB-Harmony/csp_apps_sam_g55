@@ -52,7 +52,7 @@ children:
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: tc0, value: '3749888'}
+        attributes: {id: tc0, value: '3125248'}
   - type: Combo
     attributes: {id: TC0_CMR_ACPA}
     children:
@@ -91,7 +91,7 @@ children:
       - type: Long
         attributes: {id: max}
         children:
-        - {type: Value, value: '37499'}
+        - {type: Value, value: '31249'}
   - type: Long
     attributes: {id: TC0_COMPARE_B}
     children:
@@ -100,7 +100,7 @@ children:
       - type: Long
         attributes: {id: max}
         children:
-        - {type: Value, value: '37499'}
+        - {type: Value, value: '31249'}
   - type: Boolean
     attributes: {id: TC0_COMPARE_IER_CPCS}
     children:
@@ -116,14 +116,14 @@ children:
       - type: String
         attributes: {id: text}
         children:
-        - {type: Value, value: '**** Waveform Period is 10000.032001 uS****'}
+        - {type: Value, value: '**** Waveform Period is 9998.88648836 uS****'}
   - type: Long
     attributes: {id: TC0_COMPARE_PERIOD_COUNT}
     children:
     - type: Values
       children:
       - type: User
-        attributes: {value: '37499'}
+        attributes: {value: '31249'}
   - type: Boolean
     attributes: {id: TC0_ENABLE}
     children:
@@ -153,7 +153,7 @@ children:
       - type: String
         attributes: {id: text}
         children:
-        - {type: Value, value: '****Clock resolution is 266.674631349 nS****'}
+        - {type: Value, value: '****Clock resolution is 319.974606815 nS****'}
   - type: Menu
     attributes: {id: TC0_TIMER}
     children:
@@ -187,7 +187,7 @@ children:
       - type: Float
         attributes: {id: max}
         children:
-        - {type: Value, value: '17.47679'}
+        - {type: Value, value: '20.969856'}
   - type: Comment
     attributes: {id: TC0_Zero_Freq}
     children:
@@ -203,7 +203,7 @@ children:
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: tc0, value: '3749888'}
+        attributes: {id: tc0, value: '3125248'}
   - type: Combo
     attributes: {id: TC1_CMR_BCPB}
     children:
@@ -242,7 +242,7 @@ children:
       - type: Long
         attributes: {id: max}
         children:
-        - {type: Value, value: '37499'}
+        - {type: Value, value: '31249'}
   - type: Long
     attributes: {id: TC1_COMPARE_B}
     children:
@@ -251,7 +251,7 @@ children:
       - type: Long
         attributes: {id: max}
         children:
-        - {type: Value, value: '37499'}
+        - {type: Value, value: '31249'}
     - type: Values
       children:
       - type: User
@@ -271,14 +271,14 @@ children:
       - type: String
         attributes: {id: text}
         children:
-        - {type: Value, value: '**** Waveform Period is 10000.032001 uS****'}
+        - {type: Value, value: '**** Waveform Period is 9998.88648836 uS****'}
   - type: Long
     attributes: {id: TC1_COMPARE_PERIOD_COUNT}
     children:
     - type: Values
       children:
       - type: User
-        attributes: {value: '37499'}
+        attributes: {value: '31249'}
   - type: Boolean
     attributes: {id: TC1_ENABLE}
     children:
@@ -308,7 +308,7 @@ children:
       - type: String
         attributes: {id: text}
         children:
-        - {type: Value, value: '****Clock resolution is 266.674631349 nS****'}
+        - {type: Value, value: '****Clock resolution is 319.974606815 nS****'}
   - type: Menu
     attributes: {id: TC1_TIMER}
     children:
@@ -342,7 +342,7 @@ children:
       - type: Float
         attributes: {id: max}
         children:
-        - {type: Value, value: '17.47679'}
+        - {type: Value, value: '20.969856'}
   - type: Comment
     attributes: {id: TC1_Zero_Freq}
     children:

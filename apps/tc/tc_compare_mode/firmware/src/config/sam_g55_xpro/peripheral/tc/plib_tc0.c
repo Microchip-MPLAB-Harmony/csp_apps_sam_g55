@@ -77,7 +77,7 @@ void TC0_CH0_CompareInitialize (void)
                 TC_CMR_WAVEFORM_EEVTEDG_NONE;
 
     /* write period */
-    TC0_REGS->TC_CHANNEL[0].TC_RC = 37499U;
+    TC0_REGS->TC_CHANNEL[0].TC_RC = 31249U;
 
     /* write compare values */
     TC0_REGS->TC_CHANNEL[0].TC_RA = 5000U;
@@ -99,7 +99,7 @@ void TC0_CH0_CompareStop (void)
 
 uint32_t TC0_CH0_CompareFrequencyGet( void )
 {
-    return (uint32_t)(3749888UL);
+    return (uint32_t)(3125248UL);
 }
 
 /* Configure the period value */
@@ -111,7 +111,7 @@ void TC0_CH0_ComparePeriodSet (uint16_t period)
 /* Read the period value */
 uint16_t TC0_CH0_ComparePeriodGet (void)
 {
-    return TC0_REGS->TC_CHANNEL[0].TC_RC;
+    return (uint16_t)TC0_REGS->TC_CHANNEL[0].TC_RC;
 }
 
 /* Set the compare A value */
@@ -153,7 +153,7 @@ void TC0_CH1_CompareInitialize (void)
                 TC_CMR_WAVEFORM_EEVTEDG_NONE;
 
     /* write period */
-    TC0_REGS->TC_CHANNEL[1].TC_RC = 37499U;
+    TC0_REGS->TC_CHANNEL[1].TC_RC = 31249U;
 
     /* write compare values */
     TC0_REGS->TC_CHANNEL[1].TC_RA = 5000U;
@@ -175,7 +175,7 @@ void TC0_CH1_CompareStop (void)
 
 uint32_t TC0_CH1_CompareFrequencyGet( void )
 {
-    return (uint32_t)(3749888UL);
+    return (uint32_t)(3125248UL);
 }
 
 /* Configure the period value */
@@ -187,7 +187,7 @@ void TC0_CH1_ComparePeriodSet (uint16_t period)
 /* Read the period value */
 uint16_t TC0_CH1_ComparePeriodGet (void)
 {
-    return TC0_REGS->TC_CHANNEL[1].TC_RC;
+    return (uint16_t)TC0_REGS->TC_CHANNEL[1].TC_RC;
 }
 
 /* Set the compare A value */
