@@ -47,7 +47,7 @@ void SYSTICK_TimerInitialize ( void )
 {
     SysTick->CTRL = 0U;
     SysTick->VAL = 0U;
-    SysTick->LOAD = 0xB7199AU - 1U;
+    SysTick->LOAD = 0x98999AU - 1U;
     SysTick->CTRL = SysTick_CTRL_CLKSOURCE_Msk;
 }
 
