@@ -56,27 +56,36 @@ static void WaitEntryClockSetup( bool xtal_disable )
     PMC_REGS->CKGR_MOR |= CKGR_MOR_KEY_PASSWD | CKGR_MOR_MOSCRCEN_Msk;
 
     /* Wait until the RC oscillator clock is ready. */
-    while((PMC_REGS->PMC_SR & PMC_SR_MOSCRCS_Msk) != PMC_SR_MOSCRCS_Msk);
+    while((PMC_REGS->PMC_SR & PMC_SR_MOSCRCS_Msk) != PMC_SR_MOSCRCS_Msk)
+    {
+
+    }
 
     /* Switch Main Clock (MAINCK) to the RC Oscillator clock */
     PMC_REGS->CKGR_MOR = (PMC_REGS->CKGR_MOR & ~CKGR_MOR_MOSCSEL_Msk) | CKGR_MOR_KEY_PASSWD;
 
     /* Wait for Main Clock Selection Status */
-    while((PMC_REGS->PMC_SR & PMC_SR_MOSCSELS_Msk) != PMC_SR_MOSCSELS_Msk);
+    while((PMC_REGS->PMC_SR & PMC_SR_MOSCSELS_Msk) != PMC_SR_MOSCSELS_Msk)
+    {
+
+    }
 
     /* If Master clock source is PLL, switch to MAIN clock  */
     if ((PMC_REGS->PMC_MCKR & PMC_MCKR_CSS_Msk) > PMC_MCKR_CSS_MAIN_CLK)
     {
         PMC_REGS->PMC_MCKR = (PMC_REGS->PMC_MCKR & ~PMC_MCKR_CSS_Msk) | PMC_MCKR_CSS_MAIN_CLK;
 
-        while((PMC_REGS->PMC_SR & PMC_SR_MCKRDY_Msk) != PMC_SR_MCKRDY_Msk);
+        while((PMC_REGS->PMC_SR & PMC_SR_MCKRDY_Msk) != PMC_SR_MCKRDY_Msk)
+        {
+
+        }
     }
 
     /* Disable PLLA Clock */
-    PMC_REGS->CKGR_PLLAR = CKGR_PLLAR_ZERO_Msk | CKGR_PLLAR_MULA(0);
+    PMC_REGS->CKGR_PLLAR = CKGR_PLLAR_ZERO_Msk | CKGR_PLLAR_MULA(0U);
 
     /* Disable PLLB Clock */
-    PMC_REGS->CKGR_PLLBR = CKGR_PLLBR_ZERO_Msk | CKGR_PLLBR_MULB(0);
+    PMC_REGS->CKGR_PLLBR = CKGR_PLLBR_ZERO_Msk | CKGR_PLLBR_MULB(0U);
 
     /* Disable Crystal  */
     if(xtal_disable)
@@ -95,9 +104,9 @@ void SUPC_Initialize( void )
 {
     SUPC_REGS->SUPC_SMMR = SUPC_SMMR_SMSMPL_SMD;
 
-    SUPC_REGS->SUPC_MR = SUPC_MR_KEY_PASSWD | SUPC_MR_ONE_Msk | SUPC_MR_ONEA_Msk | SUPC_MR_BODDIS_DISABLE ;
+    SUPC_REGS->SUPC_MR = (SUPC_REGS->SUPC_MR & ~SUPC_MR_Msk) | SUPC_MR_KEY_PASSWD | SUPC_MR_ONE_Msk | SUPC_MR_ONEA_Msk | SUPC_MR_BODDIS_DISABLE ;
 
-    SUPC_REGS->SUPC_WUMR = SUPC_WUMR_LPDBC(0x0) | SUPC_WUMR_WKUPDBC(0x0) ;
+    SUPC_REGS->SUPC_WUMR = SUPC_WUMR_LPDBC(0x0U) | SUPC_WUMR_WKUPDBC(0x0U) ;
 
     SUPC_REGS->SUPC_WUIR = SUPC_WUIR_WKUPEN2_ENABLE | SUPC_WUIR_WKUPT2_LOW;
 
@@ -126,7 +135,7 @@ void SUPC_WaitModeEnter( WAITMODE_FLASH_STATE flash_lpm, WAITMODE_WKUP_SOURCE so
     __DMB();
 
     /* Setup Clock for wait mode entry */
-    WaitEntryClockSetup((flash_lpm == PMC_FSMR_FLPM_FLASH_DEEP_POWERDOWN));
+    WaitEntryClockSetup((flash_lpm == WAITMODE_FLASH_DEEPSLEEP));
 
     /* Enable CPU Interrupt */
     __DMB();
@@ -136,23 +145,29 @@ void SUPC_WaitModeEnter( WAITMODE_FLASH_STATE flash_lpm, WAITMODE_WKUP_SOURCE so
     PMC_REGS->PMC_FSMR = ((uint32_t) flash_lpm | (uint32_t) source);
 
     /* Set Flash Wait State at 0 */
-    EFC_REGS->EEFC_FMR = EEFC_FMR_FWS(0) | EEFC_FMR_CLOE_Msk;
+    EFC_REGS->EEFC_FMR = EEFC_FMR_FWS(0U) | EEFC_FMR_CLOE_Msk;
 
     /* Set the WAITMODE bit */
     PMC_REGS->CKGR_MOR |= (CKGR_MOR_KEY_PASSWD | CKGR_MOR_WAITMODE_Msk);
 
     /* Waiting for Master Clock Ready MCKRDY = 1 */
-    while((PMC_REGS->PMC_SR & PMC_SR_MCKRDY_Msk) != PMC_SR_MCKRDY_Msk);
+    while((PMC_REGS->PMC_SR & PMC_SR_MCKRDY_Msk) != PMC_SR_MCKRDY_Msk)
+    {
+
+    }
 
     /* Waiting for MOSCRCEN bit is cleared is strongly recommended
      * to ensure that the core will not execute undesired instructions
      */
-    for (i = 0; i < 500; i++)
+    for (i = 0U; i < 500U; i++)
     {
        __NOP();
     }
 
-    while((PMC_REGS->CKGR_MOR & CKGR_MOR_MOSCRCEN_Msk) != CKGR_MOR_MOSCRCEN_Msk);
+    while((PMC_REGS->CKGR_MOR & CKGR_MOR_MOSCRCEN_Msk) != CKGR_MOR_MOSCRCEN_Msk)
+    {
+
+    }
 
     /* Disable CPU Interrupt */
     __disable_irq();
