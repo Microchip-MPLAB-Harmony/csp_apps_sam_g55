@@ -204,14 +204,14 @@ children:
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: flexcom5, value: '119'}
+        attributes: {id: flexcom5, value: '100'}
   - type: Integer
     attributes: {id: FLEXCOM_SPI_CSR1_SCBR_VALUE}
     children:
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: flexcom5, value: '119'}
+        attributes: {id: flexcom5, value: '100'}
   - type: KeyValueSet
     attributes: {id: FLEXCOM_SPI_CSR_BITS}
     children:
@@ -342,7 +342,7 @@ children:
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: flexcom5, value: '119996416'}
+        attributes: {id: flexcom5, value: '100007936'}
   - type: File
     attributes: {id: FLEXCOM_SYS_DEF}
     children:
@@ -391,14 +391,14 @@ children:
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: flexcom5, value: '119996416'}
+        attributes: {id: flexcom5, value: '100007936'}
   - type: Integer
     attributes: {id: FLEXCOM_TWI_CWGR_CHDIV}
     children:
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: flexcom5, value: '146'}
+        attributes: {id: flexcom5, value: '122'}
   - type: Integer
     attributes: {id: FLEXCOM_TWI_CWGR_CKDIV}
     children:
@@ -412,14 +412,14 @@ children:
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: flexcom5, value: '146'}
+        attributes: {id: flexcom5, value: '122'}
   - type: Integer
     attributes: {id: FLEX_USART_CLOCK_FREQ}
     children:
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: flexcom5, value: '119996416'}
+        attributes: {id: flexcom5, value: '100007936'}
   - type: String
     attributes: {id: RECEIVE_DATA_REGISTER}
     children:
