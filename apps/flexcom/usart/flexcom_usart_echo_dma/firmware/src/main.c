@@ -64,9 +64,9 @@ char receiveBuffer[RX_BUFFER_SIZE];
 char echoBuffer[2*RX_BUFFER_SIZE];
 char messageError[] = "**** FLEXCOM USART error occurred ****\r\n";
 
-bool errorStatus = false;
-bool writeStatus = false;
-bool readStatus = false;
+static bool errorStatus = false;
+static bool writeStatus = false;
+static bool readStatus = false;
 
 void APP_WriteCallback(uintptr_t context)
 {
