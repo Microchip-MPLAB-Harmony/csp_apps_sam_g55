@@ -57,37 +57,38 @@
 // *****************************************************************************
 // *****************************************************************************
 
-FLEXCOM_USART_OBJECT flexcom7UsartObj;
+#define FLEXCOM_USART_RHR_8BIT_REG      (*(volatile uint8_t* const)((USART7_BASE_ADDRESS + US_RHR_REG_OFST)))
+#define FLEXCOM_USART_RHR_9BIT_REG      (*(volatile uint16_t* const)((USART7_BASE_ADDRESS + US_RHR_REG_OFST)))
+
+#define FLEXCOM_USART_THR_8BIT_REG      (*(volatile uint8_t* const)((USART7_BASE_ADDRESS + US_THR_REG_OFST)))
+#define FLEXCOM_USART_THR_9BIT_REG      (*(volatile uint16_t* const)((USART7_BASE_ADDRESS + US_THR_REG_OFST)))
+
+volatile static FLEXCOM_USART_OBJECT flexcom7UsartObj;
 
 void static FLEXCOM7_USART_ErrorClear( void )
 {
-    uint8_t dummyData = 0u;
-
-    if (USART7_REGS->US_CSR & (US_CSR_OVRE_Msk | US_CSR_FRAME_Msk | US_CSR_PARE_Msk))
+    if ((USART7_REGS->US_CSR & (US_CSR_OVRE_Msk | US_CSR_FRAME_Msk | US_CSR_PARE_Msk)) != 0U)
     {
         USART7_REGS->US_CR = US_CR_RSTSTA_Msk;
 
         /* Flush existing error bytes from the RX FIFO */
-        while (USART7_REGS->US_CSR & US_CSR_RXRDY_Msk)
+        while ((USART7_REGS->US_CSR & US_CSR_RXRDY_Msk) != 0U)
         {
-            dummyData = (USART7_REGS->US_RHR & US_RHR_RXCHR_Msk);
+            (void)USART7_REGS->US_RHR;
         }
     }
-
-    /* Ignore the warning */
-    (void)dummyData;
 }
 
 
 
-void FLEXCOM7_InterruptHandler( void )
+void __attribute__((used)) FLEXCOM7_InterruptHandler( void )
 {
     /* Channel status */
     uint32_t channelStatus = USART7_REGS->US_CSR;
 
     USART7_REGS->US_PTCR = US_PTCR_ERRCLR_Msk;
 
-    if ((USART7_REGS->US_PTSR & US_PTSR_RXTEN_Msk) && (channelStatus & US_CSR_ENDRX_Msk))
+    if (((USART7_REGS->US_PTSR & US_PTSR_RXTEN_Msk) != 0U) && ((channelStatus & US_CSR_ENDRX_Msk) != 0U))
     {
         if(flexcom7UsartObj.rxBusyStatus == true)
         {
@@ -97,12 +98,14 @@ void FLEXCOM7_InterruptHandler( void )
 
             if( flexcom7UsartObj.rxCallback != NULL )
             {
-                flexcom7UsartObj.rxCallback(flexcom7UsartObj.rxContext);
+                uintptr_t rxContext = flexcom7UsartObj.rxContext;
+                
+                flexcom7UsartObj.rxCallback(rxContext);
             }
         }
     }
 
-    if ((USART7_REGS->US_PTSR & US_PTSR_TXTEN_Msk) && (channelStatus & US_CSR_ENDTX_Msk))
+    if (((USART7_REGS->US_PTSR & US_PTSR_TXTEN_Msk) != 0U) && ((channelStatus & US_CSR_ENDTX_Msk) != 0U))
     {
         if(flexcom7UsartObj.txBusyStatus == true)
         {
@@ -112,7 +115,9 @@ void FLEXCOM7_InterruptHandler( void )
 
             if( flexcom7UsartObj.txCallback != NULL )
             {
-                flexcom7UsartObj.txCallback(flexcom7UsartObj.txContext);
+                uintptr_t txContext = flexcom7UsartObj.txContext;
+                
+                flexcom7UsartObj.txCallback(txContext);
             }
         }
     }
@@ -130,7 +135,7 @@ void FLEXCOM7_USART_Initialize( void )
     USART7_REGS->US_CR = (US_CR_TXEN_Msk | US_CR_RXEN_Msk);
 
     /* Configure FLEXCOM7 USART mode */
-    USART7_REGS->US_MR = ((US_MR_USCLKS_MCK) | US_MR_CHRL_8_BIT | US_MR_PAR_NO | US_MR_NBSTOP_1_BIT | (0 << US_MR_OVER_Pos));
+    USART7_REGS->US_MR = ((US_MR_USCLKS_MCK) | US_MR_CHRL_8_BIT | US_MR_PAR_NO | US_MR_NBSTOP_1_BIT | (0UL << US_MR_OVER_Pos));
 
     /* Configure FLEXCOM7 USART Baud Rate */
     USART7_REGS->US_BRGR = US_BRGR_CD(54) | US_BRGR_FP(2);
@@ -161,29 +166,36 @@ FLEXCOM_USART_ERROR FLEXCOM7_USART_ErrorGet( void )
 
 static void FLEXCOM7_USART_BaudCalculate(uint32_t srcClkFreq, uint32_t reqBaud, uint8_t overSamp, uint32_t* cd, uint32_t* fp, uint32_t* baudError)
 {
-    uint32_t actualBaud = 0;
+    uint32_t actualBaud = 0U;
 
-    *cd = srcClkFreq / (reqBaud * 8 * (2 - overSamp));
+    *cd = srcClkFreq / (reqBaud * 8U * (2U - overSamp));
 
-    if (*cd > 0)
+    if (*cd > 0U)
     {
-        *fp = ((srcClkFreq / (reqBaud * (2 - overSamp))) - ((*cd) * 8));
-        actualBaud = (srcClkFreq / (((*cd) * 8) + (*fp))) / (2 - overSamp);
-        *baudError = ((100 * actualBaud)/reqBaud) - 100;
+        *fp = ((srcClkFreq / (reqBaud * (2U - (uint32_t)overSamp))) - ((*cd) * 8U));
+        actualBaud = (srcClkFreq / (((*cd) * 8U) + (*fp))) / (2U - (uint32_t)overSamp);
+        *baudError = ((100U * actualBaud)/reqBaud) - 100U;
     }
 }
 
 bool FLEXCOM7_USART_SerialSetup( FLEXCOM_USART_SERIAL_SETUP *setup, uint32_t srcClkFreq )
 {
-    uint32_t baud = 0;
-    uint32_t overSampVal = 0;
+    uint32_t baud = 0U;
+    uint32_t overSampVal = 0U;
     uint32_t usartMode;
     uint32_t cd0, fp0, cd1, fp1, baudError0, baudError1;
     bool status = false;
 
-    cd0 = fp0 = cd1 = fp1 = baudError0 = baudError1 = 0;
+    cd0 = 0U;
+    fp0 = 0U;
+    cd1 = 0U;
+    fp1 = 0U;
+    baudError0 = 0U;
+    baudError1 = 0U;
 
-    if((flexcom7UsartObj.rxBusyStatus == true) || (flexcom7UsartObj.txBusyStatus == true))
+    bool rxBusyStatus = flexcom7UsartObj.rxBusyStatus;
+    
+    if((flexcom7UsartObj.txBusyStatus == true) || (rxBusyStatus == true))
     {
         /* Transaction is in progress, so return without updating settings */
         return false;
@@ -193,7 +205,7 @@ bool FLEXCOM7_USART_SerialSetup( FLEXCOM_USART_SERIAL_SETUP *setup, uint32_t src
     {
         baud = setup->baudRate;
 
-        if(srcClkFreq == 0)
+        if(srcClkFreq == 0U)
         {
             srcClkFreq = FLEXCOM7_USART_FrequencyGet();
         }
@@ -203,30 +215,30 @@ bool FLEXCOM7_USART_SerialSetup( FLEXCOM_USART_SERIAL_SETUP *setup, uint32_t src
         FLEXCOM7_USART_BaudCalculate(srcClkFreq, baud, 0, &cd0, &fp0, &baudError0);
         FLEXCOM7_USART_BaudCalculate(srcClkFreq, baud, 1, &cd1, &fp1, &baudError1);
 
-        if ( !(cd0 > 0 && cd0 <= 65535) && !(cd1 > 0 && cd1 <= 65535) )
+        if ( !(cd0 > 0U && cd0 <= 65535U) && !(cd1 > 0U && cd1 <= 65535U) )
         {
             /* Requested baud cannot be generated with current clock settings */
             return status;
         }
 
-        if ( (cd0 > 0 && cd0 <= 65535) && (cd1 > 0 && cd1 <= 65535) )
+        if ( (cd0 > 0U && cd0 <= 65535U) && (cd1 > 0U && cd1 <= 65535U) )
         {
             /* Requested baud can be generated with both 8x and 16x oversampling. Select the one with less % error. */
             if (baudError1 < baudError0)
             {
                 cd0 = cd1;
                 fp0 = fp1;
-                overSampVal = (1 << US_MR_OVER_Pos) & US_MR_OVER_Msk;
+                overSampVal = (1UL << US_MR_OVER_Pos) & US_MR_OVER_Msk;
             }
         }
         else
         {
             /* Requested baud can be generated with either with 8x oversampling or with 16x oversampling. Select valid one. */
-            if (cd1 > 0 && cd1 <= 65535)
+            if (cd1 > 0U && cd1 <= 65535U)
             {
                 cd0 = cd1;
                 fp0 = fp1;
-                overSampVal = (1 << US_MR_OVER_Pos) & US_MR_OVER_Msk;
+                overSampVal = (1UL << US_MR_OVER_Pos) & US_MR_OVER_Msk;
             }
         }
 
@@ -243,10 +255,9 @@ bool FLEXCOM7_USART_SerialSetup( FLEXCOM_USART_SERIAL_SETUP *setup, uint32_t src
     return status;
 }
 
-bool FLEXCOM7_USART_Read( void *buffer, const size_t size )
+bool FLEXCOM7_USART_Read( void *pBuffer, const size_t size )
 {
     bool status = false;
-    uint8_t* pBuffer = (uint8_t*)buffer;
 
     if(pBuffer != NULL)
     {
@@ -264,7 +275,7 @@ bool FLEXCOM7_USART_Read( void *buffer, const size_t size )
             flexcom7UsartObj.rxBusyStatus = true;
             flexcom7UsartObj.errorStatus = FLEXCOM_USART_ERROR_NONE;
 
-            USART7_REGS->US_RPR = (uint32_t) buffer;
+            USART7_REGS->US_RPR = (uint32_t)(uint8_t*)pBuffer;
             USART7_REGS->US_RCR = (uint32_t) size;
             USART7_REGS->US_PTCR = US_PTCR_RXTEN_Msk;
             USART7_REGS->US_IER = US_IER_ENDRX_Msk;
@@ -274,10 +285,9 @@ bool FLEXCOM7_USART_Read( void *buffer, const size_t size )
     return status;
 }
 
-bool FLEXCOM7_USART_Write( void *buffer, const size_t size )
+bool FLEXCOM7_USART_Write( void *pBuffer, const size_t size )
 {
     bool status = false;
-    uint8_t* pBuffer = (uint8_t *)buffer;
 
     if(pBuffer != NULL)
     {
@@ -286,20 +296,19 @@ bool FLEXCOM7_USART_Write( void *buffer, const size_t size )
         {
             status = true;
 
-            flexcom7UsartObj.txBuffer = pBuffer;
+            flexcom7UsartObj.txBuffer = (uint8_t*)pBuffer;
             flexcom7UsartObj.txSize = size;
             flexcom7UsartObj.txProcessedSize = 0;
             flexcom7UsartObj.txBusyStatus = true;
 
 
-            USART7_REGS->US_TPR = (uint32_t) buffer;
+            USART7_REGS->US_TPR = (uint32_t)(uint8_t*)pBuffer;
             USART7_REGS->US_TCR = (uint32_t) size;
             USART7_REGS->US_PTCR = US_PTCR_TXTEN_Msk;
             USART7_REGS->US_IER = US_IER_ENDTX_Msk;
 
         }
     }
-
     return status;
 }
 
@@ -340,14 +349,15 @@ bool FLEXCOM7_USART_ReadAbort(void)
     if (flexcom7UsartObj.rxBusyStatus == true)
     {
         /* Disable PDA channel transfer */
-        USART7_REGS->US_RCR = (uint32_t) 0;
+        USART7_REGS->US_RCR = (uint32_t) 0U;
         USART7_REGS->US_PTCR = US_PTCR_RXTDIS_Msk;
         USART7_REGS->US_IDR = US_IDR_ENDRX_Msk;
 
         flexcom7UsartObj.rxBusyStatus = false;
 
         /* If required application should read the num bytes processed prior to calling the read abort API */
-        flexcom7UsartObj.rxSize = flexcom7UsartObj.rxProcessedSize = 0;
+        flexcom7UsartObj.rxSize = 0;
+        flexcom7UsartObj.rxProcessedSize = 0;
     }
 
     return true;
@@ -358,7 +368,7 @@ bool FLEXCOM7_USART_TransmitComplete( void )
 {
     bool status = false;
 
-    if (USART7_REGS->US_CSR & US_CSR_TXEMPTY_Msk)
+    if ((USART7_REGS->US_CSR & US_CSR_TXEMPTY_Msk) != 0U)
     {
         status = true;
     }
