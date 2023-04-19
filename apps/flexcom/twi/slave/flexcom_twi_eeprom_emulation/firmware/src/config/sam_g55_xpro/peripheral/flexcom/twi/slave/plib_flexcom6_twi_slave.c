@@ -58,8 +58,8 @@
 // Global Data
 // *****************************************************************************
 // *****************************************************************************
-static FLEXCOM_TWI_SLAVE_OBJ flexcom6TwiObj;
-static twi_registers_t *FLEXCOM6_TWI_Module = TWI6_REGS;
+volatile static FLEXCOM_TWI_SLAVE_OBJ flexcom6TwiObj;
+volatile static twi_registers_t *FLEXCOM6_TWI_Module = TWI6_REGS;
 
 // *****************************************************************************
 // *****************************************************************************
@@ -143,12 +143,14 @@ bool FLEXCOM6_TWI_IsBusy(void)
     return flexcom6TwiObj.isBusy;
 }
 
-void FLEXCOM6_InterruptHandler( void )
+void __attribute__((used)) FLEXCOM6_InterruptHandler( void )
 {
     uint32_t status = FLEXCOM6_TWI_Module->TWI_SR;
 
     if ((status & FLEXCOM6_TWI_Module->TWI_IMR) != 0U)
     {
+        uintptr_t context = flexcom6TwiObj.context;
+
         if((status & TWI_SR_SVACC_Msk) != 0U)
         {
             if (flexcom6TwiObj.isAddrMatchEventNotified == false)
@@ -171,7 +173,7 @@ void FLEXCOM6_InterruptHandler( void )
 
                 if (flexcom6TwiObj.callback != NULL)
                 {
-                   (void) flexcom6TwiObj.callback(FLEXCOM_TWI_SLAVE_TRANSFER_EVENT_ADDR_MATCH, flexcom6TwiObj.context);
+                   (void) flexcom6TwiObj.callback(FLEXCOM_TWI_SLAVE_TRANSFER_EVENT_ADDR_MATCH, context);
                 }
 
                 flexcom6TwiObj.isAddrMatchEventNotified = true;
@@ -186,7 +188,7 @@ void FLEXCOM6_InterruptHandler( void )
                     {
                         if (flexcom6TwiObj.callback != NULL)
                         {
-                           (void) flexcom6TwiObj.callback(FLEXCOM_TWI_SLAVE_TRANSFER_EVENT_TX_READY, flexcom6TwiObj.context);
+                           (void) flexcom6TwiObj.callback(FLEXCOM_TWI_SLAVE_TRANSFER_EVENT_TX_READY, context);
                         }
                         flexcom6TwiObj.isFirstTxPending = false;
                     }
@@ -204,7 +206,7 @@ void FLEXCOM6_InterruptHandler( void )
                 {
                     if (flexcom6TwiObj.callback != NULL)
                     {
-                       (void) flexcom6TwiObj.callback(FLEXCOM_TWI_SLAVE_TRANSFER_EVENT_RX_READY, flexcom6TwiObj.context);
+                       (void) flexcom6TwiObj.callback(FLEXCOM_TWI_SLAVE_TRANSFER_EVENT_RX_READY, context);
                     }
                 }
             }
@@ -226,7 +228,7 @@ void FLEXCOM6_InterruptHandler( void )
 
                 if (flexcom6TwiObj.callback != NULL)
                 {
-                   (void) flexcom6TwiObj.callback(FLEXCOM_TWI_SLAVE_TRANSFER_EVENT_TRANSMISSION_COMPLETE, flexcom6TwiObj.context);
+                   (void) flexcom6TwiObj.callback(FLEXCOM_TWI_SLAVE_TRANSFER_EVENT_TRANSMISSION_COMPLETE, context);
                 }
 
                 FLEXCOM6_TWI_Module->TWI_IDR = TWI_IDR_TXCOMP_Msk;

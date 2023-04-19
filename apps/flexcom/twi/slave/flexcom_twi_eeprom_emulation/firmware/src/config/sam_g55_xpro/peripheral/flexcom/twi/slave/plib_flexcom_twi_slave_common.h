@@ -65,6 +65,9 @@
 #endif
 // DOM-IGNORE-END
 
+/* MISRAC 2012 deviation block start */
+/* MISRA C-2012 Rule 5.2 deviated 9 times.  Deviation record ID -  H3_MISRAC_2012_R_5_2_DR_1 */
+
 // *****************************************************************************
 // *****************************************************************************
 // Section: Data Types
@@ -181,6 +184,7 @@ typedef enum
     FLEXCOM_TWI_SLAVE_TRANSFER_EVENT_TRANSMISSION_COMPLETE
 
 }FLEXCOM_TWI_SLAVE_TRANSFER_EVENT;
+/* MISRAC 2012 deviation block end */
 
 // *****************************************************************************
 /* FLEXCOM TWI Slave Callback
