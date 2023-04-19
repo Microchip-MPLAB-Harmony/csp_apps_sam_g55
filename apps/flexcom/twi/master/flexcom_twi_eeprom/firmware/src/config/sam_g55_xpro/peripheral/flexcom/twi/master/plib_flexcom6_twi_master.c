@@ -73,8 +73,8 @@
 // *****************************************************************************
 // *****************************************************************************
 
-static FLEXCOM_TWI_OBJ flexcom6TwiObj;
-static twi_registers_t *FLEXCOM6_TWI_Module = TWI6_REGS;
+volatile static FLEXCOM_TWI_OBJ flexcom6TwiObj;
+volatile static twi_registers_t *FLEXCOM6_TWI_Module = TWI6_REGS;
 
 // *****************************************************************************
 // *****************************************************************************
@@ -196,7 +196,7 @@ static bool FLEXCOM6_TWI_InitiateTransfer(uint16_t address, bool type)
                  * */
                 flexcom6TwiObj.state = FLEXCOM_TWI_STATE_WAIT_FOR_TXCOMP;
 
-                FLEXCOM6_TWI_Module->TWI_THR = TWI_THR_TXDATA(flexcom6TwiObj.writeBuffer[flexcom6TwiObj.writeCount]);
+                FLEXCOM6_TWI_Module->TWI_THR = TWI_THR_TXDATA(flexcom6TwiObj.writeBuffer[0]);
                 flexcom6TwiObj.writeCount++;
                 FLEXCOM6_TWI_Module->TWI_CR = TWI_CR_STOP_Msk;
                 FLEXCOM6_TWI_Module->TWI_IER = TWI_IER_TXCOMP_Msk;
@@ -207,7 +207,7 @@ static bool FLEXCOM6_TWI_InitiateTransfer(uint16_t address, bool type)
                 /*  START bit must be set before the byte is shifted out. Hence disabled interrupt */
                 __disable_irq();
 
-                FLEXCOM6_TWI_Module->TWI_THR = TWI_THR_TXDATA(flexcom6TwiObj.writeBuffer[flexcom6TwiObj.writeCount]);
+                FLEXCOM6_TWI_Module->TWI_THR = TWI_THR_TXDATA(flexcom6TwiObj.writeBuffer[0]);
                 flexcom6TwiObj.writeCount++;
 
                 /*  Wait for control byte to be transferred before initiating repeat start for read */
@@ -237,7 +237,7 @@ static bool FLEXCOM6_TWI_InitiateTransfer(uint16_t address, bool type)
         {
             flexcom6TwiObj.state = FLEXCOM_TWI_STATE_TRANSFER_WRITE;
 
-            FLEXCOM6_TWI_Module->TWI_THR = TWI_THR_TXDATA(flexcom6TwiObj.writeBuffer[flexcom6TwiObj.writeCount]);
+            FLEXCOM6_TWI_Module->TWI_THR = TWI_THR_TXDATA(flexcom6TwiObj.writeBuffer[0]);
             flexcom6TwiObj.writeCount++;
             FLEXCOM6_TWI_Module->TWI_IER = TWI_IDR_TXRDY_Msk | TWI_IER_TXCOMP_Msk;
         }
@@ -567,9 +567,10 @@ bool FLEXCOM6_TWI_TransferSetup(FLEXCOM_TWI_TRANSFER_SETUP* setup, uint32_t srcC
     enabled user need to call it from the main while loop of the application.
 */
 
-void FLEXCOM6_InterruptHandler(void)
+void __attribute__((used)) FLEXCOM6_InterruptHandler(void)
 {
     uint32_t status = 0U;
+    uintptr_t context = flexcom6TwiObj.context;
 
     /*  Read the peripheral status */
     status = FLEXCOM6_TWI_Module->TWI_SR;
@@ -622,28 +623,32 @@ void FLEXCOM6_InterruptHandler(void)
 
             case FLEXCOM_TWI_STATE_TRANSFER_WRITE:
             {
+                size_t writeCount = flexcom6TwiObj.writeCount;
+
                 /* checks if master is ready to transmit */
                 if(( status & TWI_SR_TXRDY_Msk ) != 0U)
                 {
                     /*  Write Last Byte and then initiate read transfer */
-                    if( ( flexcom6TwiObj.writeCount == (flexcom6TwiObj.writeSize -1U) ) && ( flexcom6TwiObj.readSize != 0U ))
+                    bool lastByteWrPending = (writeCount == (flexcom6TwiObj.writeSize -1U));
+
+                    if(( flexcom6TwiObj.readSize != 0U ) && (lastByteWrPending))
                     {
                         /*  START bit must be set before the last byte is shifted out to generate repeat start. Hence disabled interrupt */
                         __disable_irq();
 
                         FLEXCOM6_TWI_Module->TWI_IDR = TWI_IDR_TXRDY_Msk;
-                        FLEXCOM6_TWI_Module->TWI_THR = TWI_THR_TXDATA(flexcom6TwiObj.writeBuffer[flexcom6TwiObj.writeCount]);
-                        flexcom6TwiObj.writeCount++;
+                        FLEXCOM6_TWI_Module->TWI_THR = TWI_THR_TXDATA(flexcom6TwiObj.writeBuffer[writeCount]);
+                        writeCount++;
                         FLEXCOM6_TWI_InitiateRead();
                     }
                     /*  Write Last byte and then issue STOP condition */
-                    else if ( flexcom6TwiObj.writeCount == (flexcom6TwiObj.writeSize -1U))
+                    else if (lastByteWrPending)
                     {
                         /* Load last byte in transmit register, issue stop condition
                          * Generate TXCOMP interrupt after STOP condition has been sent.
                          * */
-                        FLEXCOM6_TWI_Module->TWI_THR = TWI_THR_TXDATA(flexcom6TwiObj.writeBuffer[flexcom6TwiObj.writeCount]);
-                        flexcom6TwiObj.writeCount++;
+                        FLEXCOM6_TWI_Module->TWI_THR = TWI_THR_TXDATA(flexcom6TwiObj.writeBuffer[writeCount]);
+                        writeCount++;
                         FLEXCOM6_TWI_Module->TWI_CR = TWI_CR_STOP_Msk;
                         FLEXCOM6_TWI_Module->TWI_IDR = TWI_IDR_TXRDY_Msk;
 
@@ -662,9 +667,11 @@ void FLEXCOM6_InterruptHandler(void)
                     /*  Write next byte */
                     else
                     {
-                        FLEXCOM6_TWI_Module->TWI_THR = TWI_THR_TXDATA(flexcom6TwiObj.writeBuffer[flexcom6TwiObj.writeCount]);
-                        flexcom6TwiObj.writeCount++;
+                        FLEXCOM6_TWI_Module->TWI_THR = TWI_THR_TXDATA(flexcom6TwiObj.writeBuffer[writeCount]);
+                        writeCount++;
                     }
+
+                    flexcom6TwiObj.writeCount = writeCount;
 
                     /*  Dummy read to ensure that TXRDY bit is cleared */
                     (void)FLEXCOM6_TWI_Module->TWI_SR;
@@ -678,17 +685,19 @@ void FLEXCOM6_InterruptHandler(void)
                 /* checks if master has received the data */
                 if(( status & TWI_SR_RXRDY_Msk ) != 0U)
                 {
+                    size_t readCount = flexcom6TwiObj.readCount;
+
                     /*  Set the STOP (or START) bit before reading the TWI_RHR on the next-to-last access */
-                    if(  flexcom6TwiObj.readCount == (flexcom6TwiObj.readSize - 2U) )
+                    if(  readCount == (flexcom6TwiObj.readSize - 2U) )
                     {
                         FLEXCOM6_TWI_Module->TWI_CR = TWI_CR_STOP_Msk;
                     }
 
                     /* read the received data */
-                    flexcom6TwiObj.readBuffer[flexcom6TwiObj.readCount] = (uint8_t)(FLEXCOM6_TWI_Module->TWI_RHR & TWI_RHR_RXDATA_Msk);
-                    flexcom6TwiObj.readCount++;
+                    flexcom6TwiObj.readBuffer[readCount] = (uint8_t)(FLEXCOM6_TWI_Module->TWI_RHR & TWI_RHR_RXDATA_Msk);
+                    readCount++;
                     /* checks if transmission has reached at the end */
-                    if( flexcom6TwiObj.readCount == flexcom6TwiObj.readSize )
+                    if( readCount == flexcom6TwiObj.readSize )
                     {
                         /* Disable the RXRDY interrupt*/
                         FLEXCOM6_TWI_Module->TWI_IDR = TWI_IDR_RXRDY_Msk;
@@ -705,6 +714,8 @@ void FLEXCOM6_InterruptHandler(void)
                             flexcom6TwiObj.state = FLEXCOM_TWI_STATE_WAIT_FOR_TXCOMP;
                         }
                     }
+
+                    flexcom6TwiObj.readCount = readCount;
                 }
 
                 break;
@@ -740,7 +751,7 @@ void FLEXCOM6_InterruptHandler(void)
 
         if ( flexcom6TwiObj.callback != NULL )
         {
-            flexcom6TwiObj.callback( flexcom6TwiObj.context );
+            flexcom6TwiObj.callback( context );
         }
     }
 
@@ -759,7 +770,7 @@ void FLEXCOM6_InterruptHandler(void)
 
         if ( flexcom6TwiObj.callback != NULL )
         {
-            flexcom6TwiObj.callback( flexcom6TwiObj.context );
+            flexcom6TwiObj.callback( context );
         }
     }
 
