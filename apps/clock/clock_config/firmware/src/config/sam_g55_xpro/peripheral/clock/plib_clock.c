@@ -118,8 +118,10 @@ static void CLK_ProgrammableClockInitialize(void)
     /* Enable selected programmable clock   */
     PMC_REGS->PMC_SCER =    PMC_SCER_PCK1_Msk;
 
-    /* Wait for clock to be ready   */
-    while( (PMC_REGS->PMC_SR & (PMC_SR_PCKRDY1_Msk) ) != (PMC_SR_PCKRDY1_Msk));
+    while( (PMC_REGS->PMC_SR & (PMC_SR_PCKRDY1_Msk) ) != (PMC_SR_PCKRDY1_Msk))
+    {
+        /* Wait for clock to be ready   */
+    }
 
 
 }
