@@ -233,14 +233,14 @@
         <targetDevice>ATSAMG55J19</targetDevice>
         <targetHeader></targetHeader>
         <targetPluginBoard></targetPluginBoard>
-        <platformTool>EdbgTool</platformTool>
+        <platformTool>noID</platformTool>
         <languageToolchain>XC32</languageToolchain>
-        <languageToolchainVersion>4.10</languageToolchainVersion>
+        <languageToolchainVersion>4.21</languageToolchainVersion>
         <platform>3</platform>
       </toolsSet>
       <packs>
         <pack name="CMSIS" vendor="ARM" version="5.4.0"/>
-        <pack name="SAMG_DFP" vendor="Microchip" version="3.5.65"/>
+        <pack name="SAMG_DFP" vendor="Microchip" version="3.7.83"/>
       </packs>
       <ScriptingSettings>
       </ScriptingSettings>
@@ -464,8 +464,6 @@
         <property key="memories.programmemory" value="true"/>
         <property key="memories.programmemory.ranges" value="400000-47ffff"/>
         <property key="poweroptions.powerenable" value="false"/>
-        <property key="programmerToGoFilePath"
-                  value="C:/h3_csp_apps/csp_apps_sam_g55/apps/flexcom/spi/slave/flexcom_spi_write_read/firmware/sam_g55_xpro.X/debug/sam_g55_xpro/sam_g55_xpro_ptg"/>
         <property key="programoptions.eraseb4program" value="true"/>
         <property key="programoptions.preservedataflash" value="false"/>
         <property key="programoptions.preservedataflash.ranges"
@@ -1038,6 +1036,8 @@
         <property key="memories.programmemory.ranges" value="400000-47ffff"/>
         <property key="memories.rww" value="true"/>
         <property key="poweroptions.powerenable" value="false"/>
+        <property key="programmerToGoFilePath"
+                  value="C:/h3_csp_apps/csp_apps_sam_g55/apps/flexcom/spi/slave/flexcom_spi_write_read/firmware/sam_g55_xpro.X/debug/sam_g55_xpro/sam_g55_xpro_ptg"/>
         <property key="programoptions.eraseb4program" value="true"/>
         <property key="programoptions.preservedataflash" value="false"/>
         <property key="programoptions.preservedataflash.ranges"

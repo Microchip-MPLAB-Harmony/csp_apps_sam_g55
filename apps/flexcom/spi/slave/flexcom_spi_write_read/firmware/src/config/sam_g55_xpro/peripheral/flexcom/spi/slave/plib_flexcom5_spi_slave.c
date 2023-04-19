@@ -50,12 +50,14 @@
 #include <string.h>
 #include "interrupts.h"
 
-#define FLEXCOM5_READ_BUFFER_SIZE            256
-#define FLEXCOM5_WRITE_BUFFER_SIZE           256
+#define FLEXCOM_SPI_RDR_REG      (*(volatile uint8_t* const)((SPI5_BASE_ADDRESS + SPI_RDR_REG_OFST)))
+#define FLEXCOM_SPI_TDR_REG      (*(volatile uint8_t* const)((SPI5_BASE_ADDRESS + SPI_TDR_REG_OFST)))
 
-static uint8_t FLEXCOM5_ReadBuffer[FLEXCOM5_READ_BUFFER_SIZE];
-static uint8_t FLEXCOM5_WriteBuffer[FLEXCOM5_WRITE_BUFFER_SIZE];
+#define FLEXCOM5_READ_BUFFER_SIZE            256U
+#define FLEXCOM5_WRITE_BUFFER_SIZE           256U
 
+volatile static uint8_t FLEXCOM5_ReadBuffer[FLEXCOM5_READ_BUFFER_SIZE];
+volatile static uint8_t FLEXCOM5_WriteBuffer[FLEXCOM5_WRITE_BUFFER_SIZE];
 
 // *****************************************************************************
 // *****************************************************************************
@@ -64,7 +66,18 @@ static uint8_t FLEXCOM5_WriteBuffer[FLEXCOM5_WRITE_BUFFER_SIZE];
 // *****************************************************************************
 
 /* Global object to save FLEXCOM SPI Exchange related data */
-FLEXCOM_SPI_SLAVE_OBJECT flexcom5SpiObj;
+volatile static FLEXCOM_SPI_SLAVE_OBJECT flexcom5SpiObj;
+
+static void mem_copy(volatile void* pDst, volatile void* pSrc, uint32_t nBytes)
+{
+    volatile uint8_t* pSource = (volatile uint8_t*)pSrc;
+    volatile uint8_t* pDest = (volatile uint8_t*)pDst;
+
+    for (uint32_t i = 0U; i < nBytes; i++)
+    {
+        pDest[i] = pSource[i];
+    }
+}
 
 void FLEXCOM5_SPI_Initialize( void )
 {
@@ -108,7 +121,7 @@ size_t FLEXCOM5_SPI_Read(void* pRdBuffer, size_t size)
         rdSize = rdInIndex;
     }
 
-    memcpy(pRdBuffer, FLEXCOM5_ReadBuffer, rdSize);
+    (void) mem_copy(pRdBuffer, FLEXCOM5_ReadBuffer, rdSize);
 
     return rdSize;
 }
@@ -118,23 +131,26 @@ size_t FLEXCOM5_SPI_Write(void* pWrBuffer, size_t size )
 {
     uint32_t intState = SPI5_REGS->SPI_IMR;
     size_t wrSize = size;
+    uint32_t wrOutIndex = 0;
 
     SPI5_REGS->SPI_IDR = intState;
 
-    if (wrSize > FLEXCOM5_WRITE_BUFFER_SIZE)
+    if (wrSize > (uint32_t)FLEXCOM5_WRITE_BUFFER_SIZE)
     {
         wrSize = FLEXCOM5_WRITE_BUFFER_SIZE;
     }
 
-    memcpy(FLEXCOM5_WriteBuffer, pWrBuffer, wrSize);
+   (void) mem_copy(FLEXCOM5_WriteBuffer, pWrBuffer, wrSize);
 
     flexcom5SpiObj.nWrBytes = wrSize;
-    flexcom5SpiObj.wrOutIndex = 0;
 
-    while ((SPI5_REGS->SPI_SR & SPI_SR_TDRE_Msk) && (flexcom5SpiObj.wrOutIndex < flexcom5SpiObj.nWrBytes))
+    while (((SPI5_REGS->SPI_SR & SPI_SR_TDRE_Msk) != 0U) && (wrOutIndex < wrSize))
     {
-        *((uint8_t*)&SPI5_REGS->SPI_TDR) = FLEXCOM5_WriteBuffer[flexcom5SpiObj.wrOutIndex++];
+        FLEXCOM_SPI_TDR_REG = FLEXCOM5_WriteBuffer[wrOutIndex];
+        wrOutIndex++;
     }
+
+    flexcom5SpiObj.wrOutIndex = wrOutIndex;
 
     /* Restore interrupt enable state and also enable TDRE interrupt */
     SPI5_REGS->SPI_IER = (intState | SPI_IER_TDRE_Msk);
@@ -188,13 +204,13 @@ FLEXCOM_SPI_SLAVE_ERROR FLEXCOM5_SPI_ErrorGet(void)
     return errorStatus;
 }
 
-void FLEXCOM5_InterruptHandler(void)
+void __attribute__((used)) FLEXCOM5_InterruptHandler(void)
 {
-    uint8_t txRxData = 0;
+    uint8_t txRxData = 0U;
 
     uint32_t statusFlags = SPI5_REGS->SPI_SR;
 
-    if (statusFlags & SPI_SR_OVRES_Msk)
+    if ((statusFlags & SPI_SR_OVRES_Msk) != 0U)
     {
         /*OVRES flag is cleared on reading SPI SR*/
 
@@ -202,7 +218,7 @@ void FLEXCOM5_InterruptHandler(void)
         flexcom5SpiObj.errorStatus = SPI_SR_OVRES_Msk;
     }
 
-    if(statusFlags & SPI_SR_RDRF_Msk)
+    if((statusFlags & SPI_SR_RDRF_Msk) != 0U)
     {
         if (flexcom5SpiObj.transferIsBusy == false)
         {
@@ -211,36 +227,46 @@ void FLEXCOM5_InterruptHandler(void)
             PIO_PinWrite((PIO_PIN)PIO_PIN_PA24, 1);
         }
 
-        while ((statusFlags |= SPI5_REGS->SPI_SR) & SPI_SR_RDRF_Msk)
-        {
-            /* Reading DATA register will also clear the RDRF flag */
-            txRxData = *((uint8_t*)&SPI5_REGS->SPI_RDR);
+        uint32_t rdInIndex = flexcom5SpiObj.rdInIndex;
 
-            if (flexcom5SpiObj.rdInIndex < FLEXCOM5_READ_BUFFER_SIZE)
+        while (((statusFlags |= SPI5_REGS->SPI_SR) & SPI_SR_RDRF_Msk) != 0U)
+        {
+            txRxData = FLEXCOM_SPI_RDR_REG;
+
+            if (rdInIndex < (uint32_t)FLEXCOM5_READ_BUFFER_SIZE)
             {
-                FLEXCOM5_ReadBuffer[flexcom5SpiObj.rdInIndex++] = txRxData;
+                FLEXCOM5_ReadBuffer[rdInIndex] = txRxData;
+                rdInIndex++;
             }
 
             statusFlags &= ~SPI_SR_RDRF_Msk;
         }
+
+        flexcom5SpiObj.rdInIndex = rdInIndex;
     }
 
-    if(statusFlags & SPI_SR_TDRE_Msk)
+    if((statusFlags & SPI_SR_TDRE_Msk) != 0U)
     {
-        while (((statusFlags |= SPI5_REGS->SPI_SR) & SPI_SR_TDRE_Msk) && (flexcom5SpiObj.wrOutIndex < flexcom5SpiObj.nWrBytes))
+        uint32_t wrOutIndex = flexcom5SpiObj.wrOutIndex;
+        uint32_t nWrBytes = flexcom5SpiObj.nWrBytes;
+
+        while ((((statusFlags |= SPI5_REGS->SPI_SR) & SPI_SR_TDRE_Msk) != 0U) && (wrOutIndex < nWrBytes))
         {
-            *((uint8_t*)&SPI5_REGS->SPI_TDR) = FLEXCOM5_WriteBuffer[flexcom5SpiObj.wrOutIndex++];
+            FLEXCOM_SPI_TDR_REG = FLEXCOM5_WriteBuffer[wrOutIndex];
+            wrOutIndex++;
             statusFlags &= ~SPI_SR_TDRE_Msk;
         }
 
-        if (flexcom5SpiObj.wrOutIndex >= flexcom5SpiObj.nWrBytes)
+        if (wrOutIndex >= nWrBytes)
         {
             /* Disable TDRE interrupt. The last byte sent by the master will be shifted out automatically */
             SPI5_REGS->SPI_IDR = SPI_IDR_TDRE_Msk;
         }
+
+        flexcom5SpiObj.wrOutIndex = wrOutIndex;
     }
 
-    if(statusFlags & SPI_SR_NSSR_Msk)
+    if((statusFlags & SPI_SR_NSSR_Msk) != 0U)
     {
         /* NSSR flag is cleared on reading SPI SR */
 
@@ -251,7 +277,9 @@ void FLEXCOM5_InterruptHandler(void)
 
         if(flexcom5SpiObj.callback != NULL)
         {
-            flexcom5SpiObj.callback(flexcom5SpiObj.context);
+            uintptr_t context = flexcom5SpiObj.context;
+
+            flexcom5SpiObj.callback(context);
         }
 
         /* Clear the rdInIndex. Application must read the received data in the callback. */
