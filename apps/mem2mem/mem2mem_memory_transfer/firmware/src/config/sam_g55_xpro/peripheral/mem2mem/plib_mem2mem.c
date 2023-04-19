@@ -56,7 +56,7 @@ Description:
 // *****************************************************************************
 // *****************************************************************************
 
-static MEM2MEM_OBJECT mem2memObj;
+volatile static MEM2MEM_OBJECT mem2memObj;
 
 // *****************************************************************************
 // *****************************************************************************
@@ -95,9 +95,10 @@ void MEM2MEM_CallbackRegister( MEM2MEM_CALLBACK callback, uintptr_t context )
     mem2memObj.context = context;
 }
 
-void MEM2MEM_InterruptHandler( void )
+void __attribute__((used)) MEM2MEM_InterruptHandler( void )
 {
     uint8_t error = (uint8_t)MEM2MEM_TRANSFER_EVENT_COMPLETE;
+    uintptr_t context = mem2memObj.context;
 
     MEM2MEM_REGS->MEM2MEM_IDR = MEM2MEM_IDR_RXEND_Msk;
 
@@ -107,6 +108,6 @@ void MEM2MEM_InterruptHandler( void )
 
     if (mem2memObj.callback != NULL)
     {
-        mem2memObj.callback((MEM2MEM_TRANSFER_EVENT)error, mem2memObj.context);
+        mem2memObj.callback((MEM2MEM_TRANSFER_EVENT)error, context);
     }
 }
