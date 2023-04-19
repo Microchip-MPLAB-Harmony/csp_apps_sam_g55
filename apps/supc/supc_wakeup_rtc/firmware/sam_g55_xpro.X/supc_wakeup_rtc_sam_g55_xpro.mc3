@@ -1,4 +1,4 @@
-<config configName="sam_g55_xpro" projectName="supc_wakeup_rtc_sam_g55_xpro" configVersion="1.1" device="ATSAMG55J19" deviceLibraryClass="com.microchip.mcc.harmony.Harmony3Library" coreVersion="5.4.3">
+<config configName="sam_g55_xpro" projectName="supc_wakeup_rtc_sam_g55_xpro" configVersion="1.1" device="ATSAMG55J19" deviceLibraryClass="com.microchip.mcc.harmony.Harmony3Library" coreVersion="5.5.0">
    <usedPackages class="java.util.ArrayList"/>
    <usedClasses class="java.util.TreeMap">
       <entry>
@@ -35,7 +35,7 @@
       </entry>
    </usedClasses>
    <usedLibraries class="java.util.ArrayList">
-      <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.harmony.Harmony3Library" version="1.1.1"/>
+      <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.harmony.Harmony3Library" version="1.3.1"/>
    </usedLibraries>
    <tokenMap class="java.util.TreeMap">
       <entry>
@@ -1656,7 +1656,7 @@
    <generatedFileHashHistoryMap class="java.util.HashMap">
       <entry>
          <file>..\src\packs\ATSAMG55J19_DFP\instance\usart3.h</file>
-         <hash>2344a555af6ef25d269f2e2ac1335092973c1f141038d3a6a978ccd11774264f</hash>
+         <hash>853741c2746fc39ce185772397f084ceb7dffa5e826dc2035a658d4681676451</hash>
       </entry>
       <entry>
          <file>..\src\packs\CMSIS\CMSIS\Core\Include\cachel1_armv7.h</file>
@@ -1664,11 +1664,11 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAMG55J19_DFP\component\rtt.h</file>
-         <hash>da638205a8d87a79b76bb5bf00077e329c28d381aa7af37b2ed4663df2f1a627</hash>
+         <hash>6c83a297252f4e935a29e5bfaa1bef42cc58e43a3af07b4dc85627ad9f2dd919</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAMG55J19_DFP\instance\usart7.h</file>
-         <hash>35ed221db0c9e560d30ff16da77ddf7b183942586147a53132949f17a5294de4</hash>
+         <hash>687733c2a3517b90f699c83f765bc56fe10813b729d6312bf79666045e70e14f</hash>
       </entry>
       <entry>
          <file>..\src\packs\CMSIS\CMSIS\Core\Include\cmsis_gcc.h</file>
@@ -1676,63 +1676,63 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAMG55J19_DFP\instance\wdt.h</file>
-         <hash>3978467e1a0bc9709b2cc91012512166cac1f075048aad084b33ab9746164f37</hash>
+         <hash>8dec197ed9040fbe4456733b949699ab770e5984b3b5aafc923c4a590b91ac1f</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_g55_xpro\peripheral\nvic\plib_nvic.c</file>
-         <hash>fe7e66708ccd8ce70a86a9816104ffcbfbeba75cbceb676adc5e8e3b48821f39</hash>
+         <hash>5f890ea7e4657f59aa4d9d4b1229113b6b112bd25d912a22d9d76f78f708cad7</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAMG55J19_DFP\instance\twi1.h</file>
-         <hash>6a116107c664ad1bb46ba75c369fe1dc5decd4729fb71063c336a00a4238f81a</hash>
+         <hash>1e7ba3b043499de0d3ffbf39e44120d29ba67bc8dbaeacffa30fa126cb775ea1</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAMG55J19_DFP\instance\twi5.h</file>
-         <hash>45885b0a3828ebb65dc11550c7343c878b405512a5913d58e5fe3ca336fc678f</hash>
+         <hash>2026f58e98a8f807b7daf0793e51bc75ee46f94212c89a0e78d4a227b800927a</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAMG55J19_DFP\instance\flexcom3.h</file>
-         <hash>d83b93daf03f752b4a73a76b87461500d004bf258e1c313334e336936c1146db</hash>
+         <hash>a452dce72da3be2db7e14b9d755167babc1f1df0652db404f1ca709d0e059f66</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAMG55J19_DFP\instance\matrix.h</file>
-         <hash>9ee27c49df7142ed0afe6497800812d61353915cb41202d6c22966aa8096e84e</hash>
+         <hash>d1e2c4cc59cec5ed7b2cc3ad61474f597c95e4cfb9440838baa8960e2a9382ac</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAMG55J19_DFP\instance\flexcom7.h</file>
-         <hash>ad1686f964986241ab7fb39cc6a370f62615fc0da2336d1059607ff337e9f993</hash>
+         <hash>1234bff0bf88ebfab664f719d2decd67c8a23e0f480332a96b8d2c703d134564</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAMG55J19_DFP\instance\spi0.h</file>
-         <hash>26bc8c84341a295e1682509c434c9677c7d1afa70c180f8bb43e804183b595c9</hash>
+         <hash>b01282f402188c434515bd570ec56c0cd85f54aa4112110bcf860acea0116ec0</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAMG55J19_DFP\instance\rtc.h</file>
-         <hash>bab6d2d9b98538972a1daf320f3dda5ba2048db5836b2b1670527d00aee1d89a</hash>
+         <hash>0ce54cb3f02af42f79f4b3fd652fce7001651a9dcd9a57de66ed263b2cf8fd9c</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAMG55J19_DFP\instance\pdmic0.h</file>
-         <hash>7de4728f3d61752900590cccba9e607b1375f9203b051b0a69cb225e77fa829c</hash>
+         <hash>830f4d9555ab83ea22d3b1e50ca2bed3064e0dd5d624e435dba2e10b50b30603</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAMG55J19_DFP\instance\spi4.h</file>
-         <hash>c975855951a8c57db514da7abf4627091986a8ce97b9bf522602dc26c7bef80e</hash>
+         <hash>8573f3c0ac4b6ae8821e3786fb03b2a7f0b956e5589da518fa2f78155e30e80f</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAMG55J19_DFP\instance\efc.h</file>
-         <hash>da0eb0c9551704a0f35df09a9b402f1061fa2ff5543cfce721c2d3eed0bd6421</hash>
+         <hash>0d5a3e2712dc671c7644973c8c30cfa44294432352537578c96c07e8ccbd52d4</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAMG55J19_DFP\instance\udp.h</file>
-         <hash>d1f9ceeae2f9f02242f6dfd1a9b21a71fc345959e17945412676dfc83f9fa5b9</hash>
+         <hash>365ea28f837260ca060c45240a9122ed9dd319105e387c586492d6d39b05e303</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAMG55J19_DFP\instance\flexcom2.h</file>
-         <hash>521e79892ba5a1f167edc3a259d80d4da00a3df16ca50c4d88fef777a8b3db76</hash>
+         <hash>43229a5c9408432ba194269d0ab66fa6373c18ae27f880e88550e335874a1258</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAMG55J19_DFP\samg55j19.h</file>
-         <hash>c600f4b450a07053ebfa8b35ac2904660625598ff02548abbab5012131c3f271</hash>
+         <hash>d2f50897896e3ac5e87ef06ff135cf1bd4a4d9e0cc114229d2c5a4e569528049</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_g55_xpro\peripheral\efc\plib_efc.h</file>
@@ -1752,31 +1752,31 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAMG55J19_DFP\instance\rstc.h</file>
-         <hash>0c4a3ae2bfd480933b771754ca46fa8a4420aae31a12bdd0f1ac56c64dfbea94</hash>
+         <hash>e0ab3156ef2ae91e8cf92f5338f883baf1009a2436c8721d0a6eb26adeb2f10f</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAMG55J19_DFP\instance\tc1.h</file>
-         <hash>8fa509c7723f0937f76517f21ea5b348c92684e5fbdb3bfc75c11d677b46d358</hash>
+         <hash>4cea0b64db538e28830da136f5dcf34f9f362d149a6cb3a0eb13e10a5a188abb</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAMG55J19_DFP\instance\crccu.h</file>
-         <hash>2d51fc524a323c9e7aca60f7a2beeb1282da35ae65fce2d10e44c69e697266b2</hash>
+         <hash>5288da35157d9bbb6c60883c6754a8e5f4e33b60872f39498802cbb41ca2f08d</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_g55_xpro\initialization.c</file>
-         <hash>32813333fdeee07ae1f435c40b01ce4417200600b641b507cd88b6cab92c3a22</hash>
+         <hash>414226d9be8c72ff237c70cc8d59f6cce5a44523ddcc79f7d8458b962d25529d</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAMG55J19_DFP\instance\usart0.h</file>
-         <hash>448432e7bc6d6f26c11d02cb62e83b0406bb6971004a2ea3464d1b9b0dcfa870</hash>
+         <hash>f54a76b61921d3804bb29e87bb91d34775bfdc7738f21ba6a1de894410794fd7</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAMG55J19_DFP\instance\usart4.h</file>
-         <hash>fb68e50bcf891b04f83b50fe8c9756189ca060d29ea24599d5b638317187aa51</hash>
+         <hash>8f644acced085a93f6fe191f738aaa953d529fdebaa153ca4cd224a7680a53c8</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAMG55J19_DFP\component\tc.h</file>
-         <hash>5f7dd1194f7f3e94dcd75a98ee630be4a5bd6e5542f0e909f2b55124078899eb</hash>
+         <hash>b73c9f182fac166d9a894cd48eb64d3193e501b25b5b51bd5bdde6f11cfd65b6</hash>
       </entry>
       <entry>
          <file>..\src\packs\CMSIS\CMSIS\Core\Include\mpu_armv7.h</file>
@@ -1788,31 +1788,31 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAMG55J19_DFP\component\wdt.h</file>
-         <hash>79316ebd196725e3e809f955ca399ad584bfbdb5417c15998f1c84460a9d69e1</hash>
+         <hash>e4b00ff194d574f4b8c9578fdb6a1780c05aaa3090207640d271c4410d7c5fe3</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_g55_xpro\peripheral\pio\plib_pio.c</file>
-         <hash>8f08afb133d2b91cc7e88ff17923c1c6a29d293f77b8a45abe2d83b23727965c</hash>
+         <hash>7e52604e8bb6ac8556c2e05b2b164e9262423084488dd726c59c6461a0e6b120</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAMG55J19_DFP\component\matrix.h</file>
-         <hash>1b5809218f29ad2d585972610e46f1acaaa0d23f9151144201260157b7664665</hash>
+         <hash>9167b826bc77b28b6c7d60a6097a81888b8cb6c2964436b09156dab0aa75b523</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAMG55J19_DFP\instance\twi4.h</file>
-         <hash>e40b1ea339e64e08590d0d051834e02806e5606a26fc5845c24089be0648784a</hash>
+         <hash>2b63bc939a8f367b85b6b5f013e090365570693e33cd4afe970d2795542572f7</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAMG55J19_DFP\instance\adc.h</file>
-         <hash>3f51c29b05063695f06757b629dca035ecca46757661d9b91779bb837d69917c</hash>
+         <hash>638cb0cb8abd548792dac4c43350deaf6d9e21632472d4f413ffb81a031326a4</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAMG55J19_DFP\instance\i2sc0.h</file>
-         <hash>bfebb8bb72d3ed7c41cff0a6335af0bcca437b8fa422fc383ec4cd3fb30221cf</hash>
+         <hash>60ab88254d5f76aa907225beea1d805053a37b52d672580dd866772fc7a7733a</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAMG55J19_DFP\instance\fuses.h</file>
-         <hash>18c138848e3c4779be5b72493ebe59ba80008d55224fb0df1b192d492059c687</hash>
+         <hash>870362d811190f86a92608d0b47496fc9a1be9d2b5c87eb1a1842ca36b765b3d</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_g55_xpro\peripheral\supc\plib_supc.h</file>
@@ -1820,7 +1820,7 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAMG55J19_DFP\instance\flexcom4.h</file>
-         <hash>6f09a7845cbb23d450385b5d00a1110290bdacf0111c086ccafc03d314905f73</hash>
+         <hash>c0850ea3cb016d14ce7e83168c5d85d58265dde9abb6ac8fb628366f522a2183</hash>
       </entry>
       <entry>
          <file>..\src\packs\CMSIS\CMSIS\Core\Include\cmsis_armclang.h</file>
@@ -1828,7 +1828,7 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAMG55J19_DFP\instance\piob.h</file>
-         <hash>3a4c3c7afcd67db252dac097ab2acec4ec147321c831eced9242bf944a3a7f32</hash>
+         <hash>634ef7fec56f1dffaa12a09778e46da2f4cf561e9e97ae3ca55786fcaac98ac2</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_g55_xpro\peripheral\supc\plib_supc.c</file>
@@ -1836,11 +1836,11 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAMG55J19_DFP\component\i2sc.h</file>
-         <hash>2e5f465afae8e5a26124284943400ff71d33779573600c8d1d50e9d68c33fe4a</hash>
+         <hash>88dcb69510d08d0e20e8a9c50d787f0543c9f80f02a9b3cdaa19e74c27ee13c1</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAMG55J19_DFP\component\chipid.h</file>
-         <hash>7d151abea0b1d5211f4f15768587b2d5f5c15f597da59d3d4e3ad10e38efc6d3</hash>
+         <hash>141b50b48196d6f5a6246791138c497f565af12c27f6a2dee678ccc7443f1852</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_g55_xpro\peripheral\rtc\plib_rtc_common.h</file>
@@ -1848,11 +1848,11 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAMG55J19_DFP\instance\cmcc.h</file>
-         <hash>a0dfb65d016b294a36f0c009f93556173f93193cfed724e0e652128e5e2871f5</hash>
+         <hash>0032ed0cc9d489eb6cdec7f182293db32fa1d5e6f3669e99ac8297054482bfd8</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAMG55J19_DFP\instance\pdmic1.h</file>
-         <hash>299cc941673097a411ee00e109ff61475eba22074393848bf3701c7a1d331549</hash>
+         <hash>a6c7716fbd00f6ee944de55d94dcb3c29c7ba8593ee9b7e7fef25610b7180dae</hash>
       </entry>
       <entry>
          <file>..\src\packs\CMSIS\CMSIS\Core\Include\cmsis_compiler.h</file>
@@ -1860,19 +1860,19 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAMG55J19_DFP\instance\spi3.h</file>
-         <hash>90b54b5bb3160d1c9ad04005a8c2250a3d75fbe2c94f53df3e958a221a9b11ed</hash>
+         <hash>b80f5d42679a17d64ddea426bf2ef51a2377a3bebf232bad68ca74415b65dd8c</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAMG55J19_DFP\instance\pmc.h</file>
-         <hash>b18be387edf9d270c09508634614d83ca779e6bbbcca3d95c95cfc85bb653123</hash>
+         <hash>82619b63fb342233ccbbba48e23e360bb8ac3555a6bd806b1d3706c5defa9bb6</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAMG55J19_DFP\component\spi.h</file>
-         <hash>8915791c5b07cf02d5ce73564e1c4d6d2bb248b50f97780e087242dca7f94b61</hash>
+         <hash>db342fea7f8a574d46ebe5391dc72028c942f82770dffc2a0a8d9ee56db3d507</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_g55_xpro\exceptions.c</file>
-         <hash>887ebb647a339393c5f6e5adf42edc62038fe31f8401b9c077a8808f6a101aa6</hash>
+         <hash>1fd383302c4cdf1cc6a804aa03b8abe8c1e5e5e9ea3450438c34dcea441e6b34</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_g55_xpro\peripheral\cmcc\plib_cmcc.h</file>
@@ -1880,11 +1880,11 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAMG55J19_DFP\instance\twi0.h</file>
-         <hash>78b89fce23c0c6973660e0b4ec02ebcf5ac2780005c3ffa31605bb2c161f8e22</hash>
+         <hash>c1ac9f83c04f392155011f4acd6949b0617e8ba9d6c29b8b4c9db9afcca5b815</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAMG55J19_DFP\instance\gpbr.h</file>
-         <hash>9e9795822c29305138368005c44573ae35005cdfb3c3bb66303afde5fbaa13ef</hash>
+         <hash>cdf33f810b458f4a48bf63d420bc4674ec7b0695490cdde3ce351561f995b552</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_g55_xpro\peripheral\cmcc\plib_cmcc.c</file>
@@ -1896,11 +1896,11 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAMG55J19_DFP\instance\tc0.h</file>
-         <hash>655570d7fe0e3005cd04daf33de6bb01b4939d498bf83acbfd4a95c80df699a8</hash>
+         <hash>68ff3b796ee92e6f37a3850f56eba6fabcf6abfb41139b19bc56792395477f22</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAMG55J19_DFP\component\efc.h</file>
-         <hash>00ae8f1381c430204b411bdf952afbccd1f6a470226119f4ab9acd3facbfdd53</hash>
+         <hash>806d2cf6104d86601ff7501554667ab24e8e9c1a1c2e9788791cdc158b6b5fe7</hash>
       </entry>
       <entry>
          <file>..\src\main.c</file>
@@ -1908,7 +1908,7 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAMG55J19_DFP\component\udp.h</file>
-         <hash>a018aeb0c1d0edbc73ee0231faa06be2f12dd4e4c5ae612e2560394b65fc0413</hash>
+         <hash>a46aab159e9d5fef335c0515bf0f906ee95c9f528fe652d6e45d8da0241dd4f8</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_g55_xpro\libc_syscalls.c</file>
@@ -1916,11 +1916,11 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAMG55J19_DFP\component\adc.h</file>
-         <hash>da4ea70772a5eba32fb76f07cad2a75b21d8504bffb51a81eb263a01b34b414f</hash>
+         <hash>78f6df50de8d2453553362631f8323988d2c9771ec5d7dbcc0561ec5f283e94b</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAMG55J19_DFP\instance\usart1.h</file>
-         <hash>d77a413f42be94315c2c2176878076dfa32a43851e6fdf8828df39098ff31604</hash>
+         <hash>b09000d5cf99af7da03a00ee2d30caf5dbba3099a098db90a79b65bd38115a0f</hash>
       </entry>
       <entry>
          <file>..\src\packs\CMSIS\CMSIS\Core\Include\core_cm4.h</file>
@@ -1928,51 +1928,51 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAMG55J19_DFP\component\mem2mem.h</file>
-         <hash>3feee1a9bdd08ec58c5fd2f45303a342fbfcf403c3afd72af2bc9608a90915a9</hash>
+         <hash>3d974291ff2b7f90bb3a7ab781e6d799f74f37115e638a9a05219b123c3e9857</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAMG55J19_DFP\component\crccu.h</file>
-         <hash>03c87cafffadc2c6f3b32d1abee5e29142bb28527ef4e6b0085b31be7f061ac0</hash>
+         <hash>9139aa1ac7ea9ab5b7095940d29ba3d115a81449d66235bbc20c237b057f9faf</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAMG55J19_DFP\instance\usart5.h</file>
-         <hash>0c153bfceb082e67560a7b25e34a91729474cbf4635d76527262cb9647de0e76</hash>
+         <hash>e66903de67674f458f3eb2bcfd5c245570ba067a2f02961d19a907c294e7b1b2</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAMG55J19_DFP\component\supc.h</file>
-         <hash>520c285ff871ae1fdc2a75bf00baeb17cff40b0e36cecc70c1d237b995cffba0</hash>
+         <hash>ed2f6cb3859c0332015a71ff36120a29ae36215722de1b1a62bdc797b099b827</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_g55_xpro\peripheral\rtc\plib_rtc.c</file>
-         <hash>6e6c0c83162e337154cbffdd5410b1210f2c62492b29218ced692caefc01a0a4</hash>
+         <hash>94ee3e29cabeaa24725322588a85744d4fc2e80d9e9a7fe08363b0e98d5699ee</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_g55_xpro\interrupts.c</file>
-         <hash>0f195025a4028dd5762bb466a3508cb1dec3710c3b4933d92f60de3ad070c48b</hash>
+         <hash>e2842d4b8c47ff579a31c54075c183187ca8f8a8e60abc5ab9a70d15760bec34</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAMG55J19_DFP\component\pdmic.h</file>
-         <hash>de4c2820a41a44d6cf4f0b555e64a28aaf15741d564fbe313e410e1651c4354f</hash>
+         <hash>5502d3ae06e4d12cad20087286534f25c76885809bbf96a7e5d4400de2fcf268</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAMG55J19_DFP\instance\chipid.h</file>
-         <hash>c06668772393ce5140391f349bf28bfe80d3ee175e4ec454fe89758ed11dc94e</hash>
+         <hash>9cfd799072718d95bec1cdfea3272159682a8d2b0005f97ef03570d2d70ca534</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAMG55J19_DFP\instance\twi3.h</file>
-         <hash>bc8a69ebc9776944da1933f0de117e61166522335bb9973099bae8df1bb71d27</hash>
+         <hash>e4c25e34346de2b19303e82576cdf757a685383972e8fad0f7e222a976ca2b22</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAMG55J19_DFP\component\cmcc.h</file>
-         <hash>ad6c20d1f3b5dd097418baa559487165d0d5335c18d633dda11275f1bbc89f58</hash>
+         <hash>72bfe5119a79463a900df98979f37f370e971be4d4041a30e61d1dd411abff6a</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAMG55J19_DFP\instance\i2sc1.h</file>
-         <hash>98da4bc4af9bbc95a230c53695969f9771ef9b06b7de8c27e5d0bc1a17c99b93</hash>
+         <hash>83a2cb671a1b9fb761d6a1637f05ef0564ad66b6f5edbf0e6c7056cd4757dc26</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAMG55J19_DFP\instance\twi7.h</file>
-         <hash>4c7d31bf8452d08c6e093900d8f7503da5bb3b3be1ab287c544837c2fcdf5132</hash>
+         <hash>312c3362ea44a98343932ef05fab5b9befc27043f499af90a136f80f5de0069e</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_g55_xpro\interrupts.h</file>
@@ -1980,19 +1980,19 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAMG55J19_DFP\instance\spi7.h</file>
-         <hash>d9640eb8e929261d66157e0596a0f6a1898c4fb44c6bc438d638cb7ebdc3b421</hash>
+         <hash>7f404ae769851d481c06106f21d2d9bbb828f0a827c30efd7d979ea57ce20a13</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAMG55J19_DFP\instance\uhp.h</file>
-         <hash>e7bf8ac992efb2307f9db61c9a34454d9bbfaa271f17973a3282e245c9d0ba15</hash>
+         <hash>d6b644f6391b6bf61e0dde97f2661099215c41411285f658775f7ebdc3d2d5c3</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAMG55J19_DFP\instance\flexcom5.h</file>
-         <hash>46dae7e823f6ce09a6c64b03857e1fbc5e1e5ed0767a473990be3e46f41acb06</hash>
+         <hash>05da5f9f92ff9a146ac196d48b4adfd0ede21371ee6b493d41e318785e969dfa</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAMG55J19_DFP\instance\pioa.h</file>
-         <hash>a008242982ec1d70ad2aba603734c311a3ddda4c13b8c535ce16b5502a7c1638</hash>
+         <hash>9ca0b3ecc8174ae655dd04e27625efba8f68da7d1bb682f281367fc38b1ba424</hash>
       </entry>
       <entry>
          <file>..\src\packs\CMSIS\CMSIS\Core\Include\cmsis_version.h</file>
@@ -2004,27 +2004,27 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAMG55J19_DFP\instance\spi2.h</file>
-         <hash>afb967d929b92f45f7b9cf87bccbf694d1360b61daf0b029fa83b5a62ab9242f</hash>
+         <hash>8f5baf2df55ae7f6674c03a7ec6b5272251996fd26025fa0b7e2eb59e18683d9</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAMG55J19_DFP\instance\flexcom0.h</file>
-         <hash>a12d385f99ae9ac28417b2a35b8a6d3512e8fbc5804778ea22a439c5d757d74a</hash>
+         <hash>a96f8821c9bccf77c1da9c56388c069ec6a76998ac6c4cdca217192f4eb3955c</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_g55_xpro\stdio\xc32_monitor.c</file>
-         <hash>6d23ec8016c4d9d56aa527ce3fdad6cce6642befaf6ccb7948bbf7c1c2c05753</hash>
+         <hash>31ca9d8e88e5ba311d805db9a6738e656daf09ade8aefd624536ef27f4a7cb41</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAMG55J19_DFP\component\gpbr.h</file>
-         <hash>fb7c4f644e69181e3a620364ad541892e831af4083fcd2974c52342283dd484d</hash>
+         <hash>c22a695ee4b2f2f915064b29c17d2727f99f1f8d3f04aef8be63b439b90cae71</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAMG55J19_DFP\instance\spi6.h</file>
-         <hash>fa25c642f6abc9780e2ce8301bbaf983b92097bd35bac779049d043960020a86</hash>
+         <hash>75679176b7ba938b772926a90458bf6b0f2df1fe4e5f0d330e2c2e93b1f26b7a</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAMG55J19_DFP\instance\supc.h</file>
-         <hash>449aadc9456ba76dac23ca04dcdcc9ee67ee5733e109aa0e81d375c3e8f06500</hash>
+         <hash>9020c57fe43918a539bdeaa26e21e017453e3577e57e20bcaf1c59230e7a5d2d</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_g55_xpro\peripheral\pio\plib_pio.h</file>
@@ -2032,15 +2032,15 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAMG55J19_DFP\component\twi.h</file>
-         <hash>4d6fc353240982ac0d3bd14411fca272360249185d2c58f5584866e4f692a5bf</hash>
+         <hash>7cfe435b482987e8f941d73b63482c06a20aa645a63c954d5de08b3e30582d8b</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAMG55J19_DFP\component\pmc.h</file>
-         <hash>c20ddb21ca581070081337de0c09bd727d621e18bd2797c7ad6ddfbe4efab6d8</hash>
+         <hash>79a8fc2936b3bce0564b19bb99722217f6c3288caeeb96f9449ec99fb3709796</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAMG55J19_DFP\component\usart.h</file>
-         <hash>2b34db291206769599b5e74e080fd315b48d9335044075f13ba85a623b9caaa0</hash>
+         <hash>425d13c90ee99e2f7519e5260988ca6e223ead950f30a82f8c8193d0ec16be55</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_g55_xpro\peripheral\rtc\plib_rtc.h</file>
@@ -2048,7 +2048,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_g55_xpro\peripheral\flexcom\usart\plib_flexcom7_usart.c</file>
-         <hash>245c5c0d3955957a5666de43b559f269e5e345f5984ec5470950542789fad51a</hash>
+         <hash>185eb54d8f0171c8c2c406f9ed647332bcbad32d396a8a1162f78eda4edf1b23</hash>
       </entry>
       <entry>
          <file>..\src\packs\CMSIS\CMSIS\Core\Include\cmsis_armclang_ltm.h</file>
@@ -2056,15 +2056,15 @@
       </entry>
       <entry>
          <file>..\src\config\sam_g55_xpro\peripheral\flexcom\usart\plib_flexcom7_usart.h</file>
-         <hash>3ecfa100dc6a99e4761dd0f3e58d60249c08b9d77896424795acdb6948f08030</hash>
+         <hash>91babe1bd6b6c23359c8d0f0c78c025e1e7a8bfd6edf0e60829453e5c68204f1</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAMG55J19_DFP\component\pio.h</file>
-         <hash>8a6450743f6fd2e6c13b23d24d4c52b019d0955e58aca3585fcd008af1f196f3</hash>
+         <hash>34cf536c0c8a45d5800813466328878b079a0bdb162d2cc045fd1dfcee2f0bf7</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAMG55J19_DFP\instance\usart2.h</file>
-         <hash>a197fb243785059e07b5b7aea1ce9115fbea829c1842ea82945416117c22b32a</hash>
+         <hash>12a6f84e382cc7cd811bfdb5c8b1874b20b8d7cd3666d15cabcecc195736ae9b</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_g55_xpro\device_cache.h</file>
@@ -2072,35 +2072,35 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAMG55J19_DFP\instance\usart6.h</file>
-         <hash>3c85a9d2248986888ac336934868e3b83b615cc30d2d9642aaf6a09aab778e66</hash>
+         <hash>e985edf11e4e6a53d1bfb8f05f69ad89e3ba9767608a31bc5322b7b61fdc7fe5</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_g55_xpro\definitions.h</file>
-         <hash>24e6a916e4f6ee400154bb9c236189e912988100d66dbc29878f0eeb899e27ad</hash>
+         <hash>6349d51ccd4e8c30d581d11f9803ba00dbd0fbb8273b4a57e98e595f719e3282</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAMG55J19_DFP\component\fuses.h</file>
-         <hash>dbca4a00af099fe5f33f1f6612bad5ff71c66102fa7f1a3b001460584007bdfd</hash>
+         <hash>23ea29eef33b40a549333df87b73a0e28a1c9558591a3822ec055e6a97ec6222</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_g55_xpro\peripheral\systick\plib_systick.c</file>
-         <hash>dae8634a04e5c56c7d096f5cd3a2164699918176d661a3d97bb0a29cbe6f1dc9</hash>
+         <hash>bc355e9644372a5f948bf66e78eaaa8a0c17019ee0cbe0c5e2a39d82add836fc</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAMG55J19_DFP\instance\twi2.h</file>
-         <hash>1bf339b228446fe9293fedfe18d99d815f09b2b2a8ea768af4ec163de6c65828</hash>
+         <hash>adf0b366c1e9016830e5900fb0e0921b171e8abd544552884705cf9e15b85600</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_g55_xpro\toolchain_specifics.h</file>
-         <hash>fb1c58b7fb94545ef6247f18ea3001b719e06ec29bf39bfd68fe3927f709eaa3</hash>
+         <hash>6fc0551b0fa3362678b3d7a227386fafa343140d31e4da3ad4af972e61cd0acb</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAMG55J19_DFP\instance\mem2mem.h</file>
-         <hash>06a83714857e1f11695c80bbbbb475024c8f349002cea44a4fca3b6f2f10685a</hash>
+         <hash>dcaf140c2147ab867319207b5aac02f87311eb8bca921b83fae335dd8278b29b</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAMG55J19_DFP\instance\twi6.h</file>
-         <hash>97a6fc68fb466c52f03173e6e070906beda6d5f88f5b917b3f7baac312b5f461</hash>
+         <hash>95444dcd89e712e25a9bb77701c9073b832cd0ac9ad14f007591af1e045c33a8</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_g55_xpro\peripheral\efc\plib_efc.c</file>
@@ -2112,15 +2112,15 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAMG55J19_DFP\pio\samg55j19.h</file>
-         <hash>6662f212a3fb4e5732cf30cd660621f5bf47b5361caf329bc2bdccfda50557b3</hash>
+         <hash>773ae6f30eb0f3cb3fde273e0b3cc4051ec34a481780eec6ced178cffc8c182f</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAMG55J19_DFP\instance\flexcom6.h</file>
-         <hash>f62624e760bb0f5688f0180cef0a0b7ec9ec949d574ddfdff942888290690df7</hash>
+         <hash>e85268456bf7168e200225613aa10238b358b6263d0799fdbe632781b9356082</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAMG55J19_DFP\component\pdc.h</file>
-         <hash>343fd457f0eeebfdc5421235d00567335862c0210dd65d3884187b8089325ca6</hash>
+         <hash>507f645ad688578bcf030a4fca542f4c0e8a10c8d8a4d83de98475d336c0c85d</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_g55_xpro\pin_configurations.csv</file>
@@ -2128,31 +2128,31 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAMG55J19_DFP\instance\spi1.h</file>
-         <hash>31c2fb90199b7c7d72dc071e4edf1e5b19676de3feec9ca614b9ba980fecbfc7</hash>
+         <hash>13ca68e4638014ef3dabedd4149225eb8b6c0caa25c6f48ba60a7307be224c49</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAMG55J19_DFP\component\rstc.h</file>
-         <hash>8ef2b884e5156e043cf5bda8997bf734484b37156443bb1d21c224d7d612e4f8</hash>
+         <hash>9dbb3945f993eed1114708efdff47cb0cc0e0ec7e645a007cbb1ada87814a207</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAMG55J19_DFP\component\uhp.h</file>
-         <hash>242a6772d62a1cb052d45aa5a1a2e093f4cc0cb07374b07fd8ea651f4894519e</hash>
+         <hash>a3b9c481ba3c3d541dca55fd61b37e09119ac64fd15c686a705f208cddfdda6d</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAMG55J19_DFP\instance\flexcom1.h</file>
-         <hash>dcc90be8cac14c6590741bb015645f0ed775ffe5413ba40d49af794d09ee13dc</hash>
+         <hash>d66a97091468f2bd575967f3250250dbaf79eb962db6489d0b814fd734dd2d1f</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAMG55J19_DFP\instance\spi5.h</file>
-         <hash>9566fcc6379b9e58b319632cc79f9a2ae87bf639a7f6f3bc601d7298081e1835</hash>
+         <hash>92efa47f598d615952e82d66f517abad02ed4101a3008c29d137a304938f8a89</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_g55_xpro\peripheral\flexcom\usart\plib_flexcom_usart_local.h</file>
-         <hash>19d5c6f08da6fef85b54a72bfe9996912218f9a08fee0aa140b8c5c53d512de8</hash>
+         <hash>cc1e38bbee1d06ea4aaabe3971df0464ad5fc313ddd916dacaf0a177fbf258b9</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_g55_xpro\ATSAMG55J19.ld</file>
-         <hash>3823031f26fe7e4264be749bd6fbbf01d398800d0b39bd526feee21b845b4faf</hash>
+         <hash>94db87184ccd36a8e086a551f34204478a12ea87fb85799adea5eac4898769f9</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_g55_xpro\device_vectors.h</file>
@@ -2160,19 +2160,19 @@
       </entry>
       <entry>
          <file>..\src\config\sam_g55_xpro\startup_xc32.c</file>
-         <hash>9aefdd014ada971489f6d28b7f2256376ff52a9fb3a7646f94031244141a290a</hash>
+         <hash>a1cbea3ba3e2ede5628995ab09069687e40d20b6e88d79bb6b2bc6c7efc07d80</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAMG55J19_DFP\component\flexcom.h</file>
-         <hash>192031cabfdeebc48c3568e8be2abfd61e6d7d5f475055580100617733487590</hash>
+         <hash>16b626085bcb5031736880d91d8faeaf8f0948b40bcde32fa9a4343ffd99fef1</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAMG55J19_DFP\instance\rtt.h</file>
-         <hash>1a45681a6922d59588274805a2c22fd93e92e31c408c467b49c8a9a9e274a867</hash>
+         <hash>9d10d4b13c68e1f5724847ae9240d8baa60988fe0bbfe177b708ad8c52ce481c</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAMG55J19_DFP\component\rtc.h</file>
-         <hash>7703ba121e10768a6ac57928e2e6bd645344bbd931ed57b17e02f34409ce2a54</hash>
+         <hash>7f8096e32ebfa149ca4ebc3f49ef1a743ae3e91d2072ee04318ac2b1514b00df</hash>
       </entry>
    </generatedFileHashHistoryMap>
 </config>
