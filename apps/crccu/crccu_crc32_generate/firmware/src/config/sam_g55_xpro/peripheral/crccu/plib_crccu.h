@@ -86,6 +86,7 @@ typedef enum
 
 } CRCCU_POLYNOMIAL;
 
+
 /** CRCCU descriptor type */
 typedef struct crccu_dscr_type {
 	uint32_t ul_tr_addr;	/* TR_ADDR */
