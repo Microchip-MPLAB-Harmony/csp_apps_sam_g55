@@ -40,7 +40,7 @@ static void CLK_SlowClockInitialize(void)
 
     /* Wait until the 32K Crystal oscillator clock is ready and
        Slow Clock (SLCK) is switched to 32KHz Oscillator */
-    while (!(SUPC_REGS->SUPC_SR & SUPC_SR_OSCSEL_Msk))
+    while ((SUPC_REGS->SUPC_SR & SUPC_SR_OSCSEL_Msk) == 0U)
     {
     }
 
