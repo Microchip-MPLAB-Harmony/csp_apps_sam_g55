@@ -77,6 +77,9 @@ typedef enum
 
 } FLEXCOM_SPI_CLOCK_PHASE;
 
+/* MISRAC 2012 deviation block start */
+/* MISRA C-2012 Rule 5.2 deviated 1 times.  Deviation record ID -  H3_MISRAC_2012_R_5_2_DR_1 */
+
 typedef enum
 {
     FLEXCOM_SPI_CLOCK_POLARITY_IDLE_LOW = 0 << SPI_CSR_CPOL_Pos,
@@ -86,6 +89,7 @@ typedef enum
     FLEXCOM_SPI_CLOCK_POLARITY_INVALID = 0xFFFFFFFF
 
 } FLEXCOM_SPI_CLOCK_POLARITY;
+/* MISRAC 2012 deviation block end */
 
 typedef enum
 {
