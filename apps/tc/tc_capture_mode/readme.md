@@ -56,6 +56,6 @@ The following table shows the target hardware for the application projects.
     - Flow Control : None
 3. Build and Program the application using its IDE
 4. Console displays the frequency and duty cycle of the input signal
-5. Frequency is constant (2499 Hz) and duty cycle changes by 1%
+5. Frequency is constant (2083 Hz) and duty cycle changes by 1%
 
   ![output](images/output_tc_capture_mode.png)
