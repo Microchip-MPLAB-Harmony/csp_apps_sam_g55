@@ -4,16 +4,15 @@
 
 
 project: flexcom_spi_write_read
-creation_date: 2023-05-02T10:30:56.957+05:30[Asia/Calcutta]    # ISO 8601 format: https://www.w3.org/TR/NOTE-datetime
+creation_date: 2023-05-30T11:12:16.575+05:30[Asia/Calcutta]    # ISO 8601 format: https://www.w3.org/TR/NOTE-datetime
 operating_system: Windows 10
 mcc_mode: IDE            # [IDE|Standalone|Headless]
 mcc_version: v5.3.0
 mcc_core_version: v5.5.0
 mplabx_version: v6.05        # if MPLAB X plugin only
 harmony_version: v1.3.1
-compiler: XC32 (v4.10) 
+compiler: XC32 (v4.21)
 
 modules:
-    - {name: "csp", version: "v3.17.0-rc.1-61-ge37f8c4"}
-    - {name: "dev_packs", version: "v3.17.0-rc.1-1-g845a7e7"}
-
+    - {name: "csp", version: "v3.17.0"}
+    - {name: "dev_packs", version: "v3.17.0"}
