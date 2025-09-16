@@ -1,0 +1,178 @@
+configVersion: 1.0.0
+componentName: adc
+coreVersion: 5.8.2
+device: ATSAMG55J19
+library: []
+dependency:
+- dependencyPackage: class com.microchip.mcc.harmony.HarmonyModule
+  name: adc
+  type: module
+  version: ''
+- dependencyPackage: ''
+  name: CMSIS_5
+  type: package
+  version: 5.9.0
+- dependencyPackage: ''
+  name: csp
+  type: package
+  version: v3.23.0
+customDataClassName: com.microchip.utils_mh3.utils.persistence.CustomModuleData
+data:
+  attachments: {}
+  elementPosition:
+    attributes:
+      id: __ROOTVIEW
+    children:
+    - children:
+      - attributes:
+          id: adc
+          x: '191'
+          y: '60'
+        type: ElementPosition
+      type: ElementPositions
+    type: ComponentGraph
+  symbols:
+    ADC_0_CHER:
+      attributes:
+        id: ADC_0_CHER
+      children:
+      - children:
+        - attributes:
+            value: 'true'
+          type: User
+        type: Values
+      type: Boolean
+    ADC_1_CHER:
+      attributes:
+        id: ADC_1_CHER
+      children:
+      - children:
+        - attributes:
+            value: 'true'
+          type: User
+        type: Values
+      type: Boolean
+    ADC_1_IER_EOC:
+      attributes:
+        id: ADC_1_IER_EOC
+      children:
+      - children:
+        - attributes:
+            id: visible
+          children:
+          - type: Value
+            value: 'true'
+          type: Boolean
+        type: Attributes
+      - children:
+        - attributes:
+            value: 'true'
+          type: User
+        type: Values
+      type: Boolean
+    ADC_2_CHER:
+      attributes:
+        id: ADC_2_CHER
+      children:
+      - children:
+        - attributes:
+            value: 'true'
+          type: User
+        type: Values
+      type: Boolean
+    ADC_3_CHER:
+      attributes:
+        id: ADC_3_CHER
+      children:
+      - children:
+        - attributes:
+            value: 'false'
+          type: User
+        type: Values
+      type: Boolean
+    ADC_CLK:
+      attributes:
+        id: ADC_CLK
+      children:
+      - children:
+        - attributes:
+            id: adc
+            value: '7499776'
+          type: Dynamic
+        type: Values
+      type: Integer
+    ADC_CONV_MODE:
+      attributes:
+        id: ADC_CONV_MODE
+      children:
+      - children:
+        - attributes:
+            value: '1'
+          type: User
+        type: Values
+      type: KeyValueSet
+    ADC_MR_USEQ:
+      attributes:
+        id: ADC_MR_USEQ
+      children:
+      - children:
+        - attributes:
+            value: 'true'
+          type: User
+        type: Values
+      type: Boolean
+    ADC_SEQ1R_USCH0:
+      attributes:
+        id: ADC_SEQ1R_USCH0
+      children:
+      - children:
+        - attributes:
+            id: visible
+          children:
+          - type: Value
+            value: 'true'
+          type: Boolean
+        type: Attributes
+      - children:
+        - attributes:
+            value: CH2
+          type: User
+        type: Values
+      type: Combo
+    ADC_SEQ1R_USCH1:
+      attributes:
+        id: ADC_SEQ1R_USCH1
+      children:
+      - children:
+        - attributes:
+            id: visible
+          children:
+          - type: Value
+            value: 'true'
+          type: Boolean
+        type: Attributes
+      - children:
+        - attributes:
+            value: CH0
+          type: User
+        type: Values
+      type: Combo
+    ADC_SEQ1R_USCH2:
+      attributes:
+        id: ADC_SEQ1R_USCH2
+      children:
+      - children:
+        - attributes:
+            id: visible
+          children:
+          - type: Value
+            value: 'true'
+          type: Boolean
+        type: Attributes
+      - children:
+        - attributes:
+            value: CH1
+          type: User
+        type: Values
+      type: Combo
+  userData: {}
