@@ -63,9 +63,9 @@
 #define FLEXCOM_USART_THR_8BIT_REG      (*(volatile uint8_t* const)((USART7_BASE_ADDRESS + US_THR_REG_OFST)))
 #define FLEXCOM_USART_THR_9BIT_REG      (*(volatile uint16_t* const)((USART7_BASE_ADDRESS + US_THR_REG_OFST)))
 
-volatile static FLEXCOM_USART_OBJECT flexcom7UsartObj;
+static volatile FLEXCOM_USART_OBJECT flexcom7UsartObj;
 
-void static FLEXCOM7_USART_ErrorClear( void )
+static void FLEXCOM7_USART_ErrorClear( void )
 {
     if ((USART7_REGS->US_CSR & (US_CSR_OVRE_Msk | US_CSR_FRAME_Msk | US_CSR_PARE_Msk)) != 0U)
     {
@@ -80,13 +80,13 @@ void static FLEXCOM7_USART_ErrorClear( void )
 }
 
 
-void static __attribute__((used)) FLEXCOM7_USART_ISR_RX_Handler( void )
+static void __attribute__((used)) FLEXCOM7_USART_ISR_RX_Handler( void )
 {
     if(flexcom7UsartObj.rxBusyStatus == true)
     {
         size_t rxProcessedSize = flexcom7UsartObj.rxProcessedSize;
         size_t rxSize = flexcom7UsartObj.rxSize;
-    
+
         while (((USART7_REGS->US_CSR & US_CSR_RXRDY_Msk) != 0U) && (rxSize > rxProcessedSize))
         {
             if ((USART7_REGS->US_MR & US_MR_MODE9_Msk) != 0U)
@@ -99,7 +99,7 @@ void static __attribute__((used)) FLEXCOM7_USART_ISR_RX_Handler( void )
             }
             rxProcessedSize++;
         }
-        
+
         flexcom7UsartObj.rxProcessedSize = rxProcessedSize;
 
         /* Check if the buffer is done */
@@ -113,7 +113,7 @@ void static __attribute__((used)) FLEXCOM7_USART_ISR_RX_Handler( void )
             if(flexcom7UsartObj.rxCallback != NULL)
             {
                 uintptr_t rxContext = flexcom7UsartObj.rxContext;
-                
+
                 flexcom7UsartObj.rxCallback(rxContext);
             }
         }
@@ -124,13 +124,13 @@ void static __attribute__((used)) FLEXCOM7_USART_ISR_RX_Handler( void )
     }
 }
 
-void static __attribute__((used)) FLEXCOM7_USART_ISR_TX_Handler( void )
+static void __attribute__((used)) FLEXCOM7_USART_ISR_TX_Handler( void )
 {
     if(flexcom7UsartObj.txBusyStatus == true)
     {
         size_t txProcessedSize = flexcom7UsartObj.txProcessedSize;
         size_t txSize = flexcom7UsartObj.txSize;
-        
+
         while( ((USART7_REGS->US_CSR & US_CSR_TXRDY_Msk) != 0U) && (txSize > txProcessedSize) )
         {
             if ((USART7_REGS->US_MR & US_MR_MODE9_Msk) != 0U)
@@ -143,7 +143,7 @@ void static __attribute__((used)) FLEXCOM7_USART_ISR_TX_Handler( void )
             }
             txProcessedSize++;
         }
-        
+
         flexcom7UsartObj.txProcessedSize = txProcessedSize;
 
         /* Check if the buffer is done */
@@ -156,7 +156,7 @@ void static __attribute__((used)) FLEXCOM7_USART_ISR_TX_Handler( void )
             if(flexcom7UsartObj.txCallback != NULL)
             {
                 uintptr_t txContext = flexcom7UsartObj.txContext;
-                
+
                 flexcom7UsartObj.txCallback(txContext);
             }
         }
@@ -194,7 +194,7 @@ void __attribute__((used)) FLEXCOM7_InterruptHandler( void )
         if( flexcom7UsartObj.rxCallback != NULL )
         {
             uintptr_t rxContext = flexcom7UsartObj.rxContext;
-            
+
             flexcom7UsartObj.rxCallback(rxContext);
         }
     }
@@ -283,7 +283,7 @@ bool FLEXCOM7_USART_SerialSetup( FLEXCOM_USART_SERIAL_SETUP *setup, uint32_t src
     baudError1 = 0U;
 
     bool rxBusyStatus = flexcom7UsartObj.rxBusyStatus;
-    
+
     if((flexcom7UsartObj.txBusyStatus == true) || (rxBusyStatus == true))
     {
         /* Transaction is in progress, so return without updating settings */
@@ -389,7 +389,7 @@ bool FLEXCOM7_USART_Write( void *pBuffer, const size_t size )
             flexcom7UsartObj.txProcessedSize = 0;
             flexcom7UsartObj.txBusyStatus = true;
 
-            
+
             size_t txProcessedSize = flexcom7UsartObj.txProcessedSize;
             size_t txSize = flexcom7UsartObj.txSize;
 
@@ -406,9 +406,9 @@ bool FLEXCOM7_USART_Write( void *pBuffer, const size_t size )
                 }
                 txProcessedSize++;
             }
-            
+
             flexcom7UsartObj.txProcessedSize = txProcessedSize;
-            
+
             USART7_REGS->US_IER = US_IER_TXRDY_Msk;
         }
     }
