@@ -144,9 +144,17 @@
       </logicalFolder>
     </logicalFolder>
     <logicalFolder name="ExternalFiles" displayName="Important Files" projectFiles="true">
+      <logicalFolder name="pio_led_on_off_polling_sam_g55_xpro_sam_g55_xpro" displayName="pio_led_on_off_polling_sam_g55_xpro_sam_g55_xpro" projectFiles="true">
+        <itemPath>pio_led_on_off_polling_sam_g55_xpro_sam_g55_xpro/mcc-config.mc4</itemPath>
+        <logicalFolder name="components" displayName="components" projectFiles="true">
+          <itemPath>pio_led_on_off_polling_sam_g55_xpro_sam_g55_xpro/components/cmsis.yml</itemPath>
+          <itemPath>pio_led_on_off_polling_sam_g55_xpro_sam_g55_xpro/components/core.yml</itemPath>
+          <itemPath>pio_led_on_off_polling_sam_g55_xpro_sam_g55_xpro/components/dfp.yml</itemPath>
+          <itemPath>pio_led_on_off_polling_sam_g55_xpro_sam_g55_xpro/components/efc.yml</itemPath>
+        </logicalFolder>
+      </logicalFolder>
       <itemPath>Makefile</itemPath>
       <itemPath>../src/config/sam_g55_xpro/harmony-manifest-success.yml</itemPath>
-      <itemPath>pio_led_on_off_polling_sam_g55_xpro.mc3</itemPath>
       <itemPath>../src/config/sam_g55_xpro/pin_configurations.csv</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript" displayName="Linker Files" projectFiles="true">
@@ -202,7 +210,7 @@
         <targetPluginBoard/>
         <platformTool>EdbgTool</platformTool>
         <languageToolchain>XC32</languageToolchain>
-        <languageToolchainVersion>4.45</languageToolchainVersion>
+        <languageToolchainVersion>4.60</languageToolchainVersion>
         <platform>3</platform>
       </toolsSet>
       <packs>
