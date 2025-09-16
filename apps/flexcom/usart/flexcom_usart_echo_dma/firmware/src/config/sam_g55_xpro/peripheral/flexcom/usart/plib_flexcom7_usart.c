@@ -63,9 +63,9 @@
 #define FLEXCOM_USART_THR_8BIT_REG      (*(volatile uint8_t* const)((USART7_BASE_ADDRESS + US_THR_REG_OFST)))
 #define FLEXCOM_USART_THR_9BIT_REG      (*(volatile uint16_t* const)((USART7_BASE_ADDRESS + US_THR_REG_OFST)))
 
-volatile static FLEXCOM_USART_OBJECT flexcom7UsartObj;
+static volatile FLEXCOM_USART_OBJECT flexcom7UsartObj;
 
-void static FLEXCOM7_USART_ErrorClear( void )
+static void FLEXCOM7_USART_ErrorClear( void )
 {
     if ((USART7_REGS->US_CSR & (US_CSR_OVRE_Msk | US_CSR_FRAME_Msk | US_CSR_PARE_Msk)) != 0U)
     {
@@ -99,7 +99,7 @@ void __attribute__((used)) FLEXCOM7_InterruptHandler( void )
             if( flexcom7UsartObj.rxCallback != NULL )
             {
                 uintptr_t rxContext = flexcom7UsartObj.rxContext;
-                
+
                 flexcom7UsartObj.rxCallback(rxContext);
             }
         }
@@ -116,7 +116,7 @@ void __attribute__((used)) FLEXCOM7_InterruptHandler( void )
             if( flexcom7UsartObj.txCallback != NULL )
             {
                 uintptr_t txContext = flexcom7UsartObj.txContext;
-                
+
                 flexcom7UsartObj.txCallback(txContext);
             }
         }
@@ -194,7 +194,7 @@ bool FLEXCOM7_USART_SerialSetup( FLEXCOM_USART_SERIAL_SETUP *setup, uint32_t src
     baudError1 = 0U;
 
     bool rxBusyStatus = flexcom7UsartObj.rxBusyStatus;
-    
+
     if((flexcom7UsartObj.txBusyStatus == true) || (rxBusyStatus == true))
     {
         /* Transaction is in progress, so return without updating settings */
