@@ -1,0 +1,317 @@
+configVersion: 1.0.0
+componentName: flexcom7
+coreVersion: 5.8.2
+device: ATSAMG55J19
+library: []
+dependency:
+- dependencyPackage: class com.microchip.mcc.harmony.HarmonyModule
+  name: flexcom7
+  type: module
+  version: ''
+- dependencyPackage: ''
+  name: CMSIS_5
+  type: package
+  version: 5.9.0
+- dependencyPackage: ''
+  name: csp
+  type: package
+  version: v3.23.0
+customDataClassName: com.microchip.utils_mh3.utils.persistence.CustomModuleData
+data:
+  attachments: {}
+  elementPosition:
+    attributes:
+      id: __ROOTVIEW
+    children:
+    - children:
+      - attributes:
+          id: flexcom7
+          x: '640'
+          y: '20'
+        type: ElementPosition
+      type: ElementPositions
+    type: ComponentGraph
+  symbols:
+    BAUD_RATE:
+      attributes:
+        id: BAUD_RATE
+      children:
+      - children:
+        - attributes:
+            id: visible
+          children:
+          - type: Value
+            value: 'true'
+          type: Boolean
+        type: Attributes
+      - children:
+        - attributes:
+            value: '115200'
+          type: User
+        type: Values
+      type: Integer
+    BRG_VALUE:
+      attributes:
+        id: BRG_VALUE
+      children:
+      - children:
+        - attributes:
+            id: flexcom7
+            value: '65'
+          type: Dynamic
+        type: Values
+      type: Integer
+    FLEXCOM_MODE:
+      attributes:
+        id: FLEXCOM_MODE
+      children:
+      - children:
+        - attributes:
+            value: '1'
+          type: User
+        type: Values
+      type: KeyValueSet
+    FLEXCOM_SPI_CSR0_SCBR_VALUE:
+      attributes:
+        id: FLEXCOM_SPI_CSR0_SCBR_VALUE
+      children:
+      - children:
+        - attributes:
+            id: flexcom7
+            value: '119'
+          type: Dynamic
+        type: Values
+      type: Integer
+    FLEXCOM_SPI_CSR1_SCBR_VALUE:
+      attributes:
+        id: FLEXCOM_SPI_CSR1_SCBR_VALUE
+      children:
+      - children:
+        - attributes:
+            id: flexcom7
+            value: '119'
+          type: Dynamic
+        type: Values
+      type: Integer
+    FLEXCOM_SPI_PERIPHERAL_CLOCK:
+      attributes:
+        id: FLEXCOM_SPI_PERIPHERAL_CLOCK
+      children:
+      - children:
+        - attributes:
+            id: flexcom7
+            value: '119996416'
+          type: Dynamic
+        type: Values
+      type: Integer
+    FLEXCOM_TWI_CLK_SRC_FREQ:
+      attributes:
+        id: FLEXCOM_TWI_CLK_SRC_FREQ
+      children:
+      - children:
+        - attributes:
+            id: flexcom7
+            value: '119996416'
+          type: Dynamic
+        type: Values
+      type: Integer
+    FLEXCOM_TWI_CWGR_CHDIV:
+      attributes:
+        id: FLEXCOM_TWI_CWGR_CHDIV
+      children:
+      - children:
+        - attributes:
+            id: flexcom7
+            value: '146'
+          type: Dynamic
+        type: Values
+      type: Integer
+    FLEXCOM_TWI_CWGR_CKDIV:
+      attributes:
+        id: FLEXCOM_TWI_CWGR_CKDIV
+      children:
+      - children:
+        - attributes:
+            id: flexcom7
+            value: '0'
+          type: Dynamic
+        type: Values
+      type: Integer
+    FLEXCOM_TWI_CWGR_CLDIV:
+      attributes:
+        id: FLEXCOM_TWI_CWGR_CLDIV
+      children:
+      - children:
+        - attributes:
+            id: flexcom7
+            value: '146'
+          type: Dynamic
+        type: Values
+      type: Integer
+    FLEXCOM_USART_INTERRUPT_MODE_ENABLE:
+      attributes:
+        id: FLEXCOM_USART_INTERRUPT_MODE_ENABLE
+      children:
+      - children:
+        - attributes:
+            id: flexcom7
+            value: 'false'
+          type: Dynamic
+        type: Values
+      type: Boolean
+    FLEXCOM_USART_MR_OVER:
+      attributes:
+        id: FLEXCOM_USART_MR_OVER
+      children:
+      - children:
+        - attributes:
+            id: flexcom7
+            value: '0'
+          type: Dynamic
+        type: Values
+      type: Integer
+    FLEXCOM_USART_OPERATING_MODE:
+      attributes:
+        id: FLEXCOM_USART_OPERATING_MODE
+      children:
+      - children:
+        - attributes:
+            id: visible
+          children:
+          - type: Value
+            value: 'true'
+          type: Boolean
+        type: Attributes
+      - children:
+        - attributes:
+            id: flexcom7
+            value: '0'
+          type: Dynamic
+        type: Values
+      type: KeyValueSet
+    FLEXCOM_USART_RING_BUFFER_MODE_ENABLE:
+      attributes:
+        id: FLEXCOM_USART_RING_BUFFER_MODE_ENABLE
+      children:
+      - children:
+        - attributes:
+            id: flexcom7
+            value: 'false'
+          type: Dynamic
+        type: Values
+      type: Boolean
+    FLEX_USART_CLOCK_FREQ:
+      attributes:
+        id: FLEX_USART_CLOCK_FREQ
+      children:
+      - children:
+        - attributes:
+            id: visible
+          children:
+          - type: Value
+            value: 'true'
+          type: Boolean
+        type: Attributes
+      - children:
+        - attributes:
+            id: flexcom7
+            value: '119996416'
+          type: Dynamic
+        type: Values
+      type: Integer
+    FLEX_USART_MR_MODE9:
+      attributes:
+        id: FLEX_USART_MR_MODE9
+      children:
+      - children:
+        - attributes:
+            id: flexcom7
+            value: 'false'
+          type: Dynamic
+        type: Values
+      type: Boolean
+    RECEIVE_DATA_REGISTER:
+      attributes:
+        id: RECEIVE_DATA_REGISTER
+      children:
+      - children:
+        - attributes:
+            id: flexcom7
+            value: '&(FLEXCOM7_REGS->FLEX_US_RHR)'
+          type: Dynamic
+        type: Values
+      type: String
+    TRANSMIT_DATA_REGISTER:
+      attributes:
+        id: TRANSMIT_DATA_REGISTER
+      children:
+      - children:
+        - attributes:
+            id: flexcom7
+            value: '&(FLEXCOM7_REGS->FLEX_US_THR)'
+          type: Dynamic
+        type: Values
+      type: String
+    TWI_INTERRUPT_MODE:
+      attributes:
+        id: TWI_INTERRUPT_MODE
+      children:
+      - children:
+        - attributes:
+            id: flexcom7
+            value: 'true'
+          type: Dynamic
+        type: Values
+      type: Boolean
+    USART_DATA_BITS:
+      attributes:
+        id: USART_DATA_BITS
+      children:
+      - children:
+        - attributes:
+            id: flexcom7
+            value: DRV_USART_DATA_8_BIT
+          type: Dynamic
+        type: Values
+      type: String
+    USART_INTERRUPT_MODE:
+      attributes:
+        id: USART_INTERRUPT_MODE
+      children:
+      - children:
+        - attributes:
+            id: label
+          children:
+          - type: Value
+            value: '---'
+          type: String
+        type: Attributes
+      - children:
+        - attributes:
+            value: 'false'
+          type: User
+        type: Values
+      type: Boolean
+    USE_USART_RECEIVE_DMA:
+      attributes:
+        id: USE_USART_RECEIVE_DMA
+      children:
+      - children:
+        - attributes:
+            id: flexcom7
+            value: 'false'
+          type: Dynamic
+        type: Values
+      type: Boolean
+    USE_USART_TRANSMIT_DMA:
+      attributes:
+        id: USE_USART_TRANSMIT_DMA
+      children:
+      - children:
+        - attributes:
+            id: flexcom7
+            value: 'false'
+          type: Dynamic
+        type: Values
+      type: Boolean
+  userData: {}
