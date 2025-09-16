@@ -73,8 +73,8 @@
 // *****************************************************************************
 // *****************************************************************************
 
-volatile static FLEXCOM_TWI_OBJ flexcom6TwiObj;
-volatile static twi_registers_t *FLEXCOM6_TWI_Module = TWI6_REGS;
+static volatile FLEXCOM_TWI_OBJ flexcom6TwiObj;
+static volatile twi_registers_t *FLEXCOM6_TWI_Module = TWI6_REGS;
 
 // *****************************************************************************
 // *****************************************************************************
