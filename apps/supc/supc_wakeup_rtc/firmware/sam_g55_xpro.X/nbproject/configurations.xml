@@ -160,9 +160,21 @@
       </logicalFolder>
     </logicalFolder>
     <logicalFolder name="ExternalFiles" displayName="Important Files" projectFiles="true">
+      <logicalFolder name="supc_wakeup_rtc_sam_g55_xpro_sam_g55_xpro" displayName="supc_wakeup_rtc_sam_g55_xpro_sam_g55_xpro" projectFiles="true">
+        <itemPath>supc_wakeup_rtc_sam_g55_xpro_sam_g55_xpro/mcc-config.mc4</itemPath>
+        <logicalFolder name="components" displayName="components" projectFiles="true">
+          <itemPath>supc_wakeup_rtc_sam_g55_xpro_sam_g55_xpro/components/cmsis.yml</itemPath>
+          <itemPath>supc_wakeup_rtc_sam_g55_xpro_sam_g55_xpro/components/core.yml</itemPath>
+          <itemPath>supc_wakeup_rtc_sam_g55_xpro_sam_g55_xpro/components/dfp.yml</itemPath>
+          <itemPath>supc_wakeup_rtc_sam_g55_xpro_sam_g55_xpro/components/efc.yml</itemPath>
+          <itemPath>supc_wakeup_rtc_sam_g55_xpro_sam_g55_xpro/components/flexcom7.yml</itemPath>
+          <itemPath>supc_wakeup_rtc_sam_g55_xpro_sam_g55_xpro/components/rtc.yml</itemPath>
+          <itemPath>supc_wakeup_rtc_sam_g55_xpro_sam_g55_xpro/components/stdio.yml</itemPath>
+          <itemPath>supc_wakeup_rtc_sam_g55_xpro_sam_g55_xpro/components/supc.yml</itemPath>
+        </logicalFolder>
+      </logicalFolder>
       <itemPath>Makefile</itemPath>
       <itemPath>../src/config/sam_g55_xpro/harmony-manifest-success.yml</itemPath>
-      <itemPath>supc_wakeup_rtc_sam_g55_xpro.mc3</itemPath>
       <itemPath>../src/config/sam_g55_xpro/pin_configurations.csv</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript" displayName="Linker Files" projectFiles="true">
@@ -232,7 +244,7 @@
         <targetPluginBoard/>
         <platformTool>EdbgTool</platformTool>
         <languageToolchain>XC32</languageToolchain>
-        <languageToolchainVersion>4.45</languageToolchainVersion>
+        <languageToolchainVersion>4.60</languageToolchainVersion>
         <platform>3</platform>
       </toolsSet>
       <packs>
