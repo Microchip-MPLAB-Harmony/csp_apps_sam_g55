@@ -1,0 +1,508 @@
+generatedFiles:
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/fix-double-type-symbol-issue/csp_apps_sam_g55/apps/pio/pio_led_on_off_interrupt/firmware/src/config/sam_g55_xpro/device_cache.h
+  projectFolder: config/sam_g55_xpro
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/fix-double-type-symbol-issue/csp_apps_sam_g55/apps/pio/pio_led_on_off_interrupt/firmware/src/config/sam_g55_xpro/toolchain_specifics.h
+  projectFolder: config/sam_g55_xpro
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/fix-double-type-symbol-issue/csp_apps_sam_g55/apps/pio/pio_led_on_off_interrupt/firmware/src/main.c
+  projectFolder: ''
+  type: Source Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/fix-double-type-symbol-issue/csp_apps_sam_g55/apps/pio/pio_led_on_off_interrupt/firmware/src/config/sam_g55_xpro/definitions.h
+  projectFolder: config/sam_g55_xpro
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/fix-double-type-symbol-issue/csp_apps_sam_g55/apps/pio/pio_led_on_off_interrupt/firmware/src/config/sam_g55_xpro/initialization.c
+  projectFolder: config/sam_g55_xpro
+  type: Source Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/fix-double-type-symbol-issue/csp_apps_sam_g55/apps/pio/pio_led_on_off_interrupt/firmware/src/config/sam_g55_xpro/interrupts.c
+  projectFolder: config/sam_g55_xpro
+  type: Source Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/fix-double-type-symbol-issue/csp_apps_sam_g55/apps/pio/pio_led_on_off_interrupt/firmware/src/config/sam_g55_xpro/interrupts.h
+  projectFolder: config/sam_g55_xpro
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/fix-double-type-symbol-issue/csp_apps_sam_g55/apps/pio/pio_led_on_off_interrupt/firmware/src/config/sam_g55_xpro/device_vectors.h
+  projectFolder: config/sam_g55_xpro
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/fix-double-type-symbol-issue/csp_apps_sam_g55/apps/pio/pio_led_on_off_interrupt/firmware/src/config/sam_g55_xpro/exceptions.c
+  projectFolder: config/sam_g55_xpro
+  type: Source Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/fix-double-type-symbol-issue/csp_apps_sam_g55/apps/pio/pio_led_on_off_interrupt/firmware/src/config/sam_g55_xpro/ATSAMG55J19.ld
+  projectFolder: config/sam_g55_xpro
+  type: Linker Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/fix-double-type-symbol-issue/csp_apps_sam_g55/apps/pio/pio_led_on_off_interrupt/firmware/src/config/sam_g55_xpro/stdio/xc32_monitor.c
+  projectFolder: config/sam_g55_xpro/stdio
+  type: Source Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/fix-double-type-symbol-issue/csp_apps_sam_g55/apps/pio/pio_led_on_off_interrupt/firmware/src/config/sam_g55_xpro/peripheral/pio/plib_pio.h
+  projectFolder: config/sam_g55_xpro/peripheral/pio
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/fix-double-type-symbol-issue/csp_apps_sam_g55/apps/pio/pio_led_on_off_interrupt/firmware/src/config/sam_g55_xpro/peripheral/pio/plib_pio.c
+  projectFolder: config/sam_g55_xpro/peripheral/pio
+  type: Source Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/fix-double-type-symbol-issue/csp_apps_sam_g55/apps/pio/pio_led_on_off_interrupt/firmware/src/config/sam_g55_xpro/pin_configurations.csv
+  projectFolder: ''
+  type: Important Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/fix-double-type-symbol-issue/csp_apps_sam_g55/apps/pio/pio_led_on_off_interrupt/firmware/src/config/sam_g55_xpro/peripheral/clock/plib_clock.h
+  projectFolder: config/sam_g55_xpro/peripheral/clock
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/fix-double-type-symbol-issue/csp_apps_sam_g55/apps/pio/pio_led_on_off_interrupt/firmware/src/config/sam_g55_xpro/peripheral/clock/plib_clock.c
+  projectFolder: config/sam_g55_xpro/peripheral/clock
+  type: Source Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/fix-double-type-symbol-issue/csp_apps_sam_g55/apps/pio/pio_led_on_off_interrupt/firmware/src/config/sam_g55_xpro/peripheral/nvic/plib_nvic.h
+  projectFolder: config/sam_g55_xpro/peripheral/nvic
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/fix-double-type-symbol-issue/csp_apps_sam_g55/apps/pio/pio_led_on_off_interrupt/firmware/src/config/sam_g55_xpro/peripheral/nvic/plib_nvic.c
+  projectFolder: config/sam_g55_xpro/peripheral/nvic
+  type: Source Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/fix-double-type-symbol-issue/csp_apps_sam_g55/apps/pio/pio_led_on_off_interrupt/firmware/src/config/sam_g55_xpro/peripheral/cmcc/plib_cmcc.h
+  projectFolder: config/sam_g55_xpro/peripheral/cmcc
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/fix-double-type-symbol-issue/csp_apps_sam_g55/apps/pio/pio_led_on_off_interrupt/firmware/src/config/sam_g55_xpro/peripheral/cmcc/plib_cmcc.c
+  projectFolder: config/sam_g55_xpro/peripheral/cmcc
+  type: Source Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/fix-double-type-symbol-issue/csp_apps_sam_g55/apps/pio/pio_led_on_off_interrupt/firmware/src/config/sam_g55_xpro/startup_xc32.c
+  projectFolder: config/sam_g55_xpro
+  type: Source Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/fix-double-type-symbol-issue/csp_apps_sam_g55/apps/pio/pio_led_on_off_interrupt/firmware/src/config/sam_g55_xpro/libc_syscalls.c
+  projectFolder: config/sam_g55_xpro
+  type: Source Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/fix-double-type-symbol-issue/csp_apps_sam_g55/apps/pio/pio_led_on_off_interrupt/firmware/src/config/sam_g55_xpro/device.h
+  projectFolder: config/sam_g55_xpro
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/fix-double-type-symbol-issue/csp_apps_sam_g55/apps/pio/pio_led_on_off_interrupt/firmware/src/packs/ATSAMG55J19_DFP/component/adc.h
+  projectFolder: packs/ATSAMG55J19_DFP/component
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/fix-double-type-symbol-issue/csp_apps_sam_g55/apps/pio/pio_led_on_off_interrupt/firmware/src/packs/ATSAMG55J19_DFP/component/chipid.h
+  projectFolder: packs/ATSAMG55J19_DFP/component
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/fix-double-type-symbol-issue/csp_apps_sam_g55/apps/pio/pio_led_on_off_interrupt/firmware/src/packs/ATSAMG55J19_DFP/component/cmcc.h
+  projectFolder: packs/ATSAMG55J19_DFP/component
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/fix-double-type-symbol-issue/csp_apps_sam_g55/apps/pio/pio_led_on_off_interrupt/firmware/src/packs/ATSAMG55J19_DFP/component/crccu.h
+  projectFolder: packs/ATSAMG55J19_DFP/component
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/fix-double-type-symbol-issue/csp_apps_sam_g55/apps/pio/pio_led_on_off_interrupt/firmware/src/packs/ATSAMG55J19_DFP/component/efc.h
+  projectFolder: packs/ATSAMG55J19_DFP/component
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/fix-double-type-symbol-issue/csp_apps_sam_g55/apps/pio/pio_led_on_off_interrupt/firmware/src/packs/ATSAMG55J19_DFP/component/flexcom.h
+  projectFolder: packs/ATSAMG55J19_DFP/component
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/fix-double-type-symbol-issue/csp_apps_sam_g55/apps/pio/pio_led_on_off_interrupt/firmware/src/packs/ATSAMG55J19_DFP/component/fuses.h
+  projectFolder: packs/ATSAMG55J19_DFP/component
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/fix-double-type-symbol-issue/csp_apps_sam_g55/apps/pio/pio_led_on_off_interrupt/firmware/src/packs/ATSAMG55J19_DFP/component/gpbr.h
+  projectFolder: packs/ATSAMG55J19_DFP/component
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/fix-double-type-symbol-issue/csp_apps_sam_g55/apps/pio/pio_led_on_off_interrupt/firmware/src/packs/ATSAMG55J19_DFP/component/i2sc.h
+  projectFolder: packs/ATSAMG55J19_DFP/component
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/fix-double-type-symbol-issue/csp_apps_sam_g55/apps/pio/pio_led_on_off_interrupt/firmware/src/packs/ATSAMG55J19_DFP/component/matrix.h
+  projectFolder: packs/ATSAMG55J19_DFP/component
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/fix-double-type-symbol-issue/csp_apps_sam_g55/apps/pio/pio_led_on_off_interrupt/firmware/src/packs/ATSAMG55J19_DFP/component/mem2mem.h
+  projectFolder: packs/ATSAMG55J19_DFP/component
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/fix-double-type-symbol-issue/csp_apps_sam_g55/apps/pio/pio_led_on_off_interrupt/firmware/src/packs/ATSAMG55J19_DFP/component/pdc.h
+  projectFolder: packs/ATSAMG55J19_DFP/component
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/fix-double-type-symbol-issue/csp_apps_sam_g55/apps/pio/pio_led_on_off_interrupt/firmware/src/packs/ATSAMG55J19_DFP/component/pdmic.h
+  projectFolder: packs/ATSAMG55J19_DFP/component
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/fix-double-type-symbol-issue/csp_apps_sam_g55/apps/pio/pio_led_on_off_interrupt/firmware/src/packs/ATSAMG55J19_DFP/component/pio.h
+  projectFolder: packs/ATSAMG55J19_DFP/component
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/fix-double-type-symbol-issue/csp_apps_sam_g55/apps/pio/pio_led_on_off_interrupt/firmware/src/packs/ATSAMG55J19_DFP/component/pmc.h
+  projectFolder: packs/ATSAMG55J19_DFP/component
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/fix-double-type-symbol-issue/csp_apps_sam_g55/apps/pio/pio_led_on_off_interrupt/firmware/src/packs/ATSAMG55J19_DFP/component/rstc.h
+  projectFolder: packs/ATSAMG55J19_DFP/component
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/fix-double-type-symbol-issue/csp_apps_sam_g55/apps/pio/pio_led_on_off_interrupt/firmware/src/packs/ATSAMG55J19_DFP/component/rtc.h
+  projectFolder: packs/ATSAMG55J19_DFP/component
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/fix-double-type-symbol-issue/csp_apps_sam_g55/apps/pio/pio_led_on_off_interrupt/firmware/src/packs/ATSAMG55J19_DFP/component/rtt.h
+  projectFolder: packs/ATSAMG55J19_DFP/component
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/fix-double-type-symbol-issue/csp_apps_sam_g55/apps/pio/pio_led_on_off_interrupt/firmware/src/packs/ATSAMG55J19_DFP/component/spi.h
+  projectFolder: packs/ATSAMG55J19_DFP/component
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/fix-double-type-symbol-issue/csp_apps_sam_g55/apps/pio/pio_led_on_off_interrupt/firmware/src/packs/ATSAMG55J19_DFP/component/supc.h
+  projectFolder: packs/ATSAMG55J19_DFP/component
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/fix-double-type-symbol-issue/csp_apps_sam_g55/apps/pio/pio_led_on_off_interrupt/firmware/src/packs/ATSAMG55J19_DFP/component/tc.h
+  projectFolder: packs/ATSAMG55J19_DFP/component
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/fix-double-type-symbol-issue/csp_apps_sam_g55/apps/pio/pio_led_on_off_interrupt/firmware/src/packs/ATSAMG55J19_DFP/component/twi.h
+  projectFolder: packs/ATSAMG55J19_DFP/component
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/fix-double-type-symbol-issue/csp_apps_sam_g55/apps/pio/pio_led_on_off_interrupt/firmware/src/packs/ATSAMG55J19_DFP/component/udp.h
+  projectFolder: packs/ATSAMG55J19_DFP/component
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/fix-double-type-symbol-issue/csp_apps_sam_g55/apps/pio/pio_led_on_off_interrupt/firmware/src/packs/ATSAMG55J19_DFP/component/uhp.h
+  projectFolder: packs/ATSAMG55J19_DFP/component
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/fix-double-type-symbol-issue/csp_apps_sam_g55/apps/pio/pio_led_on_off_interrupt/firmware/src/packs/ATSAMG55J19_DFP/component/usart.h
+  projectFolder: packs/ATSAMG55J19_DFP/component
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/fix-double-type-symbol-issue/csp_apps_sam_g55/apps/pio/pio_led_on_off_interrupt/firmware/src/packs/ATSAMG55J19_DFP/component/wdt.h
+  projectFolder: packs/ATSAMG55J19_DFP/component
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/fix-double-type-symbol-issue/csp_apps_sam_g55/apps/pio/pio_led_on_off_interrupt/firmware/src/packs/ATSAMG55J19_DFP/instance/adc.h
+  projectFolder: packs/ATSAMG55J19_DFP/instance
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/fix-double-type-symbol-issue/csp_apps_sam_g55/apps/pio/pio_led_on_off_interrupt/firmware/src/packs/ATSAMG55J19_DFP/instance/chipid.h
+  projectFolder: packs/ATSAMG55J19_DFP/instance
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/fix-double-type-symbol-issue/csp_apps_sam_g55/apps/pio/pio_led_on_off_interrupt/firmware/src/packs/ATSAMG55J19_DFP/instance/cmcc.h
+  projectFolder: packs/ATSAMG55J19_DFP/instance
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/fix-double-type-symbol-issue/csp_apps_sam_g55/apps/pio/pio_led_on_off_interrupt/firmware/src/packs/ATSAMG55J19_DFP/instance/crccu.h
+  projectFolder: packs/ATSAMG55J19_DFP/instance
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/fix-double-type-symbol-issue/csp_apps_sam_g55/apps/pio/pio_led_on_off_interrupt/firmware/src/packs/ATSAMG55J19_DFP/instance/efc.h
+  projectFolder: packs/ATSAMG55J19_DFP/instance
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/fix-double-type-symbol-issue/csp_apps_sam_g55/apps/pio/pio_led_on_off_interrupt/firmware/src/packs/ATSAMG55J19_DFP/instance/flexcom0.h
+  projectFolder: packs/ATSAMG55J19_DFP/instance
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/fix-double-type-symbol-issue/csp_apps_sam_g55/apps/pio/pio_led_on_off_interrupt/firmware/src/packs/ATSAMG55J19_DFP/instance/flexcom1.h
+  projectFolder: packs/ATSAMG55J19_DFP/instance
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/fix-double-type-symbol-issue/csp_apps_sam_g55/apps/pio/pio_led_on_off_interrupt/firmware/src/packs/ATSAMG55J19_DFP/instance/flexcom2.h
+  projectFolder: packs/ATSAMG55J19_DFP/instance
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/fix-double-type-symbol-issue/csp_apps_sam_g55/apps/pio/pio_led_on_off_interrupt/firmware/src/packs/ATSAMG55J19_DFP/instance/flexcom3.h
+  projectFolder: packs/ATSAMG55J19_DFP/instance
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/fix-double-type-symbol-issue/csp_apps_sam_g55/apps/pio/pio_led_on_off_interrupt/firmware/src/packs/ATSAMG55J19_DFP/instance/flexcom4.h
+  projectFolder: packs/ATSAMG55J19_DFP/instance
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/fix-double-type-symbol-issue/csp_apps_sam_g55/apps/pio/pio_led_on_off_interrupt/firmware/src/packs/ATSAMG55J19_DFP/instance/flexcom5.h
+  projectFolder: packs/ATSAMG55J19_DFP/instance
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/fix-double-type-symbol-issue/csp_apps_sam_g55/apps/pio/pio_led_on_off_interrupt/firmware/src/packs/ATSAMG55J19_DFP/instance/flexcom6.h
+  projectFolder: packs/ATSAMG55J19_DFP/instance
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/fix-double-type-symbol-issue/csp_apps_sam_g55/apps/pio/pio_led_on_off_interrupt/firmware/src/packs/ATSAMG55J19_DFP/instance/flexcom7.h
+  projectFolder: packs/ATSAMG55J19_DFP/instance
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/fix-double-type-symbol-issue/csp_apps_sam_g55/apps/pio/pio_led_on_off_interrupt/firmware/src/packs/ATSAMG55J19_DFP/instance/fuses.h
+  projectFolder: packs/ATSAMG55J19_DFP/instance
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/fix-double-type-symbol-issue/csp_apps_sam_g55/apps/pio/pio_led_on_off_interrupt/firmware/src/packs/ATSAMG55J19_DFP/instance/gpbr.h
+  projectFolder: packs/ATSAMG55J19_DFP/instance
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/fix-double-type-symbol-issue/csp_apps_sam_g55/apps/pio/pio_led_on_off_interrupt/firmware/src/packs/ATSAMG55J19_DFP/instance/i2sc0.h
+  projectFolder: packs/ATSAMG55J19_DFP/instance
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/fix-double-type-symbol-issue/csp_apps_sam_g55/apps/pio/pio_led_on_off_interrupt/firmware/src/packs/ATSAMG55J19_DFP/instance/i2sc1.h
+  projectFolder: packs/ATSAMG55J19_DFP/instance
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/fix-double-type-symbol-issue/csp_apps_sam_g55/apps/pio/pio_led_on_off_interrupt/firmware/src/packs/ATSAMG55J19_DFP/instance/matrix.h
+  projectFolder: packs/ATSAMG55J19_DFP/instance
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/fix-double-type-symbol-issue/csp_apps_sam_g55/apps/pio/pio_led_on_off_interrupt/firmware/src/packs/ATSAMG55J19_DFP/instance/mem2mem.h
+  projectFolder: packs/ATSAMG55J19_DFP/instance
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/fix-double-type-symbol-issue/csp_apps_sam_g55/apps/pio/pio_led_on_off_interrupt/firmware/src/packs/ATSAMG55J19_DFP/instance/pdmic0.h
+  projectFolder: packs/ATSAMG55J19_DFP/instance
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/fix-double-type-symbol-issue/csp_apps_sam_g55/apps/pio/pio_led_on_off_interrupt/firmware/src/packs/ATSAMG55J19_DFP/instance/pdmic1.h
+  projectFolder: packs/ATSAMG55J19_DFP/instance
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/fix-double-type-symbol-issue/csp_apps_sam_g55/apps/pio/pio_led_on_off_interrupt/firmware/src/packs/ATSAMG55J19_DFP/instance/pioa.h
+  projectFolder: packs/ATSAMG55J19_DFP/instance
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/fix-double-type-symbol-issue/csp_apps_sam_g55/apps/pio/pio_led_on_off_interrupt/firmware/src/packs/ATSAMG55J19_DFP/instance/piob.h
+  projectFolder: packs/ATSAMG55J19_DFP/instance
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/fix-double-type-symbol-issue/csp_apps_sam_g55/apps/pio/pio_led_on_off_interrupt/firmware/src/packs/ATSAMG55J19_DFP/instance/pmc.h
+  projectFolder: packs/ATSAMG55J19_DFP/instance
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/fix-double-type-symbol-issue/csp_apps_sam_g55/apps/pio/pio_led_on_off_interrupt/firmware/src/packs/ATSAMG55J19_DFP/instance/rstc.h
+  projectFolder: packs/ATSAMG55J19_DFP/instance
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/fix-double-type-symbol-issue/csp_apps_sam_g55/apps/pio/pio_led_on_off_interrupt/firmware/src/packs/ATSAMG55J19_DFP/instance/rtc.h
+  projectFolder: packs/ATSAMG55J19_DFP/instance
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/fix-double-type-symbol-issue/csp_apps_sam_g55/apps/pio/pio_led_on_off_interrupt/firmware/src/packs/ATSAMG55J19_DFP/instance/rtt.h
+  projectFolder: packs/ATSAMG55J19_DFP/instance
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/fix-double-type-symbol-issue/csp_apps_sam_g55/apps/pio/pio_led_on_off_interrupt/firmware/src/packs/ATSAMG55J19_DFP/instance/spi0.h
+  projectFolder: packs/ATSAMG55J19_DFP/instance
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/fix-double-type-symbol-issue/csp_apps_sam_g55/apps/pio/pio_led_on_off_interrupt/firmware/src/packs/ATSAMG55J19_DFP/instance/spi1.h
+  projectFolder: packs/ATSAMG55J19_DFP/instance
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/fix-double-type-symbol-issue/csp_apps_sam_g55/apps/pio/pio_led_on_off_interrupt/firmware/src/packs/ATSAMG55J19_DFP/instance/spi2.h
+  projectFolder: packs/ATSAMG55J19_DFP/instance
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/fix-double-type-symbol-issue/csp_apps_sam_g55/apps/pio/pio_led_on_off_interrupt/firmware/src/packs/ATSAMG55J19_DFP/instance/spi3.h
+  projectFolder: packs/ATSAMG55J19_DFP/instance
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/fix-double-type-symbol-issue/csp_apps_sam_g55/apps/pio/pio_led_on_off_interrupt/firmware/src/packs/ATSAMG55J19_DFP/instance/spi4.h
+  projectFolder: packs/ATSAMG55J19_DFP/instance
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/fix-double-type-symbol-issue/csp_apps_sam_g55/apps/pio/pio_led_on_off_interrupt/firmware/src/packs/ATSAMG55J19_DFP/instance/spi5.h
+  projectFolder: packs/ATSAMG55J19_DFP/instance
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/fix-double-type-symbol-issue/csp_apps_sam_g55/apps/pio/pio_led_on_off_interrupt/firmware/src/packs/ATSAMG55J19_DFP/instance/spi6.h
+  projectFolder: packs/ATSAMG55J19_DFP/instance
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/fix-double-type-symbol-issue/csp_apps_sam_g55/apps/pio/pio_led_on_off_interrupt/firmware/src/packs/ATSAMG55J19_DFP/instance/spi7.h
+  projectFolder: packs/ATSAMG55J19_DFP/instance
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/fix-double-type-symbol-issue/csp_apps_sam_g55/apps/pio/pio_led_on_off_interrupt/firmware/src/packs/ATSAMG55J19_DFP/instance/supc.h
+  projectFolder: packs/ATSAMG55J19_DFP/instance
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/fix-double-type-symbol-issue/csp_apps_sam_g55/apps/pio/pio_led_on_off_interrupt/firmware/src/packs/ATSAMG55J19_DFP/instance/tc0.h
+  projectFolder: packs/ATSAMG55J19_DFP/instance
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/fix-double-type-symbol-issue/csp_apps_sam_g55/apps/pio/pio_led_on_off_interrupt/firmware/src/packs/ATSAMG55J19_DFP/instance/tc1.h
+  projectFolder: packs/ATSAMG55J19_DFP/instance
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/fix-double-type-symbol-issue/csp_apps_sam_g55/apps/pio/pio_led_on_off_interrupt/firmware/src/packs/ATSAMG55J19_DFP/instance/twi0.h
+  projectFolder: packs/ATSAMG55J19_DFP/instance
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/fix-double-type-symbol-issue/csp_apps_sam_g55/apps/pio/pio_led_on_off_interrupt/firmware/src/packs/ATSAMG55J19_DFP/instance/twi1.h
+  projectFolder: packs/ATSAMG55J19_DFP/instance
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/fix-double-type-symbol-issue/csp_apps_sam_g55/apps/pio/pio_led_on_off_interrupt/firmware/src/packs/ATSAMG55J19_DFP/instance/twi2.h
+  projectFolder: packs/ATSAMG55J19_DFP/instance
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/fix-double-type-symbol-issue/csp_apps_sam_g55/apps/pio/pio_led_on_off_interrupt/firmware/src/packs/ATSAMG55J19_DFP/instance/twi3.h
+  projectFolder: packs/ATSAMG55J19_DFP/instance
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/fix-double-type-symbol-issue/csp_apps_sam_g55/apps/pio/pio_led_on_off_interrupt/firmware/src/packs/ATSAMG55J19_DFP/instance/twi4.h
+  projectFolder: packs/ATSAMG55J19_DFP/instance
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/fix-double-type-symbol-issue/csp_apps_sam_g55/apps/pio/pio_led_on_off_interrupt/firmware/src/packs/ATSAMG55J19_DFP/instance/twi5.h
+  projectFolder: packs/ATSAMG55J19_DFP/instance
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/fix-double-type-symbol-issue/csp_apps_sam_g55/apps/pio/pio_led_on_off_interrupt/firmware/src/packs/ATSAMG55J19_DFP/instance/twi6.h
+  projectFolder: packs/ATSAMG55J19_DFP/instance
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/fix-double-type-symbol-issue/csp_apps_sam_g55/apps/pio/pio_led_on_off_interrupt/firmware/src/packs/ATSAMG55J19_DFP/instance/twi7.h
+  projectFolder: packs/ATSAMG55J19_DFP/instance
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/fix-double-type-symbol-issue/csp_apps_sam_g55/apps/pio/pio_led_on_off_interrupt/firmware/src/packs/ATSAMG55J19_DFP/instance/udp.h
+  projectFolder: packs/ATSAMG55J19_DFP/instance
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/fix-double-type-symbol-issue/csp_apps_sam_g55/apps/pio/pio_led_on_off_interrupt/firmware/src/packs/ATSAMG55J19_DFP/instance/uhp.h
+  projectFolder: packs/ATSAMG55J19_DFP/instance
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/fix-double-type-symbol-issue/csp_apps_sam_g55/apps/pio/pio_led_on_off_interrupt/firmware/src/packs/ATSAMG55J19_DFP/instance/usart0.h
+  projectFolder: packs/ATSAMG55J19_DFP/instance
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/fix-double-type-symbol-issue/csp_apps_sam_g55/apps/pio/pio_led_on_off_interrupt/firmware/src/packs/ATSAMG55J19_DFP/instance/usart1.h
+  projectFolder: packs/ATSAMG55J19_DFP/instance
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/fix-double-type-symbol-issue/csp_apps_sam_g55/apps/pio/pio_led_on_off_interrupt/firmware/src/packs/ATSAMG55J19_DFP/instance/usart2.h
+  projectFolder: packs/ATSAMG55J19_DFP/instance
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/fix-double-type-symbol-issue/csp_apps_sam_g55/apps/pio/pio_led_on_off_interrupt/firmware/src/packs/ATSAMG55J19_DFP/instance/usart3.h
+  projectFolder: packs/ATSAMG55J19_DFP/instance
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/fix-double-type-symbol-issue/csp_apps_sam_g55/apps/pio/pio_led_on_off_interrupt/firmware/src/packs/ATSAMG55J19_DFP/instance/usart4.h
+  projectFolder: packs/ATSAMG55J19_DFP/instance
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/fix-double-type-symbol-issue/csp_apps_sam_g55/apps/pio/pio_led_on_off_interrupt/firmware/src/packs/ATSAMG55J19_DFP/instance/usart5.h
+  projectFolder: packs/ATSAMG55J19_DFP/instance
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/fix-double-type-symbol-issue/csp_apps_sam_g55/apps/pio/pio_led_on_off_interrupt/firmware/src/packs/ATSAMG55J19_DFP/instance/usart6.h
+  projectFolder: packs/ATSAMG55J19_DFP/instance
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/fix-double-type-symbol-issue/csp_apps_sam_g55/apps/pio/pio_led_on_off_interrupt/firmware/src/packs/ATSAMG55J19_DFP/instance/usart7.h
+  projectFolder: packs/ATSAMG55J19_DFP/instance
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/fix-double-type-symbol-issue/csp_apps_sam_g55/apps/pio/pio_led_on_off_interrupt/firmware/src/packs/ATSAMG55J19_DFP/instance/wdt.h
+  projectFolder: packs/ATSAMG55J19_DFP/instance
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/fix-double-type-symbol-issue/csp_apps_sam_g55/apps/pio/pio_led_on_off_interrupt/firmware/src/packs/ATSAMG55J19_DFP/samg55j19.h
+  projectFolder: packs/ATSAMG55J19_DFP
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/fix-double-type-symbol-issue/csp_apps_sam_g55/apps/pio/pio_led_on_off_interrupt/firmware/src/packs/ATSAMG55J19_DFP/pio/samg55j19.h
+  projectFolder: packs/ATSAMG55J19_DFP/pio
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/fix-double-type-symbol-issue/csp_apps_sam_g55/apps/pio/pio_led_on_off_interrupt/firmware/src/packs/CMSIS/CMSIS/Core/Include/cmsis_version.h
+  projectFolder: packs/CMSIS/CMSIS/Core/Include
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/fix-double-type-symbol-issue/csp_apps_sam_g55/apps/pio/pio_led_on_off_interrupt/firmware/src/packs/CMSIS/CMSIS/Core/Include/cmsis_compiler.h
+  projectFolder: packs/CMSIS/CMSIS/Core/Include
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/fix-double-type-symbol-issue/csp_apps_sam_g55/apps/pio/pio_led_on_off_interrupt/firmware/src/packs/CMSIS/CMSIS/Core/Include/cmsis_iccarm.h
+  projectFolder: packs/CMSIS/CMSIS/Core/Include
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/fix-double-type-symbol-issue/csp_apps_sam_g55/apps/pio/pio_led_on_off_interrupt/firmware/src/packs/CMSIS/CMSIS/Core/Include/cmsis_gcc.h
+  projectFolder: packs/CMSIS/CMSIS/Core/Include
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/fix-double-type-symbol-issue/csp_apps_sam_g55/apps/pio/pio_led_on_off_interrupt/firmware/src/packs/CMSIS/CMSIS/Core/Include/cmsis_armcc.h
+  projectFolder: packs/CMSIS/CMSIS/Core/Include
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/fix-double-type-symbol-issue/csp_apps_sam_g55/apps/pio/pio_led_on_off_interrupt/firmware/src/packs/CMSIS/CMSIS/Core/Include/cmsis_armclang.h
+  projectFolder: packs/CMSIS/CMSIS/Core/Include
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/fix-double-type-symbol-issue/csp_apps_sam_g55/apps/pio/pio_led_on_off_interrupt/firmware/src/packs/CMSIS/CMSIS/Core/Include/cmsis_armclang_ltm.h
+  projectFolder: packs/CMSIS/CMSIS/Core/Include
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/fix-double-type-symbol-issue/csp_apps_sam_g55/apps/pio/pio_led_on_off_interrupt/firmware/src/packs/CMSIS/CMSIS/Core/Include/core_cm4.h
+  projectFolder: packs/CMSIS/CMSIS/Core/Include
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/fix-double-type-symbol-issue/csp_apps_sam_g55/apps/pio/pio_led_on_off_interrupt/firmware/src/packs/CMSIS/CMSIS/Core/Include/mpu_armv7.h
+  projectFolder: packs/CMSIS/CMSIS/Core/Include
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/fix-double-type-symbol-issue/csp_apps_sam_g55/apps/pio/pio_led_on_off_interrupt/firmware/src/packs/CMSIS/CMSIS/Core/Include/cachel1_armv7.h
+  projectFolder: packs/CMSIS/CMSIS/Core/Include
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/fix-double-type-symbol-issue/csp_apps_sam_g55/apps/pio/pio_led_on_off_interrupt/firmware/src/config/sam_g55_xpro/peripheral/efc/plib_efc.h
+  projectFolder: config/sam_g55_xpro/peripheral/efc
+  type: Header Files
+- excludeFromProject: false
+  path: /home/svcjenkins/workspace/apps-team/Users/skn/fix-double-type-symbol-issue/csp_apps_sam_g55/apps/pio/pio_led_on_off_interrupt/firmware/src/config/sam_g55_xpro/peripheral/efc/plib_efc.c
+  projectFolder: config/sam_g55_xpro/peripheral/efc
+  type: Source Files
+generatedSettings:
+- category: C32-LD
+  key: preprocessor-macros
+  value: ''
+- category: C32-LD
+  key: heap-size
+  value: '512'
+- category: C32
+  key: extra-include-directories
+  value: ../src;../src/config/sam_g55_xpro;../src/packs/ATSAMG55J19_DFP;../src/packs/CMSIS/CMSIS/Core/Include;../src/packs/CMSIS/
+- category: C32CPP
+  key: extra-include-directories
+  value: ../src;../src/config/sam_g55_xpro;../src/packs/ATSAMG55J19_DFP;../src/packs/CMSIS/CMSIS/Core/Include;../src/packs/CMSIS/
+- category: C32-LD
+  key: no-device-startup-code
+  value: 'true'
+- category: C32Global
+  key: mitcm
+  value: ''
+- category: C32Global
+  key: mdtcm
+  value: ''
+- category: C32Global
+  key: mstacktcm
+  value: 'false'
+removedFiles: [
+  ]

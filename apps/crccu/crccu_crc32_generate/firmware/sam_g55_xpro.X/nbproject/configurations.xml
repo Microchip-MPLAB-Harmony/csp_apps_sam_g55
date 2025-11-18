@@ -164,7 +164,6 @@
         <itemPath>crccu_crc32_generate_sam_g55_xpro_sam_g55_xpro/mcc-config.mc4</itemPath>
       </logicalFolder>
       <itemPath>Makefile</itemPath>
-      <itemPath>../src/config/sam_g55_xpro/harmony-manifest-success.yml</itemPath>
       <itemPath>../src/config/sam_g55_xpro/pin_configurations.csv</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
@@ -232,7 +231,7 @@
       </toolsSet>
       <packs>
         <pack name="SAMG_DFP" vendor="Microchip" version="3.9.204"/>
-        <pack name="CMSIS" vendor="ARM" version="5.4.0"/>
+        <pack name="CMSIS" vendor="ARM" version="5.9.0"/>
       </packs>
       <ScriptingSettings>
       </ScriptingSettings>

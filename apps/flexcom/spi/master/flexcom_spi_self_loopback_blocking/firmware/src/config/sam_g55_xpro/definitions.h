@@ -52,8 +52,8 @@
 #include "peripheral/clock/plib_clock.h"
 #include "peripheral/nvic/plib_nvic.h"
 #include "peripheral/cmcc/plib_cmcc.h"
-#include "peripheral/flexcom/spi/master/plib_flexcom5_spi_master.h"
 #include "peripheral/efc/plib_efc.h"
+#include "peripheral/flexcom/spi/master/plib_flexcom5_spi_master.h"
 
 // DOM-IGNORE-BEGIN
 #ifdef __cplusplus  // Provide C++ Compatibility
